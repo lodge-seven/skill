@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="cn">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>常用标签 - lodge</title>
+ </head>
+ <body>
+  <!-- 标签：浏览器api的参数 要与其他不相干的文本相区别 而且要有标记开始与结束
+   			 所以是成对的 有点想xml 直接被浏览器解析
+   	   h1：权重高 一个页面只出现一次 直接被搜索引擎抓取 多出现了会被认为作弊
+	   内核介绍：http://www.cnblogs.com/vajoy/p/3735553.html   
+   -->
+
+  <h1>码农<sub>我去</sub></h1>
+
+ </body>
+</html>
