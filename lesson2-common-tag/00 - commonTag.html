@@ -10,12 +10,96 @@
  </head>
  <body>
   <!-- 标签：浏览器api的参数 要与其他不相干的文本相区别 而且要有标记开始与结束
-   			 所以是成对的 有点想xml 直接被浏览器解析
+   			 所以是成对的 有点像xml 浏览器解析
    	   h1：权重高 一个页面只出现一次 直接被搜索引擎抓取 多出现了会被认为作弊
 	   内核介绍：http://www.cnblogs.com/vajoy/p/3735553.html   
    -->
 
-  <h1>码农<sup>我去</sup></h1>
+  <div class='title_part'>
+	  <!-- 块级元素，权重递减，默认加粗 -->
+	  
+	  <!--
+	  <h1>h1<span>span</span></h1>
+	  <h2>h2</h2>
+	  <h3>h3</h3>
+	  <h4>h4</h4>
+	  <h5>h5</h5>
+	  <h6>h6</h6>
+	  -->
+	  
+	  <!-- h5，语义化div -->
+	  <header><h1><a href='#position'>#</a>常用元素</h1></header>
+	  <nav>
+		<h3> |  h1 |  h2 |  h3 |  h4 |  h5 |  h6  |</h3>
+	  </nav>
+	  <article>
+		<h4>前端元素有哪些？<h4>	
+		<section><h5>块级元素</h5></section>
+		<section><h5>行内元素</h5></section>
+		<aside><h5>块级元素是什么？</h5></aside>
+		<aside><h5>行内元素是什么？</h5></aside>
+	  </article>
+	  <footer>
+		<h6>COPYRIGHT@http://www.html5jscss.com/html5-semantics-section.html</h6>
+	  </footer>
+  </div>
 
+  <div class='text_part'>
+	  <!-- 行内元素，语义化文本 -->
+
+	  <!--
+	  <strong>三只松鼠大礼包 原价￥111</strong>
+	  现价￥<del>100</del>
+	  <em>库存为</em>
+	  12<sup>2</sup>
+	  双11大促销<sub>99</sub>
+	  -->
+
+	  <article>
+		<div class='shop_name'>
+			<strong>三只松鼠大礼包</strong>
+		</div>
+		<div class='shop_price'>
+			<span>原价￥111</span>
+			<span>现价￥<del>100</del></span>
+		</div>
+		<div class='shop_number'>
+			<em>库存为</em>
+			12<sup>2</sup>
+			双11大促销<sub>99</sub>
+		</div>
+	  </article>
+  </div>
+  
+  <div class='link'>
+    <!-- a标签，撑开行内元素 -->
+	<a href='http://www.html5jscss.com/html5-semantics-section.html' title='html5jscss' rel='img' target='_blank' >
+		<img src='http://www.html5jscss.com/pic/htmljscss/html5-layout.jpg' alt='语义化标签' width='500' height='369' />
+	</a>
+	<img src='./img/img_part/QQ图片20171017091657.jpg' alt='语义化标签' width='640' height='384' />
+  </div>
+	
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+
+  <div>
+	<a name='position'>定位</a>
+  </div>
  </body>
 </html>
