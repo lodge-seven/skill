@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>三角形</title>
+  <style>
+	div { border: 100px solid #ddd; border-top-color: #ccc; border-left-color: #333; border-right-color: #222; border-bottom: none; width: 0; border-width: 10px;}
+	ul {}
+  </style>
+ </head>
+ <body>
+   <div></div>
+ </body>
+</html>
