@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>div居中</title>
+  <style>
+	body,html {width: 100%; height: 100%; background-color: #ddd; padding: 0; margin: 0;}
+	body {width:100%; height:100%; }
+	/* div块状元素，独占一行，可以设置自动左右边距 优化：变为内容撑开 */
+	.goods-group {width: 200px; height: 300px; background-color: #fff; margin: auto; text-align: center;  }
+	/* 垂直居中，脱离文档流，不在流则后面的元素补上其原来的位置，而脱离后，活动空间扩大为整个html */
+	.vetically {position: absolute; top:0; left:0; bottom:0; right:0; }
+	.goods-pic {margin-top: 25px;}
+  </style>
+ </head>
+ <body>
+  <div class='goods-group vetically'>
+	<img class='goods-pic' width='150' height='200' src='http://qqwlw.oss-cn-shenzhen.aliyuncs.com/manage/2017091509592776231.jpg' alt='可爱的俊亨' />
+	<p class='goods-introduction'>【可爱的俊亨】帅哥</p>
+  </div>
+  <div class='goods-group'>
+	<img class='goods-pic' width='150' height='200' src='http://zyk-temp.oss-cn-shenzhen.aliyuncs.com/2017052512021843077.jpg' alt='可爱的鸭子' />
+	<p class='goods-introduction'>【静谧的风景】池塘小鸭</p>
+  </div>
+ 
+ </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>三角型</title>
+  <style>
+	/* 居中 */
+	.conter {margin:auto; width: 100px; }
+	/* 正方形 */
+	.rectangle {width: 100px; height: 100px; background: #333; }
+	/* 整体的大小为100 每一个边框都为50 正方形 三边设置颜色透明 */
+	.border-full-transparent {width: 0; height: 0; border: 50px solid transparent; }
+	/* 整体的大小为100 每一个边框都为50 正方形 只有两边 无右下边框 */
+	.border-top-left {width: 0; height: 0; border-left: 100px solid #ccc; border-top: 100px solid #666; transform:rotate(-45deg); margin-bottom: 50px;  }
+	/* 整体的大小为100 每一个边框都为50 正方形 只有两边 无上左边框 */
+	.border-bottom-left {width: 0; height: 0; border-left: 100px solid #ccc; border-bottom: 100px solid #666; transform:rotate(45deg); margin-bottom: 50px;  }
+	/* 角度90 */
+	.right-angled-triangle {border-top: 50px solid #333; }
+	/* 等边60 */
+	.regular-triangle {border-top: 86.6px solid #333;}
+  </style>
+ </head>
+ <body>
+ <div class='conter'>
+  <p class='rectangle'>溢出</p>
+  <p class='border-full-transparent right-angled-triangle'></p>
+  <p class='border-full-transparent regular-triangle'></p>
+  <p class='border-top-left'></p>
+  <p class='border-bottom-left'></p>
+  <p class='border-top-left'></p>
+  <p class='border-bottom-left'></p>
+  <p class='border-top-left'></p>
+  <p class='border-bottom-left'></p>
+  <p class='border-top-left'></p>
+  <p class='border-bottom-left'></p>
+  <p class='border-top-left'></p>
+  <p class='border-bottom-left'></p>
+ </div>
+ </body>
+</html>
