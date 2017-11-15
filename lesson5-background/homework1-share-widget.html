@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业1-分享组件</title>
+  <style>
+	/* 全黑背景 */
+	html,body { margin: 0; background: #000;}
+	ul { padding: 0;}
+	/* 分享组件 */
+	.share-group { width: 170px; height: 280px; background: #252526; margin: 340px auto 0; text-align: center; padding-top: 40px; }
+	/* 公共样式 */
+	.share-group .share-common { width: 41px; height: 41px; background: url('./img/1.png') no-repeat; list-style-type: none; margin: auto; margin-bottom: 4px; }
+	.share-group .share-common a { display: block; height: 100%; }
+	/* 客服 QQ VIP 微信 返顶 */
+	.share-group .service { background-position: -80px -278px; }
+	.share-group .tencent { background-position: 0 -200px; }
+	.share-group .vip { background-position: 0px -242px; }
+	.share-group .wechat { background-position: 0px -320px; }
+	.share-group .top { background-position: 0 0; }
+  </style>
+ </head>
+ <body>
+	<ul class='share-group'>
+		<li class='share-common service' ><a href='https://www.baidu.com/' ></a></li>
+		<li class='share-common tencent' ><a href='https://www.baidu.com/' ></a></li>
+		<li class='share-common vip' ><a href='https://www.baidu.com/' ></a></li>
+		<li class='share-common wechat' ><a href='https://www.baidu.com/' ></a></li>
+		<li class='share-common top' ><a href='https://www.baidu.com/' ></a></li>
+	</ul>
+ </body>
+</html>
