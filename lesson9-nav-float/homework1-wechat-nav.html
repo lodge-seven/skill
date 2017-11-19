@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业一-微信导航</title>
+  <style>
+	/* 首先整一个公共样式 */
+	
+	* { padding: 0; margin: 0; font: 13px/1.2em '微软雅黑'; }
+	a { text-decoration: blink; color: #fff; display: block; }
+	.common-nav ul { list-style: none; margin: 0 auto; }
+	.common-nav li { float: left; }
+	.clearfix:after {content:'';display:block;clear:both;}
+	/* 来来来 解决一下ul的宽度问题 务必要自己撑开 然而都没有什么用 */
+	
+	.wechat-bg { background: url('./images/demo2/topbg.jpg') repeat-x; }	
+	.wechat-nav { width: 958px; }
+	.wechat-nav li a { width: 102px; height: 32px; margin-top: 23px; text-align: center; line-height: 32px; font-weight: bolder; }
+
+	/* 图片垂直居中要配合父元素行高哦 */
+	.wechat-nav li { height: 74px; line-height: 64px; }
+	.wechat-nav .icon { margin-right: 5px;}
+	.wechat-nav .icon img { vertical-align: middle; }
+	.wechat-nav a.active,.wechat-nav a:hover { background: url('./images/demo2/btn2.png') no-repeat;}
+ </style>
+ </head>
+ <body>
+  <nav class='common-nav wechat-bg' >
+	<ul class='wechat-nav clearfix'>
+		<li class='icon'><img src='./images/demo2/weixin.png' width='137' height='44'/></li>
+		<li><a class='active' href='https://www.baidu.com'>首页</a></li>
+		<li><a href='https://www.baidu.com'>帮助</a></li>
+		<li><a href='https://www.baidu.com'>公众</a></li>
+		<li><a href='https://www.baidu.com'>微信</a></li>
+		<li><a href='https://www.baidu.com'>支付</a></li>
+		<li><a href='https://www.baidu.com'>网页版</a></li>
+		<li><a href='https://www.baidu.com'>表情</a></li>
+		<li><a href='https://www.baidu.com'>广告</a></li>
+	</ul>
+  </nav>
+ </body>
+</html>
