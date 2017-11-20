@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业三-导航</title>
+  <style>
+	* { font: 12px/1.2em '微软雅黑'; }
+
+	.nav { list-style: none; border: 1px solid #fd6397; margin: 0; padding:0; width: 60px;}
+	.nav li { width: 100%; height: 62px; text-align: center; background: url('./images/bg.jpg') no-repeat; }
+	.nav .nav-mainpage { background: #fd6397; padding-top: 14px; height: 48px; }
+	.nav-mainpage p { font-size: 14px; width: 30px; margin: 0 auto; color: #fff; }
+	.nav a { display: block; height: 20px; padding-top: 40px; text-decoration: none; color: #8e9093; }
+
+	/* 图标 */
+	.nav li.today { background-position: 0 0; }
+	.nav li.top { background-position: -176px -63px; }
+	.nav li.new { background-position: 0 -124px; }
+	.nav li.brand { background-position: 0 -186px; }
+	
+	.text-color a { color: #fff; }
+	.nav li.today:hover { background-position: -88px 0;}
+	.nav li.brand:hover { background-position: -88px -186px; }
+	.nav li.today:hover a,.nav li.new:hover a, .nav li.brand:hover a { color: #fd6397;}
+	.nav li.new:hover { background-position: -88px -124px; }
+
+  </style>
+ </head>
+ <body>
+	<ul class='nav'>
+		<li class='nav-mainpage'><p>聚美首页</p></li>
+		<li class='today'>
+			<a href='http://www.baidu.com'>每日必看</a>
+		</li>
+		<li class='top text-color'>
+			<a href='http://www.baidu.com'>爆款榜</a>
+		</li>
+		<li class='new'>
+			<a href='http://www.baidu.com'>上新单品</a>
+		</li>
+		<li class='brand'>
+			<a href='http://www.baidu.com'>品牌团</a>
+		</li>
+	</ul>
+ </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业二-广告</title>
+  <style>
+	/* 基础样式 */
+	div.contain { width: 526px; height: 332px; background: #555; margin:0 auto; padding-top: 40px; text-align: center; }
+	a { display: block; text-decoration: none; color: #fff; font: 14px '微软雅黑'; }
+
+	/* a一个背景 然后高度全部继承父级 */
+	.adventrue { border-radius: 50%; height: 100%; background: url('./images/demo1/3.jpg') center; background-size:100% 100%; }
+	.adventrue p { padding-top: 85px; margin: 0 0 8px 0;}
+	
+	/* 先隐藏背景 */
+	.bg p, .bg span { display: none; }
+	.bg { width: 204px; height:204px; margin:0 auto; }
+
+	/* 给焦点后显示 */
+	.bg:hover .adventrue { box-shadow: 0 0 204px #808080 inset;}
+	.bg:hover p, .bg:hover span { display: block; }
+  </style>
+ </head>
+ <body>
+	<div class='contain' >
+		<div class='bg'>
+			<!-- 要更改 a里面不能套p-->
+			<a class='adventrue' href='http://www/baidu.com' >
+				<p>新品试用</p><span>IPSA明星王牌套装</span>
+			</a>
+		</div>
+	</div>
+ </body>
+</html>

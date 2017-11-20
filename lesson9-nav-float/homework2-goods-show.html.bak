@@ -13,7 +13,7 @@
 	.goods-nav { width: 640px; }
 	.goods-nav li a { font-size: 10px; color: #666; width: 63px; text-align: center; border-left: 1px solid #ccc; } 
 	.goods-nav li:first-child a { border: none;}
-	.nav-position { margin-top: 25px 0 10px; }
+	.nav-position { margin: 25px 0 10px; }
 	.good-show { padding: 5px 0;}
 	.good-show > div { float: left; }
 

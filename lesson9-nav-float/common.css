@@ -1,4 +1,5 @@
-	* { padding: 0; margin: 0; font: 13px/1.2em 'Î¢ÈíÑÅºÚ'; }
+	@charset 'UTF-8'
+	* { padding: 0; margin: 0; font: 13px/1.2em 'microsoft yahei'; }
 	a { text-decoration: blink; display: block; }
 	.common-nav ul { list-style: none; margin: 0 auto; }
 	.common-nav li { float: left; }
