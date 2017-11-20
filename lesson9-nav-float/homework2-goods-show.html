@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业二-商品展示</title>
+  <link rel='stylesheet' href='common.css' type='text/css' />
+  <style>
+	.contain { border: 1px solid #ccc; width: 934px; margin: 0 auto; }
+	.goods-nav { width: 640px; }
+	.goods-nav li a { font-size: 10px; color: #666; width: 63px; text-align: center; border-left: 1px solid #ccc; } 
+	.goods-nav li:first-child a { border: none;}
+	.nav-position { margin: 25px 0 10px; }
+	.good-show { padding: 5px 0;}
+	.good-show > div { float: left; }
+
+	.good-show img { display: block; }
+	.img-group img { float: left; }
+
+	/* 加边框线 */
+	.border-r { border-right: 1px solid #ccc;}
+	.border-b { border-bottom: 1px solid #ccc;}
+  </style>
+ </head>
+ <body>
+  <div class='contain'>
+	<nav class='common-nav nav-position'>
+		<ul class='goods-nav clearfix'>
+			<li><a href='https://www.baidu.com'>护肤</a></li>
+			<li><a href='https://www.baidu.com'>彩妆</a></li>
+			<li><a href='https://www.baidu.com'>美发</a></li>
+			<li><a href='https://www.baidu.com'>美体</a></li>
+			<li><a href='https://www.baidu.com'>香氛</a></li>
+			<li><a href='https://www.baidu.com'>肌肤</a></li>
+			<li><a href='https://www.baidu.com'>产品</a></li>
+			<li><a href='https://www.baidu.com'>唇部</a></li>
+			<li><a href='https://www.baidu.com'>精华</a></li>
+			<li><a href='https://www.baidu.com'>修护</a></li>
+		</ul>
+	</nav>
+	<div class='good-show clearfix '>
+		<div class='border-r'>
+			<img src='./images/demo3/1.jpg' width='240' height='400' />
+		</div>
+		<div class='border-r'>
+			<img class='border-b' src='./images/demo3/2.jpg' width='180' height='200' />
+			<img src='./images/demo3/3.jpg' width='180' height='200' />
+		</div>
+		<div class='border-r'>
+			<img class='border-b' src='./images/demo3/4.jpg' width='166' height='144' />
+			<img class='border-b' src='./images/demo3/5.jpg' width='166' height='128' />
+			<img src='./images/demo3/6.jpg' width='166' height='124' />
+		</div>
+		<div>
+			<div class='img-group clearfix border-b'>
+				<img class='border-r' src='./images/demo3/7.jpg' width='160' height='144' />
+				<img src='./images/demo3/8.jpg' width='160' height='144' />
+			</div>
+			<img src='./images/demo3/9.jpg' width='320' height='260' />
+		</div>
+	</div>
+  </div>
+ </body>
+</html>

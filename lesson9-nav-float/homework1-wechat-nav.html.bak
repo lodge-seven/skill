@@ -12,7 +12,7 @@
 	/* 首先整一个公共样式 */
 	.wechat-bg { background: url('./images/demo2/topbg.jpg') repeat-x; }	
 	.wechat-nav { width: 958px; }
-	.wechat-nav li a { color: #fff; width: 102px; height: 33px; margin-top: 23px; text-align: center; line-height: 33px; font-weight: bolder; }
+	.wechat-nav li a { width: 102px; height: 33px; margin-top: 23px; text-align: center; line-height: 33px; font-weight: bolder; }
 
 	/* 图片垂直居中要配合父元素行高哦 */
 	.wechat-nav li { height: 74px; line-height: 64px; }

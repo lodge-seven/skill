@@ -1,0 +1,6 @@
+	* { padding: 0; margin: 0; font: 13px/1.2em '微软雅黑'; }
+	a { text-decoration: blink; display: block; }
+	.common-nav ul { list-style: none; margin: 0 auto; }
+	.common-nav li { float: left; }
+	.clearfix:after {content:'';display:block;clear:both;}
+	/* 来来来 解决一下ul的宽度问题 务必要自己撑开 然而都没有什么用 */
