@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业一-轮播图</title>
+  <style>
+	body, h1, h2, h3, p, ul { margin: 0; padding: 0; }
+	ul { list-style: none; }
+	/* 内容95像素高 */
+	h1 { height: 94px; border-bottom: 1px solid rgb(203,203,203); }
+	/* 不在文档流 相对body 自己没有宽高 居中 */
+	h1 p { position: absolute; left: 50%; top: 43px; margin-left: -188px; width: 377px; height: 90px; background: url('./images/demo3/1.jpg') no-repeat 0 -522px; }
+	
+	/* 整个盒子1000*500 里面的div是轮播图显示区 本身是500 要加76的轮播图突出的内容 */
+	.wrap { margin-top: 64px; height: 576px; position: relative; overflow: hidden; }
+	/* 想法是好的 ... 可是这个是一起盖住了哈哈 哭了 */
+	/* .wrap .show { height: 100%; width: 1000px; margin: 0 auto; background: blue; } */
+
+	/* 用两个盒子盖住不可见区域 */
+	.wrap div { position: absolute; width: 50%; height: 100%; background: #fff; top: 0; }
+	.wrap .cover-l { margin-left: -500px; z-index: 100; }
+	.wrap .cover-r { left: 50%; margin-left: 500px; }
+
+	/* 给左右小方块定个位置 他们的父级是各自两边的盒子 要给图片还要给背景 他们可以共存 颜色在最后 */
+	.wrap span { position: absolute; width: 50px; height: 63px; background: url('./images/demo3/3.png') no-repeat 0 -85px; top: 300px; }
+	.wrap span:hover { background-color: rgba(0,0,0, .5); }
+	/* 要减去自身哦 */
+	.cover-l span { right: 0; margin-right: -50px; }
+	.cover-r span { left: 0; background-position: 0 -155px; margin-left: -50px; }
+
+
+	/* 重点来了 给特定class的列表固定到中间 我去 ul一定要脱离文档  */
+	/* 想了n种方法移动列表 还是决定自适应移ul初始位置 之后的列表只用把ul外边距减去1000的倍数 -500 -1500 -2500... */
+	.pic-list { height: 500px; width: 4000px; position: absolute; left: 50%; margin-left: -500px; }
+	/* 给每一个标签一个相对定位方便放说明 */
+	.pic-list li { float: left; height: 100%; width: 1000px; background: red; position: relative; }
+	/* 第一张图片显示的是500像素 减去它 后面的就上来了 想法是好的 又哭一次 */
+	.pic-list .pic {  background: pink; /* margin-left: -500px; */ }
+
+	/* 每一张轮播图的内容 */
+	.pic-list a { display: block; width: 100%; height: 100%; }
+	.pic1 a { background: url('./images/demo3/2.jpg') no-repeat; }
+	.pic2 a { background: url('./images/demo3/4.jpg') no-repeat; }
+
+	/* 每一张轮播图的说明 */
+	.pic-list .pic-content { width: 890px; height: 152px; position: absolute; left: 50%; top: 424px; margin-left: -445px; background: rgba(0,0,0, .5); color: #fff; }
+	.pic-list h3 { font-size: 22px; font-weight:500; width: 249px; height: 67px; text-align: center; padding: 15px 60px 0 40px; margin: 30px 0 40px 0; border-right: 1px solid #fff; float: left; }
+	.pic-list p { float: left; width: 480px; padding: 45px 20px 0 40px; font-weight:200; }
+  </style>
+ </head>
+ <body>
+  <!--不会做啊怎么这么难啊-->
+  <!--这回不要想太多 放手做 先做出来-->
+  <!--标题是美人经 这样做有点不太合逻辑 里面什么都没有 这个要改-->		
+  <h1><p></p></h1>
+  <!--轮播用n张图片组但只显示一块区域 这里要重叠 用盒子盖住列表的话 他们最好都在一个大盒子里 高度要相等-->
+  <div class='wrap'>
+	<div class='cover-l'><span></span></div>	
+	<ul class='pic-list'>
+		<!--外层布局定位搭好-->
+		<li class='pic1'>
+			<a href='https://www.baidu.com'></a>
+			<div class='pic-content'>
+				<h3>五分钟就能搞定的时髦派对装 秒杀大红唇和烟熏眼</h3>
+				<p>红唇与烟熏妆是派对妆的标配，这个过时的妆容早就应该被打破了，程序员现在深夜敲代码，又困又冷又累，明天还要早起，好多好多的字都不想打哎</p>
+			</div>
+		</li>
+		<li class='pic2'>
+			<a href='https://www.baidu.com'></a>
+			<div class='pic-content'>
+				<h3>五分钟就能搞定的时髦派对装 秒杀大红唇和烟熏眼</h3>
+				<p>红唇与烟熏妆是派对妆的标配，这个过时的妆容早就应该被打破了，程序员现在深夜敲代码，又困又冷又累，明天还要早起，好多好多的字都不想打哎</p>
+			</div>
+		</li>
+		<li class='pic2'>
+			<a href='https://www.baidu.com'></a>
+			<div class='pic-content'>
+				<h3>五分钟就能搞定的时髦派对装 秒杀大红唇和烟熏眼</h3>
+				<p>红唇与烟熏妆是派对妆的标配，这个过时的妆容早就应该被打破了，程序员现在深夜敲代码，又困又冷又累，明天还要早起，好多好多的字都不想打哎</p>
+			</div>
+		</li>
+		<li class='pic2'>
+			<a href='https://www.baidu.com'></a>
+			<div class='pic-content'>
+				<h3>五分钟就能搞定的时髦派对装 秒杀大红唇和烟熏眼</h3>
+				<p>红唇与烟熏妆是派对妆的标配，这个过时的妆容早就应该被打破了，程序员现在深夜敲代码，又困又冷又累，明天还要早起，好多好多的字都不想打哎</p>
+			</div>
+		</li>
+	</ul>
+	<div class='cover-r'><span></span></div>	
+  </div>
+ </body>
+</html>
