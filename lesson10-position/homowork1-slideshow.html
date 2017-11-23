@@ -10,11 +10,15 @@
   <style>
 	body, h1, h2, h3, p, ul { margin: 0; padding: 0; }
 	ul { list-style: none; }
+	.clearfix:after {content:'';display:block;clear:both;}
+	/* ====================================================================S标题=========================================================== */
 	/* 内容95像素高 */
 	h1 { height: 94px; border-bottom: 1px solid rgb(203,203,203); }
 	/* 不在文档流 相对body 自己没有宽高 居中 */
 	h1 p { position: absolute; left: 50%; top: 43px; margin-left: -188px; width: 377px; height: 90px; background: url('./images/demo3/1.jpg') no-repeat 0 -522px; }
+	/* ====================================================================E标题=========================================================== */
 	
+	/* ============================================================S轮播图 1.外盒子模型========================================================= */
 	/* 整个盒子1000*500 里面的div是轮播图显示区 本身是500 要加76的轮播图突出的内容 */
 	.wrap { margin-top: 64px; height: 576px; position: relative; overflow: hidden; }
 	/* 想法是好的 ... 可是这个是一起盖住了哈哈 哭了 */
@@ -31,8 +35,9 @@
 	/* 要减去自身哦 */
 	.cover-l span { right: 0; margin-right: -50px; }
 	.cover-r span { left: 0; background-position: 0 -155px; margin-left: -50px; }
+	/* ===========================================================E轮播图 1.外盒子模型========================================================= */
 
-
+	/* ===========================================================S轮播图 2.轮播模型========================================================= */
 	/* 重点来了 给特定class的列表固定到中间 我去 ul一定要脱离文档  */
 	/* 想了n种方法移动列表 还是决定自适应移ul初始位置 之后的列表只用把ul外边距减去1000的倍数 -500 -1500 -2500... */
 	.pic-list { height: 500px; width: 4000px; position: absolute; left: 50%; margin-left: -500px; }
@@ -50,6 +55,27 @@
 	.pic-list .pic-content { width: 890px; height: 152px; position: absolute; left: 50%; top: 424px; margin-left: -445px; background: rgba(0,0,0, .5); color: #fff; }
 	.pic-list h3 { font-size: 22px; font-weight:500; width: 249px; height: 67px; text-align: center; padding: 15px 60px 0 40px; margin: 30px 0 40px 0; border-right: 1px solid #fff; float: left; }
 	.pic-list p { float: left; width: 480px; padding: 45px 20px 0 40px; font-weight:200; }
+	/* ===========================================================E轮播图 2.轮播模型========================================================= */
+
+
+	/* ===========================================================S轮播图 3.跟随组件========================================================= */
+	/* 这四个小点不使用定位 居中 */
+	.point-group { margin: 30px auto 0; width: 55px; }
+	.point-group span { display: block; float: left; width: 10px; height: 10px; border-radius: 50%; background: rgb(220, 220, 220); margin-right: 5px; }
+	.point-group span:last-child { margin-right: 0; }
+	.point-group span.active { background: red; position: relative; }
+	/* ===========================================================E轮播图 3.跟随组件========================================================= */
+
+	/* ===========================================================S轮播图 4.关键帧========================================================= */
+	/* animation */
+	.slider-animation {  animation-name: ulmove; animation-duration: 20s; animation-iteration-count: infinite;/*动画执行的次数是3次*/ }
+	@keyframes ulmove { 
+		0%   { margin-left: -500px; }
+		25%  { margin-left: -1500px; }
+		50%  { margin-left: -2500px; }
+		100% { margin-left: -3500px; }
+	}
+	/* ===========================================================E轮播图 4.关键帧========================================================= */
   </style>
  </head>
  <body>
@@ -60,7 +86,7 @@
   <!--轮播用n张图片组但只显示一块区域 这里要重叠 用盒子盖住列表的话 他们最好都在一个大盒子里 高度要相等-->
   <div class='wrap'>
 	<div class='cover-l'><span></span></div>	
-	<ul class='pic-list'>
+	<ul class='pic-list slider-animation clearfix'>
 		<!--外层布局定位搭好-->
 		<li class='pic1'>
 			<a href='https://www.baidu.com'></a>
@@ -93,5 +119,6 @@
 	</ul>
 	<div class='cover-r'><span></span></div>	
   </div>
+  <p class='point-group clearfix'><span class='active point-animation'></span><span></span><span></span><span></span></p>
  </body>
 </html>
