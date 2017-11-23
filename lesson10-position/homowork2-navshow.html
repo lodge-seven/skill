@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业二-切换导航</title>
+  <style>
+	body, div, p, ul, h3, h4 { margin: 0; padding: 0; }
+	ul { list-style: none; }
+	.clearfix:after { content:'', display: block; clear: both; }
+	/* 框架 */
+	.nav { position: absolute; width: 220px; top: 120px; left: 44px; background: rgb(4, 119, 192); z-index: 100; }
+	.bg { position: absolute; width: 100%; height: 300px; top: 170px; background: rgb(68, 27, 121); }
+
+	/* 导航条 */
+	/* 导航头部 */
+	.nav-top { padding-top: 20px; height: 30px; }
+	.nav-top .nav-selector { display: block; width: 18px; height: 12px; border-top: 3px solid #fff; border-bottom: 3px solid #fff; margin-left: 15px; float: left; margin-right: 20px; }
+	.nav-selector:after { content: ''; display: block; width: 100%; height: 3px; margin-top: 4px; background: #fff;  }
+	.nav-top .nav-title { font-size: 18px; line-height: 18px; color: #fff; font-weight: 400;  }
+
+	/* 导航小组件 */
+	.nav-bar li { padding: 15px; padding-bottom:10px; width: 190px; border-top: 1px solid rgb(77, 163, 214); z-index: 20; }
+	.nav-bar h4 { font-size: 17px; color: #fff; font-weight: 400; margin-bottom: 14px; line-height: 17px; }
+	.nav-bar span { float: right; color: rgb(77, 163, 214); }
+	/* 这里a的父元素p多出5像素 用行高限制一下 */
+	.nav-bar div { line-height: 12px; }
+	.nav-bar a { font-size: 12px; color: rgb(77, 163, 214); padding-right: 10px; text-decoration: none; }
+
+	/* 背景版 */
+	.nav-bar li div:last-child { width: 1090px; height: 420px; background: blue; position: absolute; top: 50px; margin-left:-15px; display: none; }
+	.item2 { background: yellow; }
+	.item3 { background: red; }
+	.item4 { background: orange; }
+	.item5 { background: green; }
+	.item6 { background: aliceblue; }
+
+	/* 焦点动画 */
+	.nav-bar li:hover .item1 { display: block; }
+  </style>
+ </head>
+ <body>
+  <!-- 
+	1 nav: 导航框架
+	2 bg：背景板框架
+  -->
+
+  <!--S:nav-->
+  <div class='nav' >
+	<!--nav-top：头部展示-->
+	<div class='nav-top clearfix' >
+	  <span class='nav-selector' ></span>
+	  <h3 class='nav-title' >全部课程</h3>
+	</div>
+	<!--nav-bar：导航条链表-->
+	<ul class='nav-bar' >
+	  <li>
+		<h4 class='li-item1 clearfix' >IT. 互联网<span>&gt;</span></h4>
+		<div><a href='www.baidu.com'>前端开发</a><a href='www.baidu.com'>Linux运维</a></div>
+		<div class='item1' ></div>
+	  </li>
+	  <li>
+		<h4 class='li-item2 clearfix' >设计. 创造<span>&gt;</span></h4>
+		<div><a href='www.baidu.com'>前端开发</a><a href='www.baidu.com'>Linux运维</a></div>
+		<div class='item2' ></div>
+	  </li>
+	  <li>
+		<h4 class='li-item3 clearfix' >语言. 留学<span>&gt;</span></h4>
+		<div><a href='www.baidu.com'>前端开发</a><a href='www.baidu.com'>Linux运维</a></div>
+		<div class='item3' ></div>
+	  </li>
+	  <li>
+		<h4 class='li-item4 clearfix' >职业. 考证<span>&gt;</span></h4>
+		<div><a href='www.baidu.com'>前端开发</a><a href='www.baidu.com'>Linux运维</a></div>
+		<div class='item4' ></div>
+	  </li>
+	  <li>
+		<h4 class='li-item5 clearfix' >升学. 考研<span>&gt;</span></h4>
+		<div><a href='www.baidu.com'>前端开发</a><a href='www.baidu.com'>Linux运维</a></div>
+		<div class='item5' ></div>
+	  </li>
+	  <li>
+		<h4 class='li-item6 clearfix' >兴趣. 生活<span>&gt;</span></h4>
+		<div><a href='www.baidu.com'>前端开发</a><a href='www.baidu.com'>Linux运维</a></div>
+		<div class='item6' ></div>
+	  </li>
+	</ul>
+  </div>
+  <!--E:nav-->
+
+  <!--S:bg-->
+  <div class='bg' >
+	<!--<div class='item1' ></div>
+	<div class='item2' ></div>
+	<div class='item3' ></div>
+	<div class='item4' ></div>
+	<div class='item5' ></div>
+	<div class='item6' ></div>-->
+  </div>
+  <!--S:bg-->
+ </body>
+</html>
