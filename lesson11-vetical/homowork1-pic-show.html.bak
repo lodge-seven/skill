@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业一-图片展示区</title>
+
+  <style>
+	body, ul { padding: 0; margin: 0; list-style: none; font-size: 13px }
+	/* 
+		1 导航： 1000*38
+			两个列表
+				
+		2 图片展示：998*134
+	*/
+	
+	.nav { width: 100%; height: 36px; border: 1px solid rgb(217, 222, 227); }
+	.nav li { float: left; padding: 0 10px; line-height: 36px; height: 36px; }
+
+  </style>
+ </head>
+ <body>
+  <ul class='nav'>
+	<li>我喜欢看图</li>
+	<li>猜你喜欢</li>
+  </ul>
+  <div></div>
+ </body>
+2017/11/24
