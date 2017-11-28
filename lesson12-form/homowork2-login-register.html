@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业二-登录注册</title>
+  <style>
+	body, from, input { margin: 0; padding: 0;}
+	body { font: 13px/1em '微软雅黑', '宋体'; }
+	input{ background:none; outline:none; border:0px; outline: none; } 
+
+	.clearfix:before { content:''; clear: both; display: block; }
+
+	div.login { width: 426px; height: 416px; border: 1px solid rgb(221, 221, 221); margin: 100px auto; border-radius: 10px; }
+	div.login form { height: 100%; margin: 40px 43px 35px 0; }
+	
+	.login .input-group { position: relative; vertical-align: middle; text-align: right; margin: 20px 0; }
+	.input-group label { margin-right: 10px; height: 42px; line-height: 42px; }
+	.input-group input { height: 40px; width: 290px; border: 1px solid rgb(221, 221, 221); border-radius: 6px; }
+	/* 绝对定位下自适应宽度需要给中文设置不换行 */
+	.input-group span { position: absolute; top: 6px; margin-left: 10px; white-space: nowrap; padding: 10px; background: rgb(86, 169, 211); border-radius: 2px; color: #fff; display: none; }
+	.input-group span:before { position: absolute; top: 0; bottom: 0; left: 0; margin: auto; margin-left: -22px; content: ''; display: block; height: 0; width: 0; border: 11px solid transparent; border-right: 11px solid rgb(86, 169, 211); }
+
+	.login .submit-group { margin-right: -26px; }
+	.submit-group input { height: 30px; text-align: center; background: rgb(60, 108, 177); color: #fff; float: right; margin-right: 26px; border-radius: 5px; border: none; }
+	.submit-group > .login { width: 140px; }
+	.submit-group > .register { width: 80px; }
+
+	/* 焦点事件 */
+	.input-group:hover span { display: inline; }
+  </style>
+ </head>
+ <body>
+  <div class='login' >
+	<form active='#' method='get' target='_blank' >
+		<div class='input-group'>
+			<label>用户名</label>
+			<input name='user' type='text' placeholder='输入英文字母或者数字' />
+			<span>额呵呵呵呵</span>
+		</div>
+		<div class='input-group'>
+			<label>密码</label>
+			<input name='psd' type='password' placeholder='输入密码' value='11111' />
+			<span>额呵呵呵呵额呵呵呵呵</span>
+		</div>
+		<div class='input-group'>
+			<label>确认密码</label>
+			<input name='repsd' type='password' placeholder='输入确认密码' value='11111' />
+			<span>额呵呵呵呵额呵呵呵呵额呵呵呵呵</span>
+		</div>
+		<div class='input-group'>
+			<label>email</label>
+			<input name='email' type='email' placeholder='123456789@qq.com' />
+			<span>呵呵呵</span>
+		</div>
+		<div class='input-group'>
+			<label>昵称</label>
+			<input name='nickname' type='text' placeholder='输入英文字母或者数字' />
+			<span>呵呵</span>
+		</div>
+		
+		<div class='submit-group clearfix'>
+			<input type='submit' class='login' name='login' value='我有账号,我要登录' />
+			<input type='button' class='register' name='register' value='注册' />
+			<!-- <label class='login' for='login' >我有账号,我要登录</label>
+			<label class='register' for='register' >注册</label> -->
+		</div>
+		
+		
+	</form>
+  </div>
+ </body>
+</html>
