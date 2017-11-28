@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>作业一-登录界面</title>
+  <style>
+	body, form, p, input { margin: 0; padding: 0; }
+	body { font: 13px/1em "微软雅黑","宋体"; color: #000; }
+	a { text-decoration: none; color: #222; }
+	.container { height: 520px; background: url('./images/demo1/dlbg.jpg') no-repeat;  padding-top: 48px; }
+	.container .login { width: 340px; margin-left: auto; margin-right: 151px; padding-top: 5px; padding-bottom: 95px; background: rgb(245, 234, 233);  }
+
+
+	.login .input-group, .input-function, .submit-group { margin: 25px auto; width: 255px; }
+	.login .input-group { font-size: 0; }
+	.input-group i  { display: inline-block; width: 40px; height: 40px; vertical-align: middle;} 
+	.input-group input { width: 200px; height: 38px; vertical-align: middle; border: 1px solid rgb(221, 221, 220); padding-left: 13px; font-size: 14px; background: rgb(245, 234, 233); }
+	.input-group .login-pic { background: url('./images/demo1/zhanghao.jpg') no-repeat 0 -2px; }
+	.input-group .pwd-pic { background: url('./images/demo1/mima.jpg') no-repeat 0 -2px; }
+
+	.input-function input { vertical-align: middle; }
+	.input-function a { margin-left: 14px; }
+
+	.submit-group input { width: 100%; margin: 0 auto; height: 40px; background: url('./images/demo1/but.jpg') no-repeat; border: none; }
+	
+	.outside-group {  margin: 0 auto; width: 244px; }
+  </style>
+ </head>
+ <body>
+	<div class='container'>
+		<div class='login' >
+			<form active='#' method='get' target='_blank' >
+				<div class='input-group'>
+					<i class='login-pic'></i>
+					<input name='user' type='text' placeholder='用户名/邮箱地址/手机号' />
+				</div>
+				<div class='input-group'>
+					<i class='pwd-pic'></i>
+					<input name='psd' type='password' placeholder='输入密码' />
+				</div>
+
+				<div class='input-function'>
+					<input name='psd' type='checkbox' />记住账号<a href='www.baidu.com' >欢迎注册</a><a href='www.baidu.com' >忘记密码?</a>
+				</div>
+				
+				<div class='submit-group'>
+					<input type='submit' class='btn-login' name='login' value='' />
+				</div>
+				
+				<div class='outside-group'>
+					<p>合作网站账号登录：
+						<a href='www.baidu.com'><img src='./images/demo1/qqlogin.png' /></a>
+						<a href='www.baidu.com'><img src='./images/demo1/taobao.png' /></a>
+						<a href='www.baidu.com'><img src='./images/demo1/weixin.png' /></a>
+					</p>
+				</div>
+			</form>
+	  </div>
+  </div>
+ </body>
+</html>
