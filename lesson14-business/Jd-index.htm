@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
+    <style>
+		/* 初始化 */
+        body, p, ul, input, h3 { margin: 0; padding: 0; }
+        /* 后期媒体查询自适应 */
+        body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif; color: #666; background: #F6F6F6; min-width: 1190px; }
+        a { text-decoration: none; color: #666; }
+		ul { list-style: none; }
+		em, i { font-style: normal; }
+        .d-block { display: block; }
+		.d-inlneblock { display: inline-block; }
+        .lr { float: right; }
+        .lf { float: left; }
+		.ml10 { margin-left: 10px; }
+		.mr10 { margin-right: 10px; }
+		.mrf2 { margin-right: -2px; }
+		.hidden { display: none; }
+		.camero { display: inline-block; width: 19px; height: 15px; background: url('./img/sprite-photo-search.png') no-repeat; vertical-align: middle; }
+		
+        .clearfix:after { content: ''; display: block; clear: both; }
+		/* 共同-分割 */
+		.space { overflow: hidden; padding: 0; margin: 11px 5px 0; width: 1px; height: 10px; background-color: #ccc; }
+		/* 共同-盒子头部 */
+		.box_hd { position: relative; width: 1140px; height: 55px; padding: 0 20px 0 30px; line-height: 55px; color: #fff; }
+		/* 共同-盒子头部尖角 */
+		.box_hd_arrow { position: absolute; top: 0; left: 0; width: 0; height: 0; border-top: 19px solid #f6f6f6; border-right: 19px solid transparent; }
+		.box_hd_dec { position: absolute; left: -4px; top: -4px; width: 28px; height: 28px; }
+		/* 共同-标题 */
+		.box_tit { font-size: 26px; font-weight: 400; line-height: 40px; height: 40px; padding-top: 9px; }
+		/* 共同-顶部摘要 */
+		.box_subtit { position: relative; float: right; margin-top: 19px; padding-right: 20px; height: 24px; line-height: 24px; font-size: 14px; color: #fff; }
+		/* 共同-摘要符号 */
+		.box_subtit_arrow { position: absolute; right: 0; top: 4px; }
+		.box_subtit_arrow, .coupon_entry_btn_ico { background-image: url('./img/sprite_index@1x.png'); background-position: -154px -40px; background-size: 218px 188px; background-repeat: no-repeat; width: 15px; height: 16px; }
+		/* --------------------顶部信息-------------------------- */
+        .jd-h { height: 30px; background: #E3E4E5; border-bottom: 1px solid #ddd; }
+        .jd-h .content, .container { width: 1190px; margin: auto; }
+		/* logo大图 行高一致 */
+		.jd-h .content { position: relative; line-height: 30px; }
+        .content .logo { width: 190px; height: 170px; background: url('./img/logo.v3.jpg') no-repeat; box-shadow: 0 -12px 10px rgba(0,0,0,.2); }
+		.content .map { position: relative; z-index: 2; margin: 0 7px; }
+		.content .map:hover { margin: 0 6px; z-index: 40; line-height: 29px; border: 1px solid #ccc; border-bottom: #fff; }
+		.map:hover .mapsummary { background: #fff; }
+		.content .map:hover > .mapcontent { display: block; border: 1px solid #ccc; }
+		.map .mapsummary { position: relative; z-index: 10; padding: 0 7px; height: 32px; }
+		/* 对齐右边 行宽2.5 24+5 */
+
+		.map .mapcontent { position: absolute; display: none; left: -1px; top: 30px; padding: 7px; z-index: 1; width: 306px; background: #fff; text-align: left; line-height: 29px; box-shadow: 1px 2px 1px rgba(0,0,0,.1); }
+		.mapcontent .item { display: inline-block; line-height: 24px; width: 58px;  }
+		.mapcontent a { display: inline-block; padding: 0 7px; }
+		.mapcontent a.active { background: #f10215; color: #fff; }
+		.mapcontent a.active:hover { color: #fff; }
+		.mapcontent a:hover { color: #f10215; }
+		/* 顶部右边信息 */
+		.list li { position: relative; float: left; padding: 0 7px; }
+		.list .space { padding: 0; }
+		.list .register { color: #f10215; padding-left: 7px; }
+		.list .listsummary { position: relative; }
+		.list .listhover { position: absolute; background: red; z-index: 10; }
+
+        /* 导航 */
+        .container nav { position: relative; padding-top: 25px; }
+       
+		/* 搜索表单 */
+		 nav .search { width: 550px; margin: auto; }
+        .search .form { margin-bottom: 5px; border: 1px solid #C11C44; background: #f10215; }
+		.form input { width: 490px; padding: 4px; line-height: 25px; font-size: 14px; border: none; }
+        .form i { margin-left: -40px;}
+		.form a { width: 50px; line-height: 35px; text-align: center; }
+
+		/* 购物车 */
+        nav .shopcar { position: absolute; top: 25px; right: 96px; width: 190px; line-height: 33px; border: 1px solid #ddd; text-align: center; color: #f10214; }
+		.shopcar i { margin-right: 8px; }
+		.shopcar span { position: absolute; top: 4px; right: 35px; background: #f10215; color: #fff; border-radius: 12px; line-height: 12px; font-size: 12px; width: 12px; padding: 1px; text-align: center; }
+        nav .benefit { position: absolute; top: 90px; right: 0; width: 190px; height: 40px; background: url(https://img11.360buyimg.com/da/jfs/t13135/292/1303925473/34942/5270c4b/5a1e8091Nebc158ed.jpg) center no-repeat; }
+        
+		/* 导航中的菜单 */
+		nav .menu { width: 790px; height: 40px; margin: auto; }
+		.menu li { float: left; margin-left: 30px; }
+		.menu .space { margin: 15px 0 0 20px; }
+		.menu .space + li { margin-left: 20px; }
+		.menu a { line-height: 40px; font-size: 16px; font-weight: 700; color: #555; }
+
+		/* 热词 */
+		.search .hotwords { height: 20px; line-height: 20px; margin-bottom: 14px; }
+        .hotwords a { margin-right: 10px; }
+		.hotwords a.active { color: #c81623;}
+        /* -----------------------------主要展示------------------------------ */
+        .container .mainpage { margin-left: -10px; margin-bottom: 10px; }
+		.mainpage > div { height: 480px; margin-left: 10px; }
+		
+		.mainpage .slider { width: 190px; background: #666; }
+		.slider ul { padding: 16px 0; }
+		.slider li { line-height: 28px; font-size: 14px; padding-left: 12px; }
+		.slider span { color: #fff; padding: 0 4px; font-size: 12px; }
+		.slider li:hover { background: #999395;}
+		.slider a { color: #fff; }
+		.slider a:hover { color: #c81623; }
+		
+		/* 中间图片展示 */
+		.mainpage .showpic { width: 790px; }
+		/* 轮播图 */
+		.showpic .picslider { position: relative; height: 340px; margin-bottom: 10px; overflow: hidden; }
+		.slider-animation {  animation-name: ulmove; animation-duration: 20s; animation-iteration-count: infinite;/*动画执行的次数是3次*/ }
+		@keyframes ulmove { 
+			0%   { margin-left: -790px; }
+			25%  { margin-left: -1580px; }
+			50%  { margin-left: -2370px; }
+			100% { margin-left: -3160px; }
+		}
+		.picslider > a { position: absolute; top: 50%; margin-top: -30px; width: 30px; height: 60px; line-height: 60px; text-align: center; background: rgba(0,0,0,.1); }
+		.picslider > a.left { left: 0;}
+		.picslider > a.right { right: 0;}
+		.picslider > a:hover { background: rgba(0,0,0,.6); color: #fff; }
+		.picslider ul { width: 4160px; }
+		.picslider li { float: left; }
+
+		/* 小滑块 */
+		.picslider .sliderbar { position: absolute; left: 50%; margin-left: -91px; bottom: 20px; font-size: 0; padding: 4px 8px; border-radius: 12px; background-color: hsla(0,0%,100%,.3); }
+		.sliderbar .sliderbtn { display: inline-block; margin-right: 10px; width: 12px; height: 12px; border-radius: 100%; background: #fff; }
+		.sliderbar .sliderbtn:last-child { margin-right: 0; }
+		.sliderbar i.active { background: #db192a; }
+
+		/* 功能类 */
+		.mainpage .func { width: 190px; }
+		/* 功能类-个人信息 */
+		.func .user { padding: 0 16px; height: 115px; border-bottom: 1px solid #e6e6e6; }
+		.user .info { padding: 15px 0 15px 54px; height: 45px;}
+		.info > a { font-size: 0; margin-left: -54px; }
+		.info img { width: 40px; height: 40px; margin: 5px; border-radius: 23px; }
+		.info .welcome p { margin-top: 4px; }
+		.info .welcome a { margin-right: 5px; }
+		.user .profit { margin-right: -10px; overflow: hidden; height: 24px; font-size: 0; }
+		.user .profit a { display: inline-block; line-height: 20px; width: 70px; border: 2px solid #e01222; font-size: 12px; text-align: center; margin-right: 10px; }
+		.user .profit a:hover { background: #e01222; color: #fff; }
+		/* 功能类-新闻 */
+		.func .news { padding: 0 15px; height: 154px; border-bottom: 1px solid #e6e6e6;}
+		/* 标签栏 */
+		.news .tab { position: relative; width: 160px; height: 27px; margin: auto; border-bottom: 1px solid #e6e6e6; }		
+		.tab a { height: 17px; margin-top: 7px; padding-bottom: 1px; }
+		.tab .first:after { content: ''; border-right: 1px solid #dfe0e1; padding-right: 12px; border-bottom: 2px solid #fff; padding-bottom: 1px; }
+		.tab .second { margin-left: 12px; }
+		.tab .more:hover { color: #c81623; }
+		.tab .active { border-bottom: 2px solid #db192b; padding-left: 1px; padding-right: 1px; }
+
+		.tab div { position: absolute; top: 28px; width: 160px; height: 96px; padding: 12px 0; }
+		.tab div li { line-height: 24px; width: 160px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; }
+		
+		.tab a:hover {  border-bottom: 2px solid #db192b; }
+		.tab a:hover + div { display: block; z-index: 3; background: #fff; }
+		/* .news .newscontent { padding: 12px 0; }
+		.newscontent li { line-height: 24px; width: 160px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; } */
+		/* 服务号 */
+		.func .service { height: 210px; }
+		.service ul { position: relative; }
+		.service li { float: left; width: 47px; line-height: 24px; border-right: 1px solid #e7e7e7; text-align: center; }
+		.service li:hover, .service .active { border-top: 2px solid #e01121; line-height: 20px; height: 22px; }
+		.service li:hover div, .service .active div { display: block;}
+		.service li:hover > a, .service .active > a { color: #e01121; }
+		.service li:last-child { border-right: none; width: 46px; }
+		.service .tab-content { position: absolute; top: 0; left: 0; margin-top: 22px; width: 190px; height: 186px; background: red; z-index: 1;}
+		.service .flight { background: pink; }
+		.service .hotel { background: yellow; }
+		.service .train { background: aliceblue; }
+		/* 话费部分 */
+		.service .bill { background: #fff; }
+		.bill .part1 { padding: 15px 0 0 8px; }
+		.part1 a { margin-right: 6px; padding: 1px 2px; }
+		.part1 a:hover { color: #fff; background: url("./img/iframe-san-new.png") no-repeat center; }
+		.bill .part2 { text-align: left; margin-left: 8px; line-height: 30px;}
+		.part2 input { width: 83px; height: 20px; padding: 0 4px; line-height: 20px; border: 1px solid #e7e7e7; }
+		.part2 span { margin-right: 5px; }
+		.part2 .hot { color: #e01222; white-space: nowrap; }
+		.part2 select { width: 53px; height: 22px;border: 1px solid #ccc; font-family: \5b8b\4f53; letter-spacing: -1px; color: #666;}
+		.part2 a { width: 85px; height: 25px; background: #e01222; color: #fff; text-align: center; border: 0; vertical-align: middle; margin-right: 8px; line-height: 25px; margin: 15px 0; }
+		.part2 .ab img, .ab span { vertical-align: middle; margin-right: 4px; color: #527cdb; }
+
+		/* ---------------------------京东秒杀模型 封装样式类---------------------- */
+		.container .seckill { height: 305px; margin-bottom: 30px;}
+		.sk .box_hd { background: url('./img/seckill_hd.png') no-repeat 0 0; }
+		.sk .box_hd_dec { background-image: url('./img/sprite_index@1x.png'); background-position: -190px -48px; background-size: 218px 188px; background-repeat: no-repeat; }
+		.sk .box_hd_icon { margin-top: 8px; margin-right: 8px; background-image: url('./img/sprite_index@1x.png'); background-position: 0 -40px; background-size: 218px 188px; background-repeat: no-repeat; width: 34px; height: 40px;}
+		.sk .box_subtit { float: left; margin-left: 12px;}
+		.sk .sk_cd_tip { line-height: 45px; padding-top: 10px; font-size: 14px; }
+		.sk .sk_cd_main { margin-left: 6px; margin-right: 8px; }
+		/* 封装个时间 */
+		.sk .cd_item { width: 35px; height: 37px; background-color: #440106; color: #f90013; font-size: 24px; font-family: Arial; font-weight: 700; border-radius: 3px; text-align: center; line-height: 37px; margin-top: 10px; }
+		.sk .cd_split { margin: 22px 4px 0; width: 4px; height: 12px; font-size: 0; line-height: 0; }
+		.sk .cd_split_dot { display: block; width: 4px; height: 4px; border-radius: 100%; background-color: #440106; }
+		.sk .cd_split_top { margin-bottom: 4px; }
+		.sk .cd_split_bottom { top: 30px; }
+		/* 秒杀模型主要内容 */
+		.sk .box_bd { padding: 12px 0 13px; height: 225px; overflow: hidden; }
+		/* 左边轮播内容 */
+		.sk_list_wrapper { position: relative; width: 1000px; overflow: hidden;}
+		.sk_list { width: 6000px; animation-name: ulmove2; animation-duration: 20s; animation-iteration-count: infinite; }
+		@keyframes ulmove2 { 
+			0%   { margin-left: -100px; }
+			25%  { margin-left: -200px; }
+			50%  { margin-left: -300px; }
+			100% { margin-left: -400px; }
+		}
+		/* 左边轮播内容-商品展示 */
+		.sk_item { float: left; width: 170px; height: 225px; padding: 0 14px 0 15px; border-right: 1px solid #e7e7e7; }
+		.sk_item_pic { position: relative; text-align: center; }
+		.sk_item_img { width: 130px; height: 130px; margin: 17px 0; }
+		/* 允许在单词内换行 解决一大串单词整体移位 */
+		.sk_item_name { color: #999; max-width: 100%; overflow: hidden; font-size: 12px; text-align: left; height: 32px; line-height: 16px; word-wrap: break-word; word-break: break-all; }
+		/* 中间的分割区阴影 */
+		.sk_item_shadow { position: absolute; left: 0; top: 130px; text-align: center; background-image: url('./img/sprite_index@1x.png'); background-position: 0 0; background-size: 218px 188px; background-repeat: no-repeat; width: 170px; height: 20px; }
+		.sk_item_price { padding: 3px 0; height: 25px; }
+		.sk_item_price_new { font-size: 18px; font-weight: 700; margin-right: 8px; color: #f10214; }
+		.sk_item_price_origin { color: #999; font-size: 12px; }
+		.sk_controls_item { position: absolute; display: block; z-index: 1; top: 50%; margin-top: -25px; width: 20px; height: 50px; background: #f1f1f1; background: rgba(0,0,0,.1); line-height: 50px; text-align: center; }
+		.sk_controls_prev { left: 7px; }
+		.sk_controls_next { right: 7px; }
+		.sk_controls_item i { font-size: 20px; color: #272526; }
+		/* 右边特殊展示 */
+		.sk_special { position: relative; margin: 0 10px 0 0; }
+		.sk_special_list { position: relative; width: 180px; height: 225px; }
+		.sk_special_item { position: absolute; left: 0; top: 0; width: 180px; height: 225px; }
+		.sk_special_pic { display: block; width: 180px; height: 225px; }
+		.sk_special_indlist { position: absolute; width: 100%; height: 10px; bottom: 15px; z-index: 2; font-size: 0; text-align: center; }
+		.sk_special_inditem { display: inline-block; width: 10px; height: 10px; border-radius: 5px; margin: 0 3px; background: #342a2d; }
+		.sk_special_inditem.active { background: #e01222;}
+		
+		/* ---------------------------购物模型 封装样式类---------------------- */
+		/* 第一块：发现 */
+		.box_find .box_hd { background: #4998a1; background-image: linear-gradient(90deg,#4998a1,#2e828b); width: 340px; }
+		.box_find .box_hd_dec { background-image: url('./img/sprite_index@1x.png'); background-position: -190px -96px; background-size: 218px 188px; background-repeat: no-repeat; width: 28px; height: 28px; }
+		.box_find .box_bd { padding: 10px; height: 369px; }
+		/* 发现内容区 */
+		.find_list { width: 370px; height: 363px; overflow: hidden; }
+		.find_list .find_item { float: left; border-right: 1px solid #e7e7e7; border-bottom: 1px solid #e7e7e7;}
+		.find_item_lk { position: relative; display: block; width: 185px; height: 120px; }
+		.find_item_name { font-size: 14px; color: #4998a1; position: absolute; top: 15px; left: 20px; width: 80px; line-height: 20px; z-index: 1; word-wrap: break-word; }
+		.find_item_img { position: absolute; bottom: 5px; right: 10px; width: 80px; height: 80px; transition: transform .4s ease-out; }
+		.find_item_lk:hover .find_item_img { transform: translateX(-5px); }
+		.box_sub .box_hd { background: #76488e; background-image: linear-gradient(90deg,#76488e,#662d72); width: 340px; }
+		.box_sub .box_hd_dec { background: url('./img/sup_hd_dec@1x.png'); width: 28px; height: 28px;  }
+
+		.box_top .box_hd { background: #e77005; background-image: linear-gradient(90deg,#e77005,#e45d04); width: 340px; }
+		.box_top .box_hd_dec { background-image: url('./img/sprite_index@1x.png'); background-position: -190px 0; background-size: 218px 188px; background-repeat: no-repeat; width: 28px; height: 28px; }
+
+		/* -------------------------购物券模型与寻觅------------------------- */
+		.box_coupon .box_hd { background: #f03118; width: 740px; }
+		.box_coupon .box_hd_dec { background-image: url('./img/sprite_sprite_coupon@1x.png'); background-position: 0 0; background-size: 76px 60px; background-repeat: no-repeat; width: 28px; height: 28px; }
+		/* 购物券信息清单 */
+		.coupon_list { padding: 10px 0; }
+		.coupon_list .coupon_item { position: relative; float: left; width: 197px; height: 195px; border-right: 1px solid #e7e7e7; }
+		.coupon_info { position: absolute; left: 15px; top: 15px; width: 100px; height: 180px; background-color: #fff; z-index: 1; border-top: 3px solid #e93524; box-shadow: 6px 6px 12px 0 rgba(0,0,0,.2); }
+		.coupon_price { margin-top: 7px; line-height: 36px; font-size: 34px; font-weight: 700; color: #f10214;}
+		.coupon_price i { font-size: 12px; font-weight: 400; }
+		.coupon_desc { margin: 3px; line-height: 18px; color: #e93524; }
+		.coupon_limit { width: 80px; height: 36px; padding: 15px 10px; background: #e7e7e7 url('./img/wave.jpg') repeat-x 0 0;}
+		.coupon_btn { background-color: #e93524; line-height: 26px; color: #fff; text-align: center; }
+		/* 购物券点击展开图片 */
+		.coupon_pic { position: absolute; right: 15px; top: 25px; width: 150px; height: 150px; transition: transform .5s; }
+		.coupon_item:hover .coupon_pic { transform: translateX(15px); }
+		/* 寻me */
+		.box_xmi .box_hd { background: #4f629f; width: 340px; }
+		.box_xmi .box_hd_dec { background-image: url('./img/sprite_sprite_coupon@1x.png'); background-position: -48px 0; background-size: 76px 60px; background-repeat: no-repeat; width: 28px; height: 28px; }
+		.box_xmi .box_bd { width: 390px; overflow: hidden; }
+		.xmi_list { width: 2000px;}
+		.xmi_item { float: left; width: 390px; }
+		.xmi_lk { position: relative; padding: 25px 30px; width: 330px; height: 145px; overflow: hidden; }
+		.xmi_lk img { margin-right: 8px; }
+		.xmi_info { display: inline-block; vertical-align: top; width: 118px; }
+		.xmi_title { font-size: 14px; font-weight: 700; line-height: 18px; color: #333; word-break: break-all; }
+		.xmi_desc { font-size: 12px; margin-top: 6px; color: #999; line-height: 18px; text-align: justify; }
+		.xmi_desc i { color: #4f629f; }
+		.xmi_look { position: absolute; left: 240px; bottom: 25px; color: #999; width: 120px; height: 22px; }
+		.xmi_look i { display: inline-block; background: url('./img/sprite_sprite_coupon@1x.png'); background-position: 0 -48px; background-size: 76px 60px; width: 18px; height: 12px; vertical-align: -2px; margin-right: 6px;}
+
+		/* 进度点 */
+		.xmi_point { font-size: 0; width: 95px; margin: auto;}
+		.xmi_point li { display: inline-block; width: 8px; height: 8px; background-color: #c7c7c7; margin: 5px; border-radius: 50%; }
+		.xmi_point li.active { background-color: #e21222;}
+    </style>
+</head>
+<body>
+	<!-- 头部信息 -->
+    <div class="jd-h">
+        <div class="content clearfix">
+			<a href="https://www.jd.com/" class="logo d-block lf"></a>
+			<div class="map lf">
+				<div class="mapsummary">
+					<i>11</i><span>北京</span>
+				</div>
+				<div class="mapcontent">
+					<div class="item"><a href="#" class="active">北京</a></div>
+					<div class="item"><a href="#" class="">上海</a></div>
+					<div class="item"><a href="#" class="">天津</a></div>
+					<div class="item"><a href="#" class="">重庆</a></div>
+					<div class="item"><a href="#" class="">河北</a></div>
+					<div class="item"><a href="#" class="">山西</a></div>
+					<div class="item"><a href="#" class="">河南</a></div>
+					<div class="item"><a href="#" class="">辽宁</a></div>
+					<div class="item"><a href="#" class="">吉林</a></div>
+					<div class="item"><a href="#" class="">黑龙江</a></div>
+					<div class="item"><a href="#" class="">内蒙古</a></div>
+					<div class="item"><a href="#" class="">江苏</a></div>
+					<div class="item"><a href="#" class="">山东</a></div>
+					<div class="item"><a href="#" class="">安徽</a></div>
+					<div class="item"><a href="#" class="">浙江</a></div>
+					<div class="item"><a href="#" class="">福建</a></div>
+					<div class="item"><a href="#" class="">湖北</a></div>
+					<div class="item"><a href="#" class="">湖南</a></div>
+					<div class="item"><a href="#" class="">广东</a></div>
+					<div class="item"><a href="#" class="">广西</a></div>
+					<div class="item"><a href="#" class="">江西</a></div>
+					<div class="item"><a href="#" class="">四川</a></div>
+					<div class="item"><a href="#" class="">贵州</a></div>
+					<div class="item"><a href="#" class="">云南</a></div>
+					<div class="item"><a href="#" class="">西藏</a></div>
+					<div class="item"><a href="#" class="">陕西</a></div>
+					<div class="item"><a href="#" class="">甘肃</a></div>
+					<div class="item"><a href="#" class="">青海</a></div>
+				</div>
+			</div>
+			<div class="list lr">
+				<ul>
+					<li><a href="#">你好，请登录</a><a href="#" class='register' >免费注册</a></li>
+					<li class='space'></li>
+					<li>我的订单</li>
+					<li class='space'></li>
+					<li>
+						<div class="listsummary">
+							我的京东<i>ww</i>
+						</div>
+						<div class="listhover">
+							内容哦
+						</div>
+					</li>
+					<li class='space'></li>
+					<li>京东会员</li>
+					<li class='space'></li>
+					<li>企业采购</li>
+					<li class='space'></li>
+					<li>客户服务<i>ww</i>
+						<div class="listhover">
+							内容哦
+						</div>
+					</li>
+					<li class='space'></li>
+					<li>网站导航<i>ww</i>
+						<div class="listhover">
+							内容哦
+						</div>
+					</li>
+					<li>手机京东</li>
+				</ul>
+			</div>
+        </div>
+    </div>
+	<!-- 主体对象 -->
+    <div class="container">
+		<!-- S导航信息 -->
+        <nav>
+            <div class="search">
+                <div class="form">
+					<input type="text" placeholder="努比亚手机"  />
+					<i class='camero'></i>
+					<a href="#" class="d-block lr">q</a>
+				</div>
+                <p class="hotwords">
+                    <a href="" class="active">折扣神券</a><a href="">冲印9.9元</a><a href="">养殖用品</a><a href="">暖冬新品</a>
+					<a href="">家电8.5折</a><a href="">空气炸锅</a><a href="">欧式果盘</a><a href="">199减100</a><a href="">紫砂花盆</a>
+                </p>
+            </div>
+            <div class="shopcar"><i>车</i>我的购物车<span>0</span></div>
+            <div class="menu">
+				<ul class="clearfix">
+					<li><a href="#" class="d-block" >秒杀</a></li>
+					<li><a href="#" class="d-block" >优惠券</a></li>
+					<li><a href="#" class="d-block" >闪购</a></li>
+					<li><a href="#" class="d-block" >拍卖</a></li>
+					<li class='space'></li>
+					<li><a href="#" class="d-block" >京东服饰</a></li>
+					<li><a href="#" class="d-block" >京东超市</a></li>
+					<li><a href="#" class="d-block" >生鲜</a></li>
+					<li><a href="#" class="d-block" >全球购</a></li>
+					<li class='space'></li>
+					<li><a href="#" class="d-block" >京东金融</a></li>
+				</ul>
+			</div>
+            <a href="" class="benefit d-block"></a>
+        </nav>
+		<!-- E导航信息 -->
+		<!-- S首页展示 -->
+        <div class="mainpage clearfix">
+			<div class="lf slider">
+				<ul>
+					<li><a href="#">家用电器</a></li>
+					<li><a href="#">手机</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">数码</a></li>
+					<li><a href="#">电脑</a><span>/</span><a href="#">办公</a></li>
+					<li><a href="#">家居</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">男装</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">美妆个护</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">女鞋</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">男鞋</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">汽车</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">母婴</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">食品</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">礼品鲜花</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">医药保健</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">图书</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">机票</a><span>/</span><a href="#">运营商</a></li>
+					<li><a href="#">理财</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
+				</ul>
+			</div>
+			<div class="lf showpic">
+				<div class="picslider">
+					<ul class="slider-animation clearfix">
+						<li><a href="#" class="d-block"><img src="./img/5a1fbab3N826b3024.jpg" alt=""></a></li>
+						<li><a href="#" class="d-block"><img src="./img/5a1fc935N7e54d9f2.jpg" alt=""></a></li>
+						<li><a href="#" class="d-block"><img src="./img/5a20f7ffN097f0db9.jpg" alt=""></a></li>
+						<li><a href="#" class="d-block"><img src="./img/5a210e4dN2003cff9.jpg" alt=""></a></li>
+						<li><a href="#" class="d-block"><img src="./img/5a210e4dN2003cff9.jpg" alt=""></a></li>
+					</ul>
+					<a href="#" class="left d-block"><i>&lt;</i></a>				
+					<a href="#" class="right d-block"><i>&gt;</i></a>
+					<div class="sliderbar">
+						<i class="sliderbtn active"></i><i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i>
+						<i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i>
+					</div>
+				</div>
+				<div class="picshow clearfix">
+					<a href="" class="d-block lf" ><img src="./img/5a20cf7aNbae69933.png" alt=""></a>
+					<a href="" class="d-block lf ml10" ><img src="./img/5a1e42d7N9bf29ade.jpg" alt=""></a>
+				</div>
+			</div>
+			<div class="lf func">
+				<div class="user">
+					<div class="info clearfix">
+						<a href="#" class="d-block lf"><img src="./img/no_login.jpg" alt=""></a>
+						<div class="lf welcome">
+							<p>Hi,欢迎来到京东!</p>
+							<p><a href="#">登陆</a><a href="#">注册</a></p> 
+						</div>
+					</div>
+					<div class="profit">
+						<a href="#" >新人福利</a>
+						<a href="#">PLUS会员</a>
+					</div>
+				</div>
+				<div class="news">
+					<div class="tab clearfix">
+						<a href="#" class="d-block lf first">促销</a>				
+						<div class="first-content hidden">
+							<ul>
+								<li><a href="#">购家电领券惠享8.5折</a></li>
+								<li><a href="#">品质文具每满159减60</a></li>
+								<li><a href="#">自营大牌尿裤268减40</a></li>
+								<li><a href="#">车品品类日满198减100</a></li>
+							</ul>
+						</div>
+						<a href="#" class="d-block lf second active">公告</a>
+						<div class="second-content">
+							<ul>
+								<li><a href="#">关于召回普利司通（天津）轮胎有限公司2个规格乘用车轮胎的公告</a></li>
+								<li><a href="#">京东物流推出配送员统一外呼电话"95056”</a></li>
+								<li><a href="#">天府大件运营中心开仓公告</a></li>
+								<li><a href="#">京东大件物流“送装一体”服务全面升级</a></li>
+							</ul>
+						</div>
+						<a href="#" class="d-block lr more">更多</a>
+					</div>
+					<!-- <div class="newscontent">
+						<div class="first hidden">
+							<ul>
+								<li><a href="#">购家电领券惠享8.5折</a></li>
+								<li><a href="#">品质文具每满159减60</a></li>
+								<li><a href="#">自营大牌尿裤268减40</a></li>
+								<li><a href="#">车品品类日满198减100</a></li>
+							</ul>
+						</div>
+						<div class="second">
+							<ul>
+								<li><a href="#">关于召回普利司通（天津）轮胎有限公司2个规格乘用车轮胎的公告</a></li>
+								<li><a href="#">京东物流推出配送员统一外呼电话"95056”</a></li>
+								<li><a href="#">天府大件运营中心开仓公告</a></li>
+								<li><a href="#">京东大件物流“送装一体”服务全面升级</a></li>
+							</ul>
+						</div>
+					</div> -->
+				</div>
+				<div class="service">
+					<ul class="clearfix">
+						<li class="active">
+							<a href="">话费</a>
+							<div class="tab-content hidden bill">
+								<div class="part1 clearfix">
+									<a href="#" class="d-block lf">话费充值</a><a href="#" class="d-block lf">流量充值</a><a href="#" class="d-block lf">套餐变更</a>
+								</div>
+								<div class="part2">
+									<span>号码</span><input type="text" placeholder="请输入手机号" /><br>
+									<span>面值</span>
+									<select name="bill" id="">
+										<option value="100">10元</option>
+										<option value="100">50元</option>	
+										<option value="100">100元</option>
+									</select>
+									<span class="hot">￥98.0-￥100.0</span>
+									<a href="#" class="d-block">快速充值</a>
+									<p class='ab'><img src="./img/iframe-hot.png" alt=""><span>抢90减50元话费券</span></p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="">机票</a>
+							<div class="tab-content hidden flight"></div>
+						</li>
+						<li>
+							<a href="">酒店</a>
+							<div class="tab-content hidden hotel"></div>
+						</li>
+						<li>
+							<a href="">火车票</a>
+							<div class="tab-content hidden train"></div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- E首页展示 -->
+		<!-- 
+			制作模型
+			section>div 高度自适应
+			header 标题栏
+
+		-->
+		<!-- S京东秒杀 -->
+		<section class="sk">
+			<div class="seckill">
+				<header class="box_hd clearfix">
+					<div class="lf box_hd_col1">
+						<i class="box_hd_dec"></i>
+						<i class="lf box_hd_icon"></i>
+						<h3 class="lf box_tit">京东秒杀</h3>
+						<a href="#" class='box_subtit'>总有你想不到的低价<i class="box_subtit_arrow"></i></a>
+					</div>
+					<div class="lr box_hd_col2">
+						<div class="sk_cd clearfix">
+							<span class="lf sk_cd_tip">当前场次</span>
+							<div class="lf sk_cd_main clearfix">
+								<div class="lf cd_item"><span>00</span></div>
+								<div class="lf cd_split"><i class="cd_split_dot cd_split_top"></i><i class="cd_split_dot"></i></div>
+								<div class="lf cd_item"><span>52</span></div>
+								<div class="lf cd_split"><i class="cd_split_dot cd_split_top"></i><i class="cd_split_dot"></i></div>
+								<div class="lf cd_item"><span>23</span></div>
+							</div>
+							<span class="lf sk_cd_tip">后结算抢购</span>
+						</div>
+					</div>
+				</header>
+				<div class="box_bd clearfix">
+					<div class="lf sk_list_wrapper">
+						<ul class="sk_list clearfix">
+							<li class="sk_item">
+								<!-- 图片与说明 -->
+								<div class="sk_item_pic">
+									<a href="#" class="d-block">
+										<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
+										<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
+									</a>
+									<span class="sk_item_shadow"></span>
+								</div>
+								<!-- 价格 -->
+								<p class="sk_item_price">
+									<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
+									<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
+								</p>
+							</li>
+							<li class="sk_item">
+								<!-- 图片与说明 -->
+								<div class="sk_item_pic">
+									<a href="#" class="d-block">
+										<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
+										<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
+									</a>
+									<span class="sk_item_shadow"></span>
+								</div>
+								<!-- 价格 -->
+								<p class="sk_item_price">
+									<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
+									<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
+								</p>
+							</li>
+							<li class="sk_item">
+								<!-- 图片与说明 -->
+								<div class="sk_item_pic">
+									<a href="#" class="d-block">
+										<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
+										<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
+									</a>
+									<span class="sk_item_shadow"></span>
+								</div>
+								<!-- 价格 -->
+								<p class="sk_item_price">
+									<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
+									<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
+								</p>
+							</li>
+							<li class="sk_item">
+								<!-- 图片与说明 -->
+								<div class="sk_item_pic">
+									<a href="#" class="d-block">
+										<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
+										<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
+									</a>
+									<span class="sk_item_shadow"></span>
+								</div>
+								<!-- 价格 -->
+								<p class="sk_item_price">
+									<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
+									<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
+								</p>
+							</li>
+							<li class="sk_item">
+								<!-- 图片与说明 -->
+								<div class="sk_item_pic">
+									<a href="#" class="d-block">
+										<img src="./img/5a1e7b02Nb063e8e7.jpg" alt="" class="sk_item_img" >
+										<p class="sk_item_name">【第二支1元拍2支自动减】ILISYA眉笔眉粉双头造型笔3色选 自动眉笔眉粉防水防汗不晕染 06棕褐色</p>
+									</a>
+									<span class="sk_item_shadow"></span>
+								</div>
+								<!-- 价格 -->
+								<p class="sk_item_price">
+									<span class="sk_item_price_new"><i>￥</i><span>29.00</span></span>
+									<span class="sk_item_price_origin"><i>￥</i><del>79.00</del></span>
+								</p>
+							</li>
+							<li class="sk_item">
+								<!-- 图片与说明 -->
+								<div class="sk_item_pic">
+									<a href="#" class="d-block">
+										<img src="./img/595aedc1N9ca7aab7.jpg" alt="" class="sk_item_img" >
+										<p class="sk_item_name">摩登生活（Modern life） 欧式床床1.8米床皮床双人床高箱床储物床 (玫瑰描金排骨架)单个床 1800*2000</p>
+									</a>
+									<span class="sk_item_shadow"></span>
+								</div>
+								<!-- 价格 -->
+								<p class="sk_item_price">
+									<span class="sk_item_price_new"><i>￥</i><span>1868.00</span></span>
+									<span class="sk_item_price_origin"><i>￥</i><del>2680.00</del></span>
+								</p>
+							</li>
+							<li class="sk_item">
+								<!-- 图片与说明 -->
+								<div class="sk_item_pic">
+									<a href="#" class="d-block">
+										<img src="./img/575fa2ebNd5723862.jpg" alt="" class="sk_item_img" >
+										<p class="sk_item_name">亚都（YADU）加湿器 3.5L容量 静音迷你办公室卧室家用加湿EB35B </p>
+									</a>
+									<span class="sk_item_shadow"></span>
+								</div>
+								<!-- 价格 -->
+								<p class="sk_item_price">
+									<span class="sk_item_price_new"><i>￥</i><span>99.00</span></span>
+									<span class="sk_item_price_origin"><i>￥</i><del>238.00</del></span>
+								</p>
+							</li>
+						</ul>
+						<!-- 轮播组件 -->
+						<div class="sk_controls">
+							<a href="" class="sk_controls_item sk_controls_prev"><i><</i></a>
+							<a href="" class="sk_controls_item sk_controls_next"><i>></i></a>
+						</div>
+					</div>
+					<div class="lf sk_special">
+						<ul class="sk_special_list">
+							<li class="sk_special_item"><a href="#"><img src="./img/5a211b0eNa16cb8b0.jpg" alt="" class="sk_special_pic"></a></li>
+							<li class="sk_special_item"><a href="#"><img src="./img/5a21119eN385a9d41.png" alt="" class="sk_special_pic"></a></li>
+						</ul>
+						<ul class="sk_special_indlist">
+							<li class="sk_special_inditem active"></li>
+							<li class="sk_special_inditem"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>	
+		<!-- E京东秒杀 -->
+		<!-- S栅格 -->
+		<section class="grid">
+			<div class="gridtable clearfix">
+				<div class="lf mr10 box_find clearfix">
+					<!-- 复制模型 -->
+					<div class="box_hd clearfix">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<h3 class="lf box_tit">发现好货</h3>
+						<a href="#" class="lr box_subtit">发现品质生活<i class="box_subtit_arrow"></i></a>
+					</div>
+					<div class="box_bd">
+						<ul class="find_list clearfix">
+							<li class="find_item">
+								<a href="#" class="find_item_lk">
+									<p class="find_item_name">香阁儿粗跟短靴</p>
+									<img src="./img/5a213a7eN52548c59.png" alt="" class="find_item_img" />
+								</a>
+							</li>
+							<li class="find_item mrf2">
+								<a href="#" class="find_item_lk">
+									<p class="find_item_name">惠普小巧机身轻薄本</p>
+									<img src="./img/59312c81N467a5f76.jpg" alt="" class="find_item_img" />
+								</a>
+							</li>
+							<li class="find_item">
+								<a href="#" class="find_item_lk">
+									<p class="find_item_name">NB 996复古慢跑鞋</p>
+									<img src="./img/59cb4cc7N7e7e04a6.jpg" alt="" class="find_item_img" />
+								</a>
+							</li>
+							<li class="find_item mrf2">
+								<a href="#" class="find_item_lk">
+									<p class="find_item_name">范思蓝恩羊毛呢大衣</p>
+									<img src="./img/5a20d9eeN39e6ca26.jpg" alt="" class="find_item_img" />
+								</a>
+							</li>
+							<li class="find_item">
+								<a href="#" class="find_item_lk">
+									<p class="find_item_name">骆驼牌 高帮牛皮短靴</p>
+									<img src="./img/5a17ec18N26692626.jpg" alt="" class="find_item_img" />
+								</a>
+							</li>
+							<li class="find_item mrf2">
+								<a href="#" class="find_item_lk">
+									<p class="find_item_name">海鸥 镂空机械表</p>
+									<img src="./img/5a1d0b10N67b634f1.jpg" alt="" class="find_item_img" />
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="lf mr10 box_sub ">
+					<div class="box_hd clearfix">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<h3 class="lf box_tit">会买专辑</h3>
+						<a href="#" class="lr box_subtit">甄选优质好物<i class="box_subtit_arrow"></i></a>
+					</div>
+				</div>
+				<div class="lf box_top ">
+					<div class="box_hd clearfix">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<h3 class="lf box_tit">排行榜</h3>
+						<a href="#" class="lr box_subtit">专属你的购物指南<i class="box_subtit_arrow"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- E栅格 -->
+		<!-- S栅格2 -->
+		<section class="coupon">
+			<div class="coupontable clearfix">
+				<div class="lf mr10 box_coupon ">
+					<div class="box_hd clearfix">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<h3 class="lf box_tit">领券中心</h3>
+						<a href="#" class="lr box_subtit">前往领券中心<i class="box_subtit_arrow"></i></a>
+					</div>
+					<div class="box_bd">
+						<ul class="coupon_list clearfix">
+							<li class="coupon_item">
+								<a href="#" class="d-block" >
+									<div class="d-inlneblock coupon_info">
+										<p class="coupon_price" ><i>￥</i>16</p>
+										<p class="coupon_desc" ><span>仅可购买京东自营图书音像商品</span></p>
+										<p class="coupon_limit" ><span>消费满200元可用</span></p>
+										<p class="coupon_btn">更多好券</p>
+									</div>
+									<img src="./img/55fbb8a6N64863ad3.jpg" alt="" class="coupon_pic">
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="lf box_xmi ">
+					<div class="box_hd clearfix">
+						<i class="box_hd_arrow"></i>
+						<i class="box_hd_dec"></i>
+						<h3 class="lf box_tit">寻me</h3>
+						<a href="#" class="lr box_subtit">探索生活<i class="box_subtit_arrow"></i></a>
+					</div>
+					<div class="box_bd">
+						<ul class="xmi_list clearfix">
+							<li class="xmi_item">
+								<a href="#" class="d-block xmi_lk" >
+									<img src="./img/5a122f71N0d166fa2.jpg" alt="">
+									<div class="xmi_info">
+										<span class="xmi_title">InkCase 保护壳体验：iPhone 的新装备</span><br>
+										<span class="xmi_desc">InkCase 保护壳体验：iPh...  <i>查看原文></i></span><br>
+										<span class="xmi_look"><i></i>11859人看过</span>
+									</div>
+								</a>
+							</li>
+							<li class="xmi_item">
+								<a href="#" class="d-block xmi_lk" >
+									<img src="./img/5a122f71N0d166fa2.jpg" alt="">
+									<div class="xmi_info">
+										<span class="xmi_title">InkCase 保护壳体验：iPhone 的新装备</span><br>
+										<span class="xmi_desc">InkCase 保护壳体验：iPh...  <i>查看原文></i></span><br>
+										<span class="xmi_look"><i></i>11859人看过</span>
+									</div>
+								</a>
+							</li>
+							<li class="xmi_item">
+								<a href="#" class="d-block xmi_lk" >
+									<img src="./img/5a122f71N0d166fa2.jpg" alt="">
+									<div class="xmi_info">
+										<span class="xmi_title">InkCase 保护壳体验：iPhone 的新装备</span><br>
+										<span class="xmi_desc">InkCase 保护壳体验：iPh...  <i>查看原文></i></span><br>
+										<span class="xmi_look"><i></i>11859人看过</span>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<ul class="xmi_point">
+							<li class="active"></li><li></li><li></li><li></li><li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- E栅格2 -->
+    </div>
+	
+    <footer></footer>
+</body>
+</html>
