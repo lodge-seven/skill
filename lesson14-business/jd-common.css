@@ -1,0 +1,41 @@
+@charset 'utf-8';
+/* 去除默认 */
+body, p, ul, input, h3 { margin: 0; padding: 0; }
+a { text-decoration: none; color: #999; }
+ul { list-style: none; }
+em, i { font-style: normal; }
+
+/* 后期媒体查询自适应 目前最小宽度确定 */
+body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif; color: #999; background: #F6F6F6; min-width: 1190px; }
+
+/* 常用样式集成 */
+.d-block { display: block; }
+.d-inlneblock { display: inline-block; }
+.lr { float: right; }
+.lf { float: left; }
+.ml10 { margin-left: 10px; }
+.mr10 { margin-right: 10px; }
+.mrf2 { margin-right: -2px; }
+.hidden { display: none; }
+.clearfix:after { content: ''; display: block; clear: both; }
+
+/* 小龙封装-伪导航切换 */
+
+
+/* 组件-相机 */
+.camero { display: inline-block; width: 19px; height: 15px; background: url('./img/sprite-photo-search.png') no-repeat; vertical-align: middle; }
+
+/* 共同-分割 */
+.space { overflow: hidden; padding: 0; margin: 11px 5px 0; width: 1px; height: 10px; background-color: #ccc; }
+/* 共同-盒子头部 */
+.box_hd { position: relative; width: 1140px; height: 55px; padding: 0 20px 0 30px; line-height: 55px; color: #fff; }
+/* 共同-盒子头部尖角 */
+.box_hd_arrow { position: absolute; top: 0; left: 0; width: 0; height: 0; border-top: 19px solid #f6f6f6; border-right: 19px solid transparent; }
+.box_hd_dec { position: absolute; left: -4px; top: -4px; width: 28px; height: 28px; }
+/* 共同-标题 */
+.box_tit { font-size: 26px; font-weight: 400; line-height: 40px; height: 40px; padding-top: 9px; }
+/* 共同-顶部摘要 */
+.box_subtit { position: relative; float: right; margin-top: 19px; padding-right: 20px; height: 24px; line-height: 24px; font-size: 14px; color: #fff; }
+/* 共同-摘要符号 */
+.box_subtit_arrow { position: absolute; right: 0; top: 4px; }
+.box_subtit_arrow, .coupon_entry_btn_ico { background-image: url('./img/sprite_index@1x.png'); background-position: -154px -40px; background-size: 218px 188px; background-repeat: no-repeat; width: 15px; height: 16px; }
