@@ -1,0 +1,208 @@
+@charset 'utf-8';
+
+
+/*开始 公共导航*/
+.common-nav{
+	background: #e3e4e5;
+	border: 1px solid #ddd;
+	font-size: 12px;
+	color: #666;
+
+}
+.nav-box{
+	width: 1190px;
+	height: 30px;
+	margin: auto;
+	line-height: 30px;
+}
+
+.nav-box a{
+	color: #666;
+}
+.nav-box a:hover{
+	color: #D25C64;
+}
+
+.nav-box .location{
+	margin-left: 200px;
+}
+.nav-box .nav > li{
+	position: relative;
+	float: left;
+	height: 30px;
+	
+}
+
+.nav-box .nav > li.b-line{
+	width: 1px;
+	height: 10px;
+	background-color: #bbb;
+	margin: 11px 5px 0;
+}
+.nav-box .nav > li > div .iconfont{
+	vertical-align: -2px;
+	font-size: 12px;
+}
+.nav-box .nav > li > div{
+	padding: 0 7px;
+}
+
+.nav-box .nav .login a+a{
+	margin: 0 7px 0 0;
+	color: red;
+}
+
+
+/*二级菜单*/
+.nav-box .nav > li.b-menu div{
+	height: 32px;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+
+}
+.nav-box .nav > li.b-menu:hover div{
+
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	
+	background-color: #fff;
+}
+.nav-box .nav > li.b-menu:hover div ul{
+	display: block;
+}
+
+.nav-box .nav >li.b-menu div ul{
+	display: none;
+	position: absolute;
+	top: 31px;
+	z-index: -1;
+	width: 280px;
+	border:1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 1px -1px 4px -2px #666;
+}
+.nav-box .nav >li.b-menu1 div ul{
+	left: 0;
+}
+.nav-box .nav >li.b-menu div ul li{
+	padding: 10px 15px;
+}
+.nav-box .nav >li.b-menu div ul li+li{
+	
+	border-top: 1px solid #ddd;
+	
+}
+.nav-box .nav >li.b-menu div ul a{
+	float: left;
+	height: 24px;
+	line-height: 24px;
+	width: 125px;
+}
+
+
+.nav-box .nav >li.b-menu2 div ul{
+	width: 170px;
+	right: 0px;
+}
+.nav-box .nav >li.b-menu2 div ul li{
+	padding-top:0;
+}
+.nav-box .nav >li.b-menu2 div ul b{
+	display: block;
+}
+.nav-box .nav >li.b-menu2 div ul a{
+	width: 70px;
+}
+
+.nav-box .nav >li.b-menu3 div ul{
+	width: 1189px;
+	right: -75px;
+	padding: 15px 0
+}
+
+.nav-box .nav >li.b-menu3 div ul li{
+	float: left;
+	padding-right: 0;
+	padding-left: 20px;
+}
+
+
+/*这里是有内边距的问题*/
+.nav-box .nav >li.b-menu3 div ul .m-lis1{
+	width: 340px;
+}
+.nav-box .nav >li.b-menu3 div ul .m-lis2{
+	width: 255px;
+	border: none;
+	border-left: 1px solid #ddd;
+}
+
+
+/*手机  开始*/
+.nav-box .nav >li.moble-box .moble{
+	position: absolute;
+	top: 30px;
+	right: 0;
+	width: 60px;
+	height: 60px;
+	padding: 3px;
+	border: 1px solid #ddd;
+	background: url('../images/00-header/1.png') no-repeat center/60px 60px #fff;
+}
+.nav-box .nav >li.moble-box .moble:before{
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: -5px;
+	margin-left: -5px;
+	width: 0;
+	height: 0;
+	border: 5px solid transparent;
+	border-top: none;
+	border-bottom-color: #fff;
+}
+.nav-box .nav >li.moble-box .moble1{
+	display: none;
+	width: 190px;
+	right: 0;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-bottom: 3px solid #666;
+
+}
+.nav-box .nav >li.moble-box:hover .moble1{
+	display: block;
+}
+.nav-box .nav >li.moble-box .moble1 li{
+	padding:15px 0 15px 5px; 
+	border-bottom: 1px solid #ddd;
+}
+.nav-box .nav >li.moble-box .moble1 li > img{
+	width: 68px;
+	height: 68px;
+	border: 1px solid #ddd;
+	padding: 2px;
+	margin-right: 5px;
+}
+.nav-box .nav >li.moble-box .moble1 li > div .tit{
+	display: block;
+	font-weight: bold;
+	line-height: 1.5;
+}
+.nav-box .nav >li.moble-box .moble1 li > div .icon{
+	float: left;
+	width: 25px;
+	height: 25px;
+	margin-right: 3px;
+	background: url('../images/00-header/sprite_mobile@1x.png') no-repeat ;
+}
+.nav-box .nav >li.moble-box .moble1 li > div .icon1{
+	background-position: 0 -26px;
+}
+.nav-box .nav >li.moble-box .moble1 li > div .icon2{
+	background-position: 0 -52px;
+}
+.nav-box .nav >li.moble-box .moble1 li > div p{
+	line-height: 1.8;
+	color: #F43846;
+}

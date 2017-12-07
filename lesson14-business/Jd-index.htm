@@ -62,6 +62,10 @@
 				 a 列表相对定位并浮动
 				 b 普通单元盒宽自适应，下拉单元盒一层摘要相对定位层级上并盖住1+像素，二层内容绝对于单元格定位
 				 c 一层单元盒1像素宽做分割
+				 d 切换盒子无距离时自身行高为14，这里不清楚14来由，以0为准
+
+				 *新技能get3：我的京东切换盒子与位置切换盒子不同的一点是其本身字体大小0，内联块有字体12，那么此切换盒子自身无基线，无法确定行高，行与行之间的距离不能用多行内联盒子的基线与基线，底边与底边的距离来算
+				 *封装切换元素样式，需要参数:con-类名，切换盒子宽度，内容
 			-->
 			<div class="list lr">
 				<ul class="clearfix">
@@ -69,33 +73,70 @@
 					<li class='space'></li>
 					<li>我的订单</li>
 					<li class='space'></li>
-					<li>
+					<li class='con-nav' >
 						<div class="con-summary listsummary">
 							我的京东<i class="iconfont icon-xiala2"></i>
 						</div>
-						<div class="con-content listhover">
-							内容哦
-						</div>
+						<ul class="con-content me_jdcontent hidden clearfix">
+							<li>
+								<div class="me_item con-item"><a href="#" class="d-inlneblock">待处理订单</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlneblock">消息</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlneblock">返修退换货</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlneblock">我的回答</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlneblock">降价商品</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlneblock">我的关注</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlneblock">待处理订单</a></div>
+							</li>
+							<li>
+								<div class="me_item con-item"><a href="#">我的京豆</a></div>
+								<div class="me_item con-item"><a href="#">我的优惠券</a></div>
+								<div class="me_item con-item"><a href="#">我的白条</a></div>
+								<div class="me_item con-item"><a href="#">我的理财</a></div>
+							</li>
+						</ul>
 					</li>
 					<li class='space'></li>
 					<li>京东会员</li>
 					<li class='space'></li>
 					<li>企业采购</li>
 					<li class='space'></li>
-					<li>
+					<li class='con-nav'>
 						<div class="con-summary listsummary">
 							客户服务<i class="iconfont icon-xiala2"></i>
 						</div>
-						<div class="listhover">
-							内容哦
+						<div class="con-content ser-content hidden">
+							<div class="con-essay-group ser-essay-group">
+								<h4 class="con-essay-title">客户</h4>
+								<div class="ser-essay-info con-essay-info">
+									<div class="ser-item con-item"><a href="#">帮助中心</a></div>
+									<div class="ser-item con-item"><a href="#">售后服务</a></div>
+									<div class="ser-item con-item"><a href="#">在线客服</a></div>
+									<div class="ser-item con-item"><a href="#">意见建议</a></div>
+									<div class="ser-item con-item"><a href="#">电话客服</a></div>
+									<div class="ser-item con-item"><a href="#">客服邮箱</a></div>
+									<div class="ser-item con-item"><a href="#">金融咨询</a></div>
+									<div class="ser-item con-item"><a href="#">售全球客服</a></div>
+								</div>
+							</div>
+							<div class="con-essay-group ser-essay-group">
+								<h4 class="con-essay-title">商户</h4>
+								<div class="ser-essay-info con-essay-info">
+									<div class="ser-item con-item"><a href="#">帮助中心</a></div>
+									<div class="ser-item con-item"><a href="#">售后服务</a></div>
+									<div class="ser-item con-item"><a href="#">在线客服</a></div>
+									<div class="ser-item con-item"><a href="#">意见建议</a></div>
+									<div class="ser-item con-item"><a href="#">电话客服</a></div>
+									<div class="ser-item con-item"><a href="#">客服邮箱</a></div>
+								</div>
+							</div>
 						</div>
 					</li>
 					<li class='space'></li>
-					<li>
+					<li class='con-nav'>
 						<div class="con-summary listsummary">
 							网站导航<i class="iconfont icon-xiala2"></i>
 						</div>		
-						<div class="listhover">
+						<div class="con-content listcontent">
 							内容哦
 						</div>
 					</li>

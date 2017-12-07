@@ -1,0 +1,201 @@
+@charset 'utf-8';
+
+
+
+/*开始  公共导航*/
+.conmon-nav-wrap{
+	background: #E3E4E5;
+	border-bottom:1px solid #ddd;
+}
+.conmon-box{
+	width: 1190px;
+	height: 30px;
+	margin:auto;
+
+	font-size: 12px;
+	line-height:30px;
+	color:#666;
+}
+.conmon-box .icon-icon{
+	color:red;
+}
+.conmon-box a:hover{
+	color:#CD3B46;
+}
+.conmon-box .fr > li{
+	position: relative;
+	float:left;
+	
+	
+}
+.conmon-box .fr > li > div{
+	position:relative;
+	height: 32px;
+	
+	padding:0 5px;
+	border-left:1px solid transparent;
+	border-right:1px solid transparent;
+}
+.conmon-box .fr li.com-line{
+
+	width: 1px;
+	height: 10px;
+	background: #ccc;
+	margin:10px 5px 0;
+	padding:0;
+
+}
+.conmon-box .fr li .iconfont{
+	vertical-align:middle;
+	margin-left:2px;
+	font-size: 14px;
+}
+.conmon-box .fr > li > div > a + a{
+	margin-left:5px;
+	color:red;
+}
+
+
+/* 开始  二级菜单*/
+.conmon-box .fr li.com-menu ul{
+	display: none;
+	position:absolute;
+	top: 31px;
+	width: 263px;
+	border:1px solid #ccc;
+}
+.conmon-box .fr li.com-menu:hover ul{
+	display: block;
+
+}
+.conmon-box .fr li.com-menu:hover div{
+	z-index:1;
+	background-color: #fff;
+	height: 32px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #ccc;
+}
+.conmon-box .fr li.com-menu ul li{
+	padding:10px 0 10px 15px;
+}
+.conmon-box .fr li.com-menu ul li + li{
+	border-top:1px solid #ccc;
+}
+.conmon-box .fr li.com-menu ul a{
+	float: left;
+	margin:0;
+	width: 124px;
+	height:24px;
+	line-height:24px;
+}
+
+/*第二个二级菜单*/
+.conmon-box .fr li.com-menu1 ul{
+	right:0;
+	width: 170px;
+	text-indent:15px;
+}
+.conmon-box .fr li.com-menu1 ul b{
+	display: block;
+}
+.conmon-box .fr li.com-menu1 ul li{
+	padding:0;
+}
+.conmon-box .fr li.com-menu1 ul a{
+	width: 85px;
+	
+}
+/*第三个二级菜单*/
+.conmon-box .fr li.com-menu2 ul{
+	width: 1190px;
+	right:-72px;
+	padding:15px 0;
+}
+.conmon-box .fr li.com-menu2 ul li{
+	float: left;
+}
+.conmon-box .fr li.com-menu2 ul li a{
+	width: 85px;
+}
+.conmon-box .fr li.com-menu2 ul li b{
+	display: block;
+}
+.conmon-box .fr li.com-menu2 .menu-1{
+	width: 340px;
+}
+
+
+.conmon-box .fr li.com-menu2 .menu-2{
+	width: 255px;
+	border-left:1px solid #ccc;
+	border-top:none;
+}
+
+
+.conmon-box .fr li.moblie-box .moblie{
+	position:absolute;
+	top: 31px;
+	right:0;
+	width: 68px;
+	height: 68px;
+	border:1px solid #ddd;
+	padding:0;
+	background: url('../images/00-header/1.png') no-repeat center/60px 60px #fff;
+}
+.conmon-box .fr li.moblie-box .moblie:before{
+	content:'';
+	position: absolute;
+	top: -5px;
+	left: 50%;
+	margin-left:-5px;
+	width: 0;
+	height: 0;
+	border:5px solid transparent;
+	border-top:none;
+	border-bottom-color:#fff;
+}
+.conmon-box .fr li.moblie-box .moblie-1{
+	display: none;
+	position: absolute;
+	top: 31px;
+	right:0;
+	width: 190px;
+	border:1px solid #ccc;
+	border-bottom:3px solid #666;
+	background-color: #fff;
+	
+}
+.conmon-box .fr li.moblie-box:hover .moblie-1{
+	display: block;
+}
+.conmon-box .fr li.moblie-box .moblie-1 li{
+	padding:10px 0 10px 5px;
+	border-bottom:1px solid #ccc;
+}
+.conmon-box .fr li.moblie-box .moblie-1 img{
+	width: 72px;
+	height: 72px;
+	margin-right:5px;
+	border:1px solid #ccc;
+}
+.conmon-box .fr li.moblie-box .moblie-1 div{
+	line-height:1.5;
+}
+.conmon-box .fr li.moblie-box .moblie-1 .tit{
+	
+	font-weight: bold;
+}
+
+
+.conmon-box .fr li.moblie-box .moblie-1 .icon{
+	float:left;
+	width: 25px;
+	height: 25px;
+	background: url('../images/00-header/sprite_mobile@1x.png') no-repeat;
+}
+.conmon-box .fr li.moblie-box .moblie-1 .icon1{
+	background-position:0 -26px ;
+}
+.conmon-box .fr li.moblie-box .moblie-1 .icon2{
+	background-position:0 -52px ;
+}

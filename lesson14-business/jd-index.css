@@ -12,11 +12,13 @@
 .content-top .map:hover { margin: 0 6px; z-index: 40; line-height: 28px; border: 1px solid #ccc; border-bottom: #fff; }
 .map:hover .mapsummary { background: #fff; }
 .map .mapsummary { position: relative; z-index: 10; padding: 0 7px; height: 32px; }
-.mapsummary span, .mapsummary i { vertical-align: middle; }
-.mapsummary i { font-size: 15px; padding-right: 2px; color: #f10215; }
+.mapsummary span  { vertical-align: top; }
+.mapsummary i { vertical-align: -2px; }
+.mapsummary i { font-size: 16px; padding-right: 2px; color: #f10215; }
 .map .mapcontent { position: absolute; display: none; left: -1px; top: 30px; padding: 7px;width: 306px; background: #fff; box-shadow: 1px 2px 1px rgba(0,0,0,.1); }
 .map:hover > .mapcontent { display: block; border: 1px solid #ccc; line-height: 28px; }
-.map:hover .mapsummary span, .mapsummary i { vertical-align: middle; }
+.map:hover .mapsummary span { vertical-align: top;}
+.map:hover .mapsummary i { vertical-align: -2px; }
 .mapcontent .item { display: inline-block; line-height: 24px; width: 58px;  }
 .mapcontent a { display: inline-block; padding: 0 7px; }
 .mapcontent a.active { background: #f10215; color: #fff; }
@@ -26,10 +28,20 @@
 .list li { position: relative; float: left; padding: 0 7px; }
 .list .space { padding: 0; }
 .list .register { color: #f10215; padding-left: 7px; }
-.list .listsummary { position: relative; }
-.list .listsummary, .listsummary i { vertical-align: middle; }
-.list .listhover { position: absolute; background: red; z-index: 10; }
+.list .listsummary, .listsummary i { line-height: 30px; }
+/* 图标移下去1 文字居中还是30，不用管文字如何对齐 30=29-(-1)  */
+.listsummary i { font-size: 12px; margin-left: 2px; vertical-align: -1px; line-height: 29px;}
+/* ----我的京东切换---- */
+/* 行高14时外边距距离为0 */
+.me_jdcontent li { float: left; width: 250px; padding: 10px 15px; line-height: 0;}
+.me_jdcontent li + li { border-top: 1px solid #f1f1f1; }
+.me_jdcontent .me_item { width: 125px; }
+.me_item a { vertical-align: top;}
 
+/* ----客户服务---- */
+.ser-content { left:-95px; width: 155px; padding: 10px 0 10px 15px; }
+.ser-essay-info { line-height: 0; margin-right: -70px; }
+.ser-item { width: 70px; margin-right: 15px; }
 /* 导航 */
 .container nav { position: relative; padding-top: 25px; }
 
