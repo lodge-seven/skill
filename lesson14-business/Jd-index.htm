@@ -63,7 +63,7 @@
 				 b 普通单元盒宽自适应，下拉单元盒一层摘要相对定位层级上并盖住1+像素，二层内容绝对于单元格定位
 				 c 一层单元盒1像素宽做分割
 				 d 切换盒子无距离时自身行高为14，这里不清楚14来由，以0为准
-
+				 
 				 *新技能get3：我的京东切换盒子与位置切换盒子不同的一点是其本身字体大小0，内联块有字体12，那么此切换盒子自身无基线，无法确定行高，行与行之间的距离不能用多行内联盒子的基线与基线，底边与底边的距离来算
 				 *封装切换元素样式，需要参数:con-类名，切换盒子宽度，内容
 			-->
@@ -73,6 +73,7 @@
 					<li class='space'></li>
 					<li>我的订单</li>
 					<li class='space'></li>
+					<!-- 切换显示共用样式类-伪导航切换（con-nav）外层必有单元盒 隐藏必在内容类 自定义容器宽与内容组件 -->
 					<li class='con-nav' >
 						<div class="con-summary listsummary">
 							我的京东<i class="iconfont icon-xiala2"></i>
@@ -105,7 +106,8 @@
 							客户服务<i class="iconfont icon-xiala2"></i>
 						</div>
 						<div class="con-content ser-content hidden">
-							<div class="con-essay-group ser-essay-group">
+							<!-- 文章组件等高自适应共用样式类（con-essay-group） -->
+							<div class="con-essay-group">
 								<h4 class="con-essay-title">客户</h4>
 								<div class="ser-essay-info con-essay-info">
 									<div class="ser-item con-item"><a href="#">帮助中心</a></div>
@@ -118,7 +120,7 @@
 									<div class="ser-item con-item"><a href="#">售全球客服</a></div>
 								</div>
 							</div>
-							<div class="con-essay-group ser-essay-group">
+							<div class="con-essay-group">
 								<h4 class="con-essay-title">商户</h4>
 								<div class="ser-essay-info con-essay-info">
 									<div class="ser-item con-item"><a href="#">帮助中心</a></div>
@@ -136,8 +138,81 @@
 						<div class="con-summary listsummary">
 							网站导航<i class="iconfont icon-xiala2"></i>
 						</div>		
-						<div class="con-content listcontent">
-							内容哦
+						<div class="con-content url-content clearfix hidden">
+							<!-- 变动：加分割符 -->
+							<div class="lf url-essay-group">
+								<h4 class="con-essay-title">特色主题</h4>
+								<div class="con-essay-info">
+									<div class="url-item con-item"><a href="#">京东试用</a></div>
+									<div class="url-item con-item"><a href="#">售后服务</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见</a></div>
+									<div class="url-item con-item"><a href="#">电话客</a></div>
+									<div class="url-item con-item"><a href="#">客服邮箱</a></div>
+									<div class="url-item con-item"><a href="#">帮助中</a></div>
+									<div class="url-item con-item"><a href="#">售后服务</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见建</a></div>
+									<div class="url-item con-item"><a href="#">电话客</a></div>
+									<div class="url-item con-item"><a href="#">客服邮箱</a></div>
+									<div class="url-item con-item"><a href="#">帮助</a></div>
+									<div class="url-item con-item"><a href="#">售后服</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见建</a></div>
+								</div>
+							</div>
+							<div class="lf area-split"></div>
+							<div class="lf url-essay-group">
+								<h4 class="con-essay-title">行业频道</h4>
+								<div class="con-essay-info">
+									<div class="url-item con-item"><a href="#">京东试用</a></div>
+									<div class="url-item con-item"><a href="#">售后服务</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见</a></div>
+									<div class="url-item con-item"><a href="#">电话客</a></div>
+									<div class="url-item con-item"><a href="#">客服邮箱</a></div>
+									<div class="url-item con-item"><a href="#">帮助中</a></div>
+									<div class="url-item con-item"><a href="#">售后服务</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见建</a></div>
+									<div class="url-item con-item"><a href="#">电话客</a></div>
+									<div class="url-item con-item"><a href="#">客服邮箱</a></div>
+									<div class="url-item con-item"><a href="#">帮助</a></div>
+									<div class="url-item con-item"><a href="#">售后服</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见建</a></div>
+								</div>
+							</div>
+							<div class="lf area-split"></div>
+							<div class="lf url-essay-group">
+								<h4 class="con-essay-title">生活服务</h4>
+								<div class="con-essay-info">
+									<div class="url-item con-item"><a href="#">京东试用</a></div>
+									<div class="url-item con-item"><a href="#">售后服务</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见</a></div>
+									<div class="url-item con-item"><a href="#">电话客</a></div>
+									<div class="url-item con-item"><a href="#">客服邮箱</a></div>
+									<div class="url-item con-item"><a href="#">帮助中</a></div>
+									<div class="url-item con-item"><a href="#">售后服务</a></div>
+									<div class="url-item con-item"><a href="#">售后服</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见建</a></div>
+								</div>
+							</div>
+							<div class="lf area-split"></div>
+							<div class="lf url-essay-group">
+								<h4 class="con-essay-title">更多精选</h4>
+								<div class="con-essay-info">
+									<div class="url-item con-item"><a href="#">京东试用</a></div>
+									<div class="url-item con-item"><a href="#">售后服务</a></div>
+									<div class="url-item con-item"><a href="#">在线客服</a></div>
+									<div class="url-item con-item"><a href="#">意见</a></div>
+									<div class="url-item con-item"><a href="#">电话客</a></div>
+									<div class="url-item con-item"><a href="#">客服邮箱</a></div>
+									<div class="url-item con-item"><a href="#">帮助中</a></div>
+								</div>
+							</div>
 						</div>
 					</li>
 					<li class='space'></li>

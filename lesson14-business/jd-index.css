@@ -40,8 +40,16 @@
 
 /* ----客户服务---- */
 .ser-content { left:-95px; width: 155px; padding: 10px 0 10px 15px; }
-.ser-essay-info { line-height: 0; margin-right: -70px; }
+.ser-essay-group { margin-bottom: 11px;}
+.ser-essay-info { margin-right: -70px; }
 .ser-item { width: 70px; margin-right: 15px; }
+
+/* ----网站导航---- */
+/* 初始位置为距右150，还需向左移1040+1  */
+.url-content { left: -1041px; width: 1188px; }
+.url-essay-group { width: 255px; padding: 15px 0 15px 20px; }
+.url-essay-group:first-child { width: 340px;  }
+.url-item { width: 85px; }
 /* 导航 */
 .container nav { position: relative; padding-top: 25px; }
 
