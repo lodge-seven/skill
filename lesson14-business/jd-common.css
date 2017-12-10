@@ -1,6 +1,6 @@
 @charset 'utf-8';
 /* 去除默认 */
-body, p, ul, input, h3, h4 { margin: 0; padding: 0; }
+body, p, ul, input, h3, h4, dl, dt, dd { margin: 0; padding: 0; }
 a { text-decoration: none; color: #999; }
 ul { list-style: none; }
 em, i { font-style: normal; }
@@ -10,9 +10,11 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 
 /* 常用样式集成 */
 .d-block { display: block; }
-.d-inlneblock { display: inline-block; }
+.d-inlineblock { display: inline-block; }
 .lr { float: right; }
 .lf { float: left; }
+.p-relative { position: relative; z-index: 1; }
+
 .ml10 { margin-left: 10px; }
 .mr10 { margin-right: 10px; }
 .mrf2 { margin-right: -2px; }
@@ -37,10 +39,16 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .con-essay-title { font-weight: 700; color: #666; font-size: 12px; line-height: 24px; }
 .con-essay-info { line-height: 0; }
 
+.con-b-top { border-top: 1px solid #eee; }
+/* 点击变红 */
+.nav-link:hover { color: #c81623; }
+/* 组件-广告 */
+.bg-link { position: absolute; top: 0; height: 480px; width: 100%; z-index: 0; }
+.bg-link a { height: 100%; background: url('./img/5a256c7bN42e66f77.png') no-repeat 50% 0; }
 /* 组件-相机 */
 .camero { display: inline-block; width: 19px; height: 15px; background: url('./img/sprite-photo-search.png') no-repeat; vertical-align: middle; }
 /* 组件-内容分割替代边距 */
-.area-split { width: 1px; height: 181px; margin: auto; background-color: #eee; }
+.area-split { width: 1px; height: 149px; margin: 24px 0; background-color: #eee; }
 /* 共同-分割 */
 .space { overflow: hidden; padding: 0; margin: 11px 5px 0; width: 1px; height: 10px; background-color: #ccc; }
 /* 共同-盒子头部 */

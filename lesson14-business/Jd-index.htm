@@ -66,27 +66,28 @@
 				 
 				 *新技能get3：我的京东切换盒子与位置切换盒子不同的一点是其本身字体大小0，内联块有字体12，那么此切换盒子自身无基线，无法确定行高，行与行之间的距离不能用多行内联盒子的基线与基线，底边与底边的距离来算
 				 *封装切换元素样式，需要参数:con-类名，切换盒子宽度，内容
+				 *注意：用类名代替标签名，否则很容易继承到其他样式
 			-->
 			<div class="list lr">
 				<ul class="clearfix">
-					<li><a href="#">你好，请登录</a><a href="#" class='register' >免费注册</a></li>
+					<li><a class="nav-link" href="#">你好，请登录</a><a href="#" class='register nav-link' >免费注册</a></li>
 					<li class='space'></li>
-					<li>我的订单</li>
+					<li><a class="nav-link" href="#">我的订单</a></li>
 					<li class='space'></li>
 					<!-- 切换显示共用样式类-伪导航切换（con-nav）外层必有单元盒 隐藏必在内容类 自定义容器宽与内容组件 -->
 					<li class='con-nav' >
 						<div class="con-summary listsummary">
-							我的京东<i class="iconfont icon-xiala2"></i>
+							<a class="nav-link" href="#">我的京东</a><i class="iconfont icon-xiala2"></i>
 						</div>
 						<ul class="con-content me_jdcontent hidden clearfix">
 							<li>
-								<div class="me_item con-item"><a href="#" class="d-inlneblock">待处理订单</a></div>
-								<div class="me_item con-item"><a href="#" class="d-inlneblock">消息</a></div>
-								<div class="me_item con-item"><a href="#" class="d-inlneblock">返修退换货</a></div>
-								<div class="me_item con-item"><a href="#" class="d-inlneblock">我的回答</a></div>
-								<div class="me_item con-item"><a href="#" class="d-inlneblock">降价商品</a></div>
-								<div class="me_item con-item"><a href="#" class="d-inlneblock">我的关注</a></div>
-								<div class="me_item con-item"><a href="#" class="d-inlneblock">待处理订单</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlineblock">待处理订单</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlineblock">消息</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlineblock">返修退换货</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlineblock">我的回答</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlineblock">降价商品</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlineblock">我的关注</a></div>
+								<div class="me_item con-item"><a href="#" class="d-inlineblock">待处理订单</a></div>
 							</li>
 							<li>
 								<div class="me_item con-item"><a href="#">我的京豆</a></div>
@@ -97,9 +98,9 @@
 						</ul>
 					</li>
 					<li class='space'></li>
-					<li>京东会员</li>
+					<li><a class="nav-link" href="#">京东会员</a></li>
 					<li class='space'></li>
-					<li>企业采购</li>
+					<li><a class="nav-link" href="#">企业采购</a></li>
 					<li class='space'></li>
 					<li class='con-nav'>
 						<div class="con-summary listsummary">
@@ -216,182 +217,502 @@
 						</div>
 					</li>
 					<li class='space'></li>
-					<li>手机京东</li>
+					<li class="phone-nav">
+						<div class="con-summary listsummary">手机京东</div>
+						<div class="con-content phone-content">
+							<img src="./img/59a51cafN0fec6121.png" alt="">
+						</div>
+						<div class="con-content phone-content phonemore-content hidden">
+							<div class="piccontent-group">
+								<img class="phonemore-pic" src="./img/59a51bf6Nb8e478cc.png" alt="">
+								<div class="d-inlineblock piccontent-text">
+									<h3>手机京东</h3>
+									<p>新人专享大礼包</p>
+									<a href="#" class="d-inlineblock jd-iphone-pic"></a>
+									<a href="#" class="d-inlineblock jd-android-pic"></a>
+									<a href="#" class="d-inlineblock jd-ipad-pic"></a>
+								</div>
+							</div>
+							<div class="piccontent-group">
+								<img class="phonemore-pic" src="./img/5874a54dNcec29924.jpg" alt="">
+								<div class="d-inlineblock piccontent-text">
+									<h3>关注京东微信</h3>
+									<p>微信扫一扫关注<br>新粉最高180元<br>惊喜礼包</p>
+									
+								</div>
+							</div>
+							<div class="piccontent-group">
+								<img class="phonemore-pic" src="./img/5874a555Ne8192324.jpg" alt="">
+								<div class="d-inlineblock piccontent-text">
+									<h3>京东金融客户端</h3>
+									<p>新人专享大礼包</p>
+									<a href="#" class="d-inlineblock jd-iphone-pic"></a>
+									<a href="#" class="d-inlineblock jd-android-pic"></a>
+								</div>
+							</div>
+						</div>
+					</li>
 				</ul>
 			</div>
         </div>
     </div>
 	<!-- E头部信息 -->
-	<!-- 主体对象 -->
-    <div class="container">
-		<!-- S导航信息 -->
-        <nav>
+	<!-- S主体对象（1 头部搜索导航 2 重点展示区） -->
+	<!-- 
+		12.10新增背景，改变网页结构，大盒子内部固定宽度释放，container向下层盒子移动，双12广告新增
+	-->
+    <div>
+		<!-- 1 头部搜索导航组件（1.1 搜索表单热词 1.2 关键字 1.3 公益广告） -->
+        <nav class="container">
+			<!-- 1.1 搜索表单及热词 -->
             <div class="search">
                 <div class="form">
 					<input type="text" placeholder="努比亚手机"  />
 					<i class='camero'></i>
-					<a href="#" class="d-block lr">q</a>
+					<a href="#" class="d-block lr iconfont icon-fangdajing"></a>
 				</div>
                 <p class="hotwords">
                     <a href="" class="active">折扣神券</a><a href="">冲印9.9元</a><a href="">养殖用品</a><a href="">暖冬新品</a>
 					<a href="">家电8.5折</a><a href="">空气炸锅</a><a href="">欧式果盘</a><a href="">199减100</a><a href="">紫砂花盆</a>
                 </p>
             </div>
-            <div class="shopcar"><i>车</i>我的购物车<span>0</span></div>
+			<div class="shopcar"><i class="iconfont icon-gouwuchekong"></i>我的购物车<span>0</span></div>
+			<!-- 1.2 关键字 -->
             <div class="menu">
 				<ul class="clearfix">
-					<li><a href="#" class="d-block" >秒杀</a></li>
-					<li><a href="#" class="d-block" >优惠券</a></li>
-					<li><a href="#" class="d-block" >闪购</a></li>
-					<li><a href="#" class="d-block" >拍卖</a></li>
+					<li><a href="#" class="d-block nav-link" >秒杀</a></li>
+					<li><a href="#" class="d-block nav-link" >优惠券</a></li>
+					<li><a href="#" class="d-block nav-link" >闪购</a></li>
+					<li><a href="#" class="d-block nav-link" >拍卖</a></li>
 					<li class='space'></li>
-					<li><a href="#" class="d-block" >京东服饰</a></li>
-					<li><a href="#" class="d-block" >京东超市</a></li>
-					<li><a href="#" class="d-block" >生鲜</a></li>
-					<li><a href="#" class="d-block" >全球购</a></li>
+					<li><a href="#" class="d-block nav-link" >京东服饰</a></li>
+					<li><a href="#" class="d-block nav-link" >京东超市</a></li>
+					<li><a href="#" class="d-block nav-link" >生鲜</a></li>
+					<li><a href="#" class="d-block nav-link" >全球购</a></li>
 					<li class='space'></li>
-					<li><a href="#" class="d-block" >京东金融</a></li>
+					<li><a href="#" class="d-block nav-link" >京东金融</a></li>
 				</ul>
 			</div>
+			<!-- 1.3 公益广告 -->
             <a href="" class="benefit d-block"></a>
-        </nav>
-		<!-- E导航信息 -->
-		<!-- S首页展示 -->
-        <div class="mainpage clearfix">
-			<div class="lf slider">
-				<ul>
-					<li><a href="#">家用电器</a></li>
-					<li><a href="#">手机</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">数码</a></li>
-					<li><a href="#">电脑</a><span>/</span><a href="#">办公</a></li>
-					<li><a href="#">家居</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">男装</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">美妆个护</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">女鞋</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">男鞋</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">汽车</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">母婴</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">食品</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">礼品鲜花</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">医药保健</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">图书</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">机票</a><span>/</span><a href="#">运营商</a></li>
-					<li><a href="#">理财</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a></li>
-				</ul>
-			</div>
-			<div class="lf showpic">
-				<div class="picslider">
-					<ul class="slider-animation clearfix">
-						<li><a href="#" class="d-block"><img src="./img/5a1fbab3N826b3024.jpg" alt=""></a></li>
-						<li><a href="#" class="d-block"><img src="./img/5a1fc935N7e54d9f2.jpg" alt=""></a></li>
-						<li><a href="#" class="d-block"><img src="./img/5a20f7ffN097f0db9.jpg" alt=""></a></li>
-						<li><a href="#" class="d-block"><img src="./img/5a210e4dN2003cff9.jpg" alt=""></a></li>
-						<li><a href="#" class="d-block"><img src="./img/5a210e4dN2003cff9.jpg" alt=""></a></li>
-					</ul>
-					<a href="#" class="left d-block"><i>&lt;</i></a>				
-					<a href="#" class="right d-block"><i>&gt;</i></a>
-					<div class="sliderbar">
-						<i class="sliderbtn active"></i><i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i>
-						<i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i>
-					</div>
-				</div>
-				<div class="picshow clearfix">
-					<a href="" class="d-block lf" ><img src="./img/5a20cf7aNbae69933.png" alt=""></a>
-					<a href="" class="d-block lf ml10" ><img src="./img/5a1e42d7N9bf29ade.jpg" alt=""></a>
-				</div>
-			</div>
-			<div class="lf func">
-				<div class="user">
-					<div class="info clearfix">
-						<a href="#" class="d-block lf"><img src="./img/no_login.jpg" alt=""></a>
-						<div class="lf welcome">
-							<p>Hi,欢迎来到京东!</p>
-							<p><a href="#">登陆</a><a href="#">注册</a></p> 
-						</div>
-					</div>
-					<div class="profit">
-						<a href="#" >新人福利</a>
-						<a href="#">PLUS会员</a>
-					</div>
-				</div>
-				<div class="news">
-					<div class="tab clearfix">
-						<a href="#" class="d-block lf first">促销</a>				
-						<div class="first-content hidden">
-							<ul>
-								<li><a href="#">购家电领券惠享8.5折</a></li>
-								<li><a href="#">品质文具每满159减60</a></li>
-								<li><a href="#">自营大牌尿裤268减40</a></li>
-								<li><a href="#">车品品类日满198减100</a></li>
-							</ul>
-						</div>
-						<a href="#" class="d-block lf second active">公告</a>
-						<div class="second-content">
-							<ul>
-								<li><a href="#">关于召回普利司通（天津）轮胎有限公司2个规格乘用车轮胎的公告</a></li>
-								<li><a href="#">京东物流推出配送员统一外呼电话"95056”</a></li>
-								<li><a href="#">天府大件运营中心开仓公告</a></li>
-								<li><a href="#">京东大件物流“送装一体”服务全面升级</a></li>
-							</ul>
-						</div>
-						<a href="#" class="d-block lr more">更多</a>
-					</div>
-					<!-- <div class="newscontent">
-						<div class="first hidden">
-							<ul>
-								<li><a href="#">购家电领券惠享8.5折</a></li>
-								<li><a href="#">品质文具每满159减60</a></li>
-								<li><a href="#">自营大牌尿裤268减40</a></li>
-								<li><a href="#">车品品类日满198减100</a></li>
-							</ul>
-						</div>
-						<div class="second">
-							<ul>
-								<li><a href="#">关于召回普利司通（天津）轮胎有限公司2个规格乘用车轮胎的公告</a></li>
-								<li><a href="#">京东物流推出配送员统一外呼电话"95056”</a></li>
-								<li><a href="#">天府大件运营中心开仓公告</a></li>
-								<li><a href="#">京东大件物流“送装一体”服务全面升级</a></li>
-							</ul>
-						</div>
-					</div> -->
-				</div>
-				<div class="service">
-					<ul class="clearfix">
-						<li class="active">
-							<a href="">话费</a>
-							<div class="tab-content hidden bill">
-								<div class="part1 clearfix">
-									<a href="#" class="d-block lf">话费充值</a><a href="#" class="d-block lf">流量充值</a><a href="#" class="d-block lf">套餐变更</a>
+		</nav>
+		
+		<!-- 2 重点展示区（2.1 主展示及导航 2.2 双12广告栏） -->
+		<div class="p-relative">
+			<!-- 2.1 主展示及导航
+				 a 导航右边栏
+				 b 中间轮播展示
+				 c 个人功能充值
+			-->
+			<div class="container p-relative mainpage clearfix">
+				<!-- a 导航右边栏 -->
+				<div class="lf slider">
+					<ul class="slider-list">
+						<li>
+							<a href="#">家用电器</a>
+							<!-- s分类功能块（选中时显示：分类整理链接 图片广告） 
+								 列表-列表展开-详情及分类
+								 * 这里没有用到定位，而是内联块，需要顶部对齐，标题为36行高，主要信息为24行高加12的垂直边距，所要注意的是继承的行高与外部盒子文字小大清零
+								 * z-index乱掉，覆盖出错，需要进一步测试
+							-->
+							<div class="slider-detail clearfix hidden">
+								<div class="lf detail-navlist">
+									<!-- 顶部关键字 -->
+									<div class="detail-top">
+										<a href="#" class="d-inlineblock">家电馆<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">乡镇专卖店<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">家电服务<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">家电企业购<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">商用电器<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">高端家电<i class="iconfont icon-zuoyou"></i></a>
+									</div>
+									<!-- 分类清单（高度自适应 一组为type-item） -->
+									<div class="detail-typelist">
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">电视<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">OLED电视</a><a href="#" class="d-inlineblock">4K超清电视</a><a href="#" class="d-inlineblock">人工智能电视</a>
+												<a href="#" class="d-inlineblock">55英寸</a><a href="#" class="d-inlineblock">65英寸</a><a href="#" class="d-inlineblock">电视配件</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">空调<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">挂壁式空调</a><a href="#" class="d-inlineblock">柜式空调</a><a href="#" class="d-inlineblock">中央空调</a>
+												<a href="#" class="d-inlineblock">以旧换新</a><a href="#" class="d-inlineblock">0元安装</a><a href="#" class="d-inlineblock">空调配件</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">洗衣机<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">OLED电视</a><a href="#" class="d-inlineblock">4K超清电视</a><a href="#" class="d-inlineblock">人工智能电视</a>
+												<a href="#" class="d-inlineblock">55英寸</a><a href="#" class="d-inlineblock">65英寸</a><a href="#" class="d-inlineblock">电视配件</a>
+												<a href="#" class="d-inlineblock">OLED电视</a><a href="#" class="d-inlineblock">4K超清电视</a><a href="#" class="d-inlineblock">人工智能电视</a>
+												<a href="#" class="d-inlineblock">55英寸</a><a href="#" class="d-inlineblock">65英寸</a><a href="#" class="d-inlineblock">电视配件</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">冰箱<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">厨卫大电<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">厨房小电<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">生活电器<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">个护健康<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">家庭影音<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">进口电器<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+									</div>
 								</div>
-								<div class="part2">
-									<span>号码</span><input type="text" placeholder="请输入手机号" /><br>
-									<span>面值</span>
-									<select name="bill" id="">
-										<option value="100">10元</option>
-										<option value="100">50元</option>	
-										<option value="100">100元</option>
-									</select>
-									<span class="hot">￥98.0-￥100.0</span>
-									<a href="#" class="d-block">快速充值</a>
-									<p class='ab'><img src="./img/iframe-hot.png" alt=""><span>抢90减50元话费券</span></p>
+								<div class="lf detail-ad">
+									<div class="ad-small">
+										<a href="#" class="d-inlineblock"><img src="./img/562f4971Na5379aba.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/57f9fa89N6ddb14fc.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/573c0ed1Nee530fec.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/574c0755Nc8f19944.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/5a202994N73ebb383.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/59f7d740Nad8a25b6.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/59af558eNa2ab6ef1.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/5a2029e1N74bb8115.jpg" alt=""></a>
+									</div>
+									<div class="ad-big">
+										<a href="#" class="d-inlineblock"><img src="./img/5a2ab411Ne02e5d6b.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/59a3cb87N24ba9d84.jpg" alt=""></a>
+									</div>
+								</div>	
+							</div>
+							<!-- e分类功能块 -->
+						</li>
+						<li>
+							<a  href="#">手机</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">数码</a>
+							<div class="slider-detail clearfix hidden">
+								<div class="lf detail-navlist">
+									<!-- 顶部关键字 -->
+									<div class="detail-top">
+										<a href="#" class="d-inlineblock">家电馆<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">乡镇专卖店<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">家电服务<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">家电企业购<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">商用电器<i class="iconfont icon-zuoyou"></i></a>
+										<a href="#" class="d-inlineblock">高端家电<i class="iconfont icon-zuoyou"></i></a>
+									</div>
+									<!-- 分类清单（高度自适应 一组为type-item） -->
+									<div class="detail-typelist">
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">电视<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">OLED电视</a><a href="#" class="d-inlineblock">4K超清电视</a><a href="#" class="d-inlineblock">人工智能电视</a>
+												<a href="#" class="d-inlineblock">55英寸</a><a href="#" class="d-inlineblock">65英寸</a><a href="#" class="d-inlineblock">电视配件</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">空调<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">挂壁式空调</a><a href="#" class="d-inlineblock">柜式空调</a><a href="#" class="d-inlineblock">中央空调</a>
+												<a href="#" class="d-inlineblock">以旧换新</a><a href="#" class="d-inlineblock">0元安装</a><a href="#" class="d-inlineblock">空调配件</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">洗衣机<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">OLED电视</a><a href="#" class="d-inlineblock">4K超清电视</a><a href="#" class="d-inlineblock">人工智能电视</a>
+												<a href="#" class="d-inlineblock">55英寸</a><a href="#" class="d-inlineblock">65英寸</a><a href="#" class="d-inlineblock">电视配件</a>
+												<a href="#" class="d-inlineblock">OLED电视</a><a href="#" class="d-inlineblock">4K超清电视</a><a href="#" class="d-inlineblock">人工智能电视</a>
+												<a href="#" class="d-inlineblock">55英寸</a><a href="#" class="d-inlineblock">65英寸</a><a href="#" class="d-inlineblock">电视配件</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">冰箱<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">厨卫大电<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">厨房小电<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">生活电器<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">个护健康<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">家庭影音<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+										<dl class="type-item">
+											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">进口电器<i class="iconfont icon-zuoyou"></i></a></dt>
+											<dd class="d-inlineblock type-main b-top-none">
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+												<a href="#" class="d-inlineblock">曲面电视</a><a href="#" class="d-inlineblock">超薄电视</a><a href="#" class="d-inlineblock">HDR电视</a>
+											</dd>
+										</dl>
+									</div>
 								</div>
+								<div class="lf detail-ad">
+									<div class="ad-small">
+										<a href="#" class="d-inlineblock"><img src="./img/562f4971Na5379aba.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/57f9fa89N6ddb14fc.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/573c0ed1Nee530fec.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/574c0755Nc8f19944.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/5a202994N73ebb383.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/59f7d740Nad8a25b6.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/59af558eNa2ab6ef1.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/5a2029e1N74bb8115.jpg" alt=""></a>
+									</div>
+									<div class="ad-big">
+										<a href="#" class="d-inlineblock"><img src="./img/5a2ab411Ne02e5d6b.jpg" alt=""></a>
+										<a href="#" class="d-inlineblock"><img src="./img/59a3cb87N24ba9d84.jpg" alt=""></a>
+									</div>
+								</div>	
 							</div>
 						</li>
-						<li>
-							<a href="">机票</a>
-							<div class="tab-content hidden flight"></div>
+						<li><a href="#">电脑</a><span>/</span><a href="#">办公</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
 						</li>
-						<li>
-							<a href="">酒店</a>
-							<div class="tab-content hidden hotel"></div>
+						<li><a href="#">家居</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
 						</li>
-						<li>
-							<a href="">火车票</a>
-							<div class="tab-content hidden train"></div>
+						<li><a href="#">男装</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">美妆个护</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">女鞋</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">男鞋</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">汽车</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">母婴</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">食品</a><span>/</span><a href="#">运营商</a></li>
+						<li><a href="#">礼品鲜花</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">医药保健</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">图书</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">机票</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
+						</li>
+						<li><a href="#">理财</a><span>/</span><a href="#">运营商</a><span>/</span><a href="#">运营商</a>
+							<div class="slider-detail-text clearfix hidden">测试区</div>
 						</li>
 					</ul>
 				</div>
+				<!-- b 中间轮播展示 -->
+				<div class="lf showpic">
+					<div class="picslider">
+						<ul class="slider-animation clearfix">
+							<li><a href="#" class="d-block"><img src="./img/5a1fbab3N826b3024.jpg" alt=""></a></li>
+							<li><a href="#" class="d-block"><img src="./img/5a1fc935N7e54d9f2.jpg" alt=""></a></li>
+							<li><a href="#" class="d-block"><img src="./img/5a20f7ffN097f0db9.jpg" alt=""></a></li>
+							<li><a href="#" class="d-block"><img src="./img/5a210e4dN2003cff9.jpg" alt=""></a></li>
+							<li><a href="#" class="d-block"><img src="./img/5a210e4dN2003cff9.jpg" alt=""></a></li>
+						</ul>
+						<a class="left d-block hidden"><i class="iconfont icon-zuoyou1"></i></a>				
+						<a class="right d-block hidden"><i class="iconfont icon-zuoyou"></i></a>
+						<div class="sliderbar">
+							<i class="sliderbtn active"></i><i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i>
+							<i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i>
+						</div>
+					</div>
+					<div class="picshow clearfix">
+						<a href="" class="d-block lf" ><img src="./img/5a20cf7aNbae69933.png" alt=""></a>
+						<a href="" class="d-block lf ml10" ><img src="./img/5a1e42d7N9bf29ade.jpg" alt=""></a>
+					</div>
+				</div>
+				<!-- c 个人功能充值 -->
+				<div class="lf func">
+					<div class="user">
+						<div class="info clearfix">
+							<a href="#" class="d-block lf"><img src="./img/no_login.jpg" alt=""></a>
+							<div class="lf welcome">
+								<p>Hi,欢迎来到京东!</p>
+								<p><a href="#" class="nav-link">登陆</a><a href="#" class="nav-link">注册</a></p> 
+							</div>
+						</div>
+						<div class="profit">
+							<a href="#" >新人福利</a>
+							<a href="#">PLUS会员</a>
+						</div>
+					</div>
+					<div class="news">
+						<div class="tab clearfix">
+							<a href="#" class="d-block lf first">促销</a>				
+							<div class="first-content hidden">
+								<ul>
+									<li><a href="#" class="nav-link">购家电领券惠享8.5折</a></li>
+									<li><a href="#" class="nav-link">品质文具每满159减60</a></li>
+									<li><a href="#" class="nav-link">自营大牌尿裤268减40</a></li>
+									<li><a href="#" class="nav-link">车品品类日满198减100</a></li>
+								</ul>
+							</div>
+							<a href="#" class="d-block lf second active">公告</a>
+							<div class="second-content">
+								<ul>
+									<li><a href="#" class="nav-link">关于召回普利司通（天津）轮胎有限公司2个规格乘用车轮胎的公告</a></li>
+									<li><a href="#" class="nav-link">京东物流推出配送员统一外呼电话"95056”</a></li>
+									<li><a href="#" class="nav-link">天府大件运营中心开仓公告</a></li>
+									<li><a href="#" class="nav-link">京东大件物流“送装一体”服务全面升级</a></li>
+								</ul>
+							</div>
+							<a href="#" class="d-block lr more">更多</a>
+						</div>
+						<!-- <div class="newscontent">
+							<div class="first hidden">
+								<ul>
+									<li><a href="#">购家电领券惠享8.5折</a></li>
+									<li><a href="#">品质文具每满159减60</a></li>
+									<li><a href="#">自营大牌尿裤268减40</a></li>
+									<li><a href="#">车品品类日满198减100</a></li>
+								</ul>
+							</div>
+							<div class="second">
+								<ul>
+									<li><a href="#">关于召回普利司通（天津）轮胎有限公司2个规格乘用车轮胎的公告</a></li>
+									<li><a href="#">京东物流推出配送员统一外呼电话"95056”</a></li>
+									<li><a href="#">天府大件运营中心开仓公告</a></li>
+									<li><a href="#">京东大件物流“送装一体”服务全面升级</a></li>
+								</ul>
+							</div>
+						</div> -->
+					</div>
+					<div class="service">
+						<ul class="clearfix">
+							<li class="active">
+								<a href="">话费</a>
+								<div class="tab-content hidden bill">
+									<div class="part1 clearfix">
+										<a href="#" class="d-block lf">话费充值</a><a href="#" class="d-block lf">流量充值</a><a href="#" class="d-block lf">套餐变更</a>
+									</div>
+									<div class="part2">
+										<span>号码</span><input type="text" placeholder="请输入手机号" /><br>
+										<span>面值</span>
+										<select name="bill" id="">
+											<option value="100">10元</option>
+											<option value="100">50元</option>	
+											<option value="100">100元</option>
+										</select>
+										<span class="hot">￥98.0-￥100.0</span>
+										<a href="#" class="d-block">快速充值</a>
+										<p class='ab'><img src="./img/iframe-hot.png" alt=""><span>抢90减50元话费券</span></p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="">机票</a>
+								<div class="tab-content hidden flight"></div>
+							</li>
+							<li>
+								<a href="">酒店</a>
+								<div class="tab-content hidden hotel"></div>
+							</li>
+							<li>
+								<a href="">火车票</a>
+								<div class="tab-content hidden train"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
+			<!-- 2.2 双12广告栏 -->
+			<p class="bg-link">
+				<a href="#" class="d-block"></a>
+			</p>
 		</div>
+       
+		
 		<!-- E首页展示 -->
 		<!-- 
 			制作模型
@@ -400,7 +721,7 @@
 
 		-->
 		<!-- S京东秒杀 -->
-		<section class="sk">
+		<section class="container sk">
 			<div class="seckill">
 				<header class="box_hd clearfix">
 					<div class="lf box_hd_col1">
@@ -533,9 +854,9 @@
 							</li>
 						</ul>
 						<!-- 轮播组件 -->
-						<div class="sk_controls">
-							<a href="" class="sk_controls_item sk_controls_prev"><i><</i></a>
-							<a href="" class="sk_controls_item sk_controls_next"><i>></i></a>
+						<div class="sk_controls hidden">
+							<a href="" class="sk_controls_item sk_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+							<a href="" class="sk_controls_item sk_controls_next"><i class="iconfont icon-zuoyou"></i></a>
 						</div>
 					</div>
 					<div class="lf sk_special">
@@ -553,7 +874,7 @@
 		</section>	
 		<!-- E京东秒杀 -->
 		<!-- S栅格 -->
-		<section class="grid">
+		<section class="container grid">
 			<div class="gridtable clearfix">
 				<div class="lf mr10 box_find clearfix">
 					<!-- 复制模型 -->
@@ -624,7 +945,7 @@
 		</section>
 		<!-- E栅格 -->
 		<!-- S栅格2 -->
-		<section class="coupon">
+		<section class="container coupon">
 			<div class="coupontable clearfix">
 				<div class="lf mr10 box_coupon ">
 					<div class="box_hd clearfix">
@@ -637,7 +958,7 @@
 						<ul class="coupon_list clearfix">
 							<li class="coupon_item">
 								<a href="#" class="d-block" >
-									<div class="d-inlneblock coupon_info">
+									<div class="d-inlineblock coupon_info">
 										<p class="coupon_price" ><i>￥</i>16</p>
 										<p class="coupon_desc" ><span>仅可购买京东自营图书音像商品</span></p>
 										<p class="coupon_limit" ><span>消费满200元可用</span></p>
@@ -698,7 +1019,7 @@
 		</section>
 		<!-- E栅格2 -->
     </div>
-	
+	<!-- E主体对象 -->
     <footer></footer>
 </body>
 </html>
