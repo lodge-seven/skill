@@ -55,7 +55,7 @@
 /* ----我的京东---- */
 /* 行高为0或者字体为0 */
 .phone-nav:hover .phonemore-content { display: block; }
-.phone-content { left: 5px; top: 30px; text-align: center; line-height: 0; }
+.phone-content { left: 5px; top: 30px; text-align: center; line-height: 0; z-index: 1; }
 /* 正方形边框底边 */
 .phone-content::before { content: ''; position: absolute; display: block; top: -10px; left: 50%; margin-left: -5px; width: 0; height: 0; border: 5px solid transparent; border-bottom-color: #fff; }
 .phone-content img { padding: 4px; }
@@ -111,8 +111,7 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .slider-list > li > a { color: #fff; }
 .slider-list > li > a:hover { color: #c81623; }
 /* 导航详情，提供测试模板 */
-.slider-detail, .slider-detail-text { position: absolute; width: 1000px; background: #f7f7f7; box-shadow: 2px 0px 5px rgba(0,0,0,.3); top: 0; left: 0; z-index: 100; margin-left: 190px; padding: 20px 0 10px; }
-.slider-detail-text { height: 500px; }
+.slider-detail, .slider-detail-text { position: absolute; width: 1000px; min-height:460px; background: #f7f7f7; box-shadow: 2px 0px 5px rgba(0,0,0,.3); top: 0; left: 0; z-index: 100; margin-left: 190px; padding: 20px 0 10px; }
 .slider-detail .detail-navlist { width: 800px; }
 /* 顶部信息 */
 .detail-navlist .detail-top { padding-left: 20px; font-size: 0; line-height: 0; }
@@ -157,11 +156,12 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .picslider li { float: left; }
 
 /* 小滑块 */
-.picslider .sliderbar { position: absolute; left: 50%; margin-left: -91px; bottom: 20px; font-size: 0; padding: 4px 8px; border-radius: 12px; background-color: hsla(0,0%,100%,.3); }
+.picslider .sliderbar { position: absolute; left: 50%; margin-left: -91px; bottom: 20px; font-size: 0; padding: 4px 8px; border-radius: 12px; background-color: hsla(0,0%,100%,.3); line-height: 0px; }
 .sliderbar .sliderbtn { display: inline-block; margin-right: 10px; width: 12px; height: 12px; border-radius: 100%; background: #fff; }
 .sliderbar .sliderbtn:last-child { margin-right: 0; }
 .sliderbar i.active { background: #db192a; }
-
+/* 两栏图片去行高 */
+.picshow { line-height: 0; }
 /* 功能类 */
 .mainpage .func { width: 190px; background: #fff; }
 /* 功能类-个人信息 */

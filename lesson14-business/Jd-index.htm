@@ -217,11 +217,13 @@
 						</div>
 					</li>
 					<li class='space'></li>
+					<!-- 需要降绝对层级，修改说明的行高为字体大小，给内联盒外边距 -->
 					<li class="phone-nav">
 						<div class="con-summary listsummary">手机京东</div>
 						<div class="con-content phone-content">
 							<img src="./img/59a51cafN0fec6121.png" alt="">
 						</div>
+						<!-- phone-content替换降层级 -->
 						<div class="con-content phone-content phonemore-content hidden">
 							<div class="piccontent-group">
 								<img class="phonemore-pic" src="./img/59a51bf6Nb8e478cc.png" alt="">
@@ -238,7 +240,6 @@
 								<div class="d-inlineblock piccontent-text">
 									<h3>关注京东微信</h3>
 									<p>微信扫一扫关注<br>新粉最高180元<br>惊喜礼包</p>
-									
 								</div>
 							</div>
 							<div class="piccontent-group">
@@ -308,6 +309,7 @@
 				<!-- a 导航右边栏 -->
 				<div class="lf slider">
 					<ul class="slider-list">
+						<!-- 导航右边栏，点击后显示详情 -->
 						<li>
 							<a href="#">家用电器</a>
 							<!-- s分类功能块（选中时显示：分类整理链接 图片广告） 
@@ -326,7 +328,10 @@
 										<a href="#" class="d-inlineblock">商用电器<i class="iconfont icon-zuoyou"></i></a>
 										<a href="#" class="d-inlineblock">高端家电<i class="iconfont icon-zuoyou"></i></a>
 									</div>
-									<!-- 分类清单（高度自适应 一组为type-item） -->
+									<!-- 分类清单（高度自适应 一组为type-item） 
+										 dt：一级分类
+										 dd：二级分类
+									-->
 									<div class="detail-typelist">
 										<dl class="type-item">
 											<dt class="d-inlineblock"><a href="#" class="d-inlineblock type-title">电视<i class="iconfont icon-zuoyou"></i></a></dt>
@@ -412,6 +417,7 @@
 										</dl>
 									</div>
 								</div>
+								<!-- 广告 使用内联块，可撑开高度 -->
 								<div class="lf detail-ad">
 									<div class="ad-small">
 										<a href="#" class="d-inlineblock"><img src="./img/562f4971Na5379aba.jpg" alt=""></a>
@@ -590,9 +596,15 @@
 						</li>
 					</ul>
 				</div>
-				<!-- b 中间轮播展示 -->
+				<!-- b 中间轮播展示与下层图片两栏自适应 -->
 				<div class="lf showpic">
+					<!-- s 轮播模型 -->
 					<div class="picslider">
+						<!-- 移动但只显示一张图片
+							 a 外层给特定宽度
+							 b 列表溢出隐藏，给足够长度
+							 c 单元盒浮动，整体在一行展示，当移动列表水平外边距时，其内部的单元盒移动
+						-->
 						<ul class="slider-animation clearfix">
 							<li><a href="#" class="d-block"><img src="./img/5a1fbab3N826b3024.jpg" alt=""></a></li>
 							<li><a href="#" class="d-block"><img src="./img/5a1fc935N7e54d9f2.jpg" alt=""></a></li>
@@ -600,13 +612,20 @@
 							<li><a href="#" class="d-block"><img src="./img/5a210e4dN2003cff9.jpg" alt=""></a></li>
 							<li><a href="#" class="d-block"><img src="./img/5a210e4dN2003cff9.jpg" alt=""></a></li>
 						</ul>
+						<!-- 左右切换功能
+							 必须放在轮播模型内部，当焦点经过显示
+						-->
 						<a class="left d-block hidden"><i class="iconfont icon-zuoyou1"></i></a>				
 						<a class="right d-block hidden"><i class="iconfont icon-zuoyou"></i></a>
+						<!-- 内层内联块
+							 去掉行高（内联盒子内部没有文字，但行高的影响存在，改变行高还是会有高度上的变化，这里给0），字体的影响，盒子高度20
+						-->
 						<div class="sliderbar">
 							<i class="sliderbtn active"></i><i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i>
 							<i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i><i class="sliderbtn"></i>
 						</div>
 					</div>
+					<!-- e 轮播模型 -->
 					<div class="picshow clearfix">
 						<a href="" class="d-block lf" ><img src="./img/5a20cf7aNbae69933.png" alt=""></a>
 						<a href="" class="d-block lf ml10" ><img src="./img/5a1e42d7N9bf29ade.jpg" alt=""></a>
