@@ -258,7 +258,7 @@
         </div>
     </div>
 	<!-- E头部信息 -->
-	<!-- S主体对象（1 头部搜索导航 2 重点展示区） -->
+	<!-- S主体对象（1 头部搜索导航 2 重点展示区 3 秒杀区） -->
 	<!-- 
 		12.10新增背景，改变网页结构，大盒子内部固定宽度释放，container向下层盒子移动，双12广告新增
 	-->
@@ -730,169 +730,195 @@
 				<a href="#" class="d-block"></a>
 			</p>
 		</div>
-       
-		
-		<!-- E首页展示 -->
+
 		<!-- 
+			3 秒杀组件（3.1 头部标题 3.2 秒杀商品轮播 3.3 切换展示）
 			制作模型
 			section>div 高度自适应
 			header 标题栏
-
+			采用封装将相同样式组合
+			box_hd：顶部标题栏宽高，文字居中，内边距
+			box_hd_arrow：覆盖，去掉顶角
+			box_hd_dec：顶部小尖角绝对于其父级的位置
+			box_tit：统一主标题样式
+			box_subtit，box_subtit_arrow：副标题统一样式，外边距居中
 		-->
-		<!-- S京东秒杀 -->
 		<section class="container sk">
-			<div class="seckill">
-				<header class="box_hd clearfix">
-					<div class="lf box_hd_col1">
-						<i class="box_hd_dec"></i>
-						<i class="lf box_hd_icon"></i>
-						<h3 class="lf box_tit">京东秒杀</h3>
-						<a href="#" class='box_subtit'>总有你想不到的低价<i class="box_subtit_arrow"></i></a>
-					</div>
-					<div class="lr box_hd_col2">
-						<div class="sk_cd clearfix">
-							<span class="lf sk_cd_tip">当前场次</span>
-							<div class="lf sk_cd_main clearfix">
-								<div class="lf cd_item"><span>00</span></div>
-								<div class="lf cd_split"><i class="cd_split_dot cd_split_top"></i><i class="cd_split_dot"></i></div>
-								<div class="lf cd_item"><span>52</span></div>
-								<div class="lf cd_split"><i class="cd_split_dot cd_split_top"></i><i class="cd_split_dot"></i></div>
-								<div class="lf cd_item"><span>23</span></div>
-							</div>
-							<span class="lf sk_cd_tip">后结算抢购</span>
+			<!-- 3.1 头部样式 -->
+			<header class="box_hd clearfix">
+				<!-- 尖角系列1：不用抠图背景 -->
+				<div class="lf box_hd_col1">
+					<!-- 有单独的尖角图片 -->
+					<i class="box_hd_dec"></i>
+					<!-- 浮动，不能垂直居中，需要外边距配合 -->
+					<i class="lf box_hd_icon"></i>
+					<h3 class="lf box_tit">京东秒杀</h3>
+					<a href="#" class='box_subtit'>总有你想不到的低价<i class="box_subtit_arrow"></i></a>
+				</div>
+				<div class="lr box_hd_col2">
+					<div class="sk_cd clearfix">
+						<span class="lf sk_cd_tip">当前场次</span>
+						<!-- 时间类
+								浮动后没有居中，用垂直外边距居中，内层块状，外层浮动
+						-->
+						<div class="lf sk_cd_main">
+							<div class="lf cd_item"><span>00</span></div>
+							<div class="lf cd_split"><i class="cd_split_dot cd_split_top"></i><i class="cd_split_dot"></i></div>
+							<div class="lf cd_item"><span>52</span></div>
+							<div class="lf cd_split"><i class="cd_split_dot cd_split_top"></i><i class="cd_split_dot"></i></div>
+							<div class="lf cd_item"><span>23</span></div>
 						</div>
-					</div>
-				</header>
-				<div class="box_bd clearfix">
-					<div class="lf sk_list_wrapper">
-						<ul class="sk_list clearfix">
-							<li class="sk_item">
-								<!-- 图片与说明 -->
-								<div class="sk_item_pic">
-									<a href="#" class="d-block">
-										<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
-										<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
-									</a>
-									<span class="sk_item_shadow"></span>
-								</div>
-								<!-- 价格 -->
-								<p class="sk_item_price">
-									<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
-									<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
-								</p>
-							</li>
-							<li class="sk_item">
-								<!-- 图片与说明 -->
-								<div class="sk_item_pic">
-									<a href="#" class="d-block">
-										<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
-										<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
-									</a>
-									<span class="sk_item_shadow"></span>
-								</div>
-								<!-- 价格 -->
-								<p class="sk_item_price">
-									<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
-									<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
-								</p>
-							</li>
-							<li class="sk_item">
-								<!-- 图片与说明 -->
-								<div class="sk_item_pic">
-									<a href="#" class="d-block">
-										<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
-										<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
-									</a>
-									<span class="sk_item_shadow"></span>
-								</div>
-								<!-- 价格 -->
-								<p class="sk_item_price">
-									<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
-									<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
-								</p>
-							</li>
-							<li class="sk_item">
-								<!-- 图片与说明 -->
-								<div class="sk_item_pic">
-									<a href="#" class="d-block">
-										<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
-										<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
-									</a>
-									<span class="sk_item_shadow"></span>
-								</div>
-								<!-- 价格 -->
-								<p class="sk_item_price">
-									<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
-									<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
-								</p>
-							</li>
-							<li class="sk_item">
-								<!-- 图片与说明 -->
-								<div class="sk_item_pic">
-									<a href="#" class="d-block">
-										<img src="./img/5a1e7b02Nb063e8e7.jpg" alt="" class="sk_item_img" >
-										<p class="sk_item_name">【第二支1元拍2支自动减】ILISYA眉笔眉粉双头造型笔3色选 自动眉笔眉粉防水防汗不晕染 06棕褐色</p>
-									</a>
-									<span class="sk_item_shadow"></span>
-								</div>
-								<!-- 价格 -->
-								<p class="sk_item_price">
-									<span class="sk_item_price_new"><i>￥</i><span>29.00</span></span>
-									<span class="sk_item_price_origin"><i>￥</i><del>79.00</del></span>
-								</p>
-							</li>
-							<li class="sk_item">
-								<!-- 图片与说明 -->
-								<div class="sk_item_pic">
-									<a href="#" class="d-block">
-										<img src="./img/595aedc1N9ca7aab7.jpg" alt="" class="sk_item_img" >
-										<p class="sk_item_name">摩登生活（Modern life） 欧式床床1.8米床皮床双人床高箱床储物床 (玫瑰描金排骨架)单个床 1800*2000</p>
-									</a>
-									<span class="sk_item_shadow"></span>
-								</div>
-								<!-- 价格 -->
-								<p class="sk_item_price">
-									<span class="sk_item_price_new"><i>￥</i><span>1868.00</span></span>
-									<span class="sk_item_price_origin"><i>￥</i><del>2680.00</del></span>
-								</p>
-							</li>
-							<li class="sk_item">
-								<!-- 图片与说明 -->
-								<div class="sk_item_pic">
-									<a href="#" class="d-block">
-										<img src="./img/575fa2ebNd5723862.jpg" alt="" class="sk_item_img" >
-										<p class="sk_item_name">亚都（YADU）加湿器 3.5L容量 静音迷你办公室卧室家用加湿EB35B </p>
-									</a>
-									<span class="sk_item_shadow"></span>
-								</div>
-								<!-- 价格 -->
-								<p class="sk_item_price">
-									<span class="sk_item_price_new"><i>￥</i><span>99.00</span></span>
-									<span class="sk_item_price_origin"><i>￥</i><del>238.00</del></span>
-								</p>
-							</li>
-						</ul>
-						<!-- 轮播组件 -->
-						<div class="sk_controls hidden">
-							<a href="" class="sk_controls_item sk_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
-							<a href="" class="sk_controls_item sk_controls_next"><i class="iconfont icon-zuoyou"></i></a>
-						</div>
-					</div>
-					<div class="lf sk_special">
-						<ul class="sk_special_list">
-							<li class="sk_special_item"><a href="#"><img src="./img/5a211b0eNa16cb8b0.jpg" alt="" class="sk_special_pic"></a></li>
-							<li class="sk_special_item"><a href="#"><img src="./img/5a21119eN385a9d41.png" alt="" class="sk_special_pic"></a></li>
-						</ul>
-						<ul class="sk_special_indlist">
-							<li class="sk_special_inditem active"></li>
-							<li class="sk_special_inditem"></li>
-						</ul>
+						<span class="lf sk_cd_tip">后结算抢购</span>
 					</div>
 				</div>
-			</div>
+			</header>
+			<!-- 主要内容区 -->
+			<div class="box_bd clearfix">
+				<!-- 3.2 秒杀商品轮播
+				 	a 轮播组件：列表溢出隐藏足够大宽度，五个单元格展示
+				 	b 左右选择按钮
+				-->
+				<div class="lf sk_list_wrapper">
+					<!-- 轮播商品 -->
+					<ul class="sk_list clearfix">
+						<!-- 图片与说明
+								sk_item为一个商品展示组件，由图文与价格组成， 图文构成一层，链接块级化，包裹图文
+								*新技能get4：文本居中虽然不对块级有影响但块级可以继承，当有内联或者内联块为有反应
+						-->
+						<li class="sk_item">
+							<div class="sk_item_pic">
+								<!-- 绝对于父级 -->
+								<div class="sk_tag">
+									<span>超级秒</span>
+								</div>
+								<a href="#" class="d-block">
+									<!-- 图片特效是选中往上升几个像素点，这里用到transform变换y轴，负数往上，整数往下 -->
+									<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
+									<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
+								</a>
+								<!-- 相对于一组图文，图片下方绝对与父级定位 -->
+								<span class="sk_item_shadow"></span>
+							</div>
+							<!-- 价格 -->
+							<p class="sk_item_price">
+								<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
+								<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
+							</p>
+						</li>
+						<li class="sk_item">
+							<!-- 图片与说明 -->
+							<div class="sk_item_pic">
+								<a href="#" class="d-block">
+									<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
+									<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
+								</a>
+								<span class="sk_item_shadow"></span>
+							</div>
+							<!-- 价格 -->
+							<p class="sk_item_price">
+								<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
+								<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
+							</p>
+						</li>
+						<li class="sk_item">
+							<!-- 图片与说明 -->
+							<div class="sk_item_pic">
+								<a href="#" class="d-block">
+									<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
+									<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
+								</a>
+								<span class="sk_item_shadow"></span>
+							</div>
+							<!-- 价格 -->
+							<p class="sk_item_price">
+								<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
+								<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
+							</p>
+						</li>
+						<li class="sk_item">
+							<!-- 图片与说明 -->
+							<div class="sk_item_pic">
+								<a href="#" class="d-block">
+									<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
+									<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
+								</a>
+								<span class="sk_item_shadow"></span>
+							</div>
+							<!-- 价格 -->
+							<p class="sk_item_price">
+								<span class="sk_item_price_new"><i>￥</i><span>7490.00</span></span>
+								<span class="sk_item_price_origin"><i>￥</i><del>9999.00</del></span>
+							</p>
+						</li>
+						<li class="sk_item">
+							<!-- 图片与说明 -->
+							<div class="sk_item_pic">
+								<a href="#" class="d-block">
+									<img src="./img/5a1e7b02Nb063e8e7.jpg" alt="" class="sk_item_img" >
+									<p class="sk_item_name">【第二支1元拍2支自动减】ILISYA眉笔眉粉双头造型笔3色选 自动眉笔眉粉防水防汗不晕染 06棕褐色</p>
+								</a>
+								<span class="sk_item_shadow"></span>
+							</div>
+							<!-- 价格 -->
+							<p class="sk_item_price">
+								<span class="sk_item_price_new"><i>￥</i><span>29.00</span></span>
+								<span class="sk_item_price_origin"><i>￥</i><del>79.00</del></span>
+							</p>
+						</li>
+						<li class="sk_item">
+							<!-- 图片与说明 -->
+							<div class="sk_item_pic">
+								<a href="#" class="d-block">
+									<img src="./img/595aedc1N9ca7aab7.jpg" alt="" class="sk_item_img" >
+									<p class="sk_item_name">摩登生活（Modern life） 欧式床床1.8米床皮床双人床高箱床储物床 (玫瑰描金排骨架)单个床 1800*2000</p>
+								</a>
+								<span class="sk_item_shadow"></span>
+							</div>
+							<!-- 价格 -->
+							<p class="sk_item_price">
+								<span class="sk_item_price_new"><i>￥</i><span>1868.00</span></span>
+								<span class="sk_item_price_origin"><i>￥</i><del>2680.00</del></span>
+							</p>
+						</li>
+						<li class="sk_item">
+							<!-- 图片与说明 -->
+							<div class="sk_item_pic">
+								<a href="#" class="d-block">
+									<img src="./img/575fa2ebNd5723862.jpg" alt="" class="sk_item_img" >
+									<p class="sk_item_name">亚都（YADU）加湿器 3.5L容量 静音迷你办公室卧室家用加湿EB35B </p>
+								</a>
+								<span class="sk_item_shadow"></span>
+							</div>
+							<!-- 价格 -->
+							<p class="sk_item_price">
+								<span class="sk_item_price_new"><i>￥</i><span>99.00</span></span>
+								<span class="sk_item_price_origin"><i>￥</i><del>238.00</del></span>
+							</p>
+						</li>
+					</ul>
+					<!-- 轮播组件 -->
+					<div class="sk_controls hidden">
+						<a href="" class="sk_controls_item sk_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+						<a href="" class="sk_controls_item sk_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+					</div>
+				</div>
+				<!-- 3.3 切换展示 -->
+				<div class="lf sk_special">
+					<!-- 切换商品 -->
+					<ul class="sk_special_list">
+						<li class="sk_special_item"><a href="#"><img src="./img/5a211b0eNa16cb8b0.jpg" alt="" class="sk_special_pic"></a></li>
+						<li class="sk_special_item"><a href="#"><img src="./img/5a21119eN385a9d41.png" alt="" class="sk_special_pic"></a></li>
+					</ul>
+					<!-- 切换按钮 -->
+					<ul class="sk_special_indlist">
+						<li class="sk_special_inditem active"></li>
+						<li class="sk_special_inditem"></li>
+					</ul>
+				</div>
+			</div>	
 		</section>	
 		<!-- E京东秒杀 -->
-		<!-- S栅格 -->
+		<!-- S购物模型栅格 -->
 		<section class="container grid">
 			<div class="gridtable clearfix">
 				<div class="lf mr10 box_find clearfix">
@@ -929,13 +955,13 @@
 									<img src="./img/5a20d9eeN39e6ca26.jpg" alt="" class="find_item_img" />
 								</a>
 							</li>
-							<li class="find_item">
+							<li class="find_item special_find_item">
 								<a href="#" class="find_item_lk">
 									<p class="find_item_name">骆驼牌 高帮牛皮短靴</p>
 									<img src="./img/5a17ec18N26692626.jpg" alt="" class="find_item_img" />
 								</a>
 							</li>
-							<li class="find_item mrf2">
+							<li class="find_item special_find_item mrf2">
 								<a href="#" class="find_item_lk">
 									<p class="find_item_name">海鸥 镂空机械表</p>
 									<img src="./img/5a1d0b10N67b634f1.jpg" alt="" class="find_item_img" />
@@ -962,7 +988,7 @@
 				</div>
 			</div>
 		</section>
-		<!-- E栅格 -->
+		<!-- E购物模型栅格 -->
 		<!-- S栅格2 -->
 		<section class="container coupon">
 			<div class="coupontable clearfix">

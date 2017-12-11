@@ -217,7 +217,7 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .part2 .ab img, .ab span { vertical-align: middle; margin-right: 4px; color: #527cdb; }
 
 /* ---------------------------京东秒杀模型 封装样式类---------------------- */
-.seckill { height: 305px; margin-bottom: 30px; }
+.sk { margin-bottom: 30px; }
 .sk .box_hd { background: url('./img/seckill_hd.png') no-repeat 0 0; }
 .sk .box_hd_dec { background-image: url('./img/sprite_index@1x.png'); background-position: -190px -48px; background-size: 218px 188px; background-repeat: no-repeat; }
 .sk .box_hd_icon { margin-top: 8px; margin-right: 8px; background-image: url('./img/sprite_index@1x.png'); background-position: 0 -40px; background-size: 218px 188px; background-repeat: no-repeat; width: 34px; height: 40px;}
@@ -245,7 +245,13 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 /* 左边轮播内容-商品展示 */
 .sk_item { float: left; width: 170px; height: 225px; padding: 0 14px 0 15px; border-right: 1px solid #e7e7e7; }
 .sk_item_pic { position: relative; text-align: center; }
-.sk_item_img { width: 130px; height: 130px; margin: 17px 0; }
+.sk_item_pic:hover .sk_item_img { transform: translateY(-3px);}
+/* transform变换位置
+   当选中其父级时网上平移（y轴）
+   当移除时缓慢回来（transition加入时间流逝的感觉）
+*/
+.sk_item_img { width: 130px; height: 130px; margin: 17px 0; transition: transform .7s; transform: translateY(0);  }
+
 /* 允许在单词内换行 解决一大串单词整体移位 */
 .sk_item_name { color: #999; max-width: 100%; overflow: hidden; font-size: 12px; text-align: left; height: 32px; line-height: 16px; word-wrap: break-word; word-break: break-all; }
 /* 中间的分割区阴影 */
@@ -267,13 +273,15 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .sk_special_inditem.active { background: #e01222;}
 
 /* ---------------------------购物模型 封装样式类---------------------- */
+.grid { margin-bottom: 30px; }
 /* 第一块：发现 */
 .box_find .box_hd { background: #4998a1; background-image: linear-gradient(90deg,#4998a1,#2e828b); width: 340px; }
 .box_find .box_hd_dec { background-image: url('./img/sprite_index@1x.png'); background-position: -190px -96px; background-size: 218px 188px; background-repeat: no-repeat; width: 28px; height: 28px; }
-.box_find .box_bd { padding: 10px; height: 369px; background: #fff; }
+.box_find .box_bd { padding: 10px; background: #fff; }
 /* 发现内容区 */
 .find_list { width: 370px; height: 363px; overflow: hidden; }
 .find_list .find_item { float: left; border-right: 1px solid #e7e7e7; border-bottom: 1px solid #e7e7e7;}
+.find_list .special_find_item {border-bottom: 0; }
 .find_item_lk { position: relative; display: block; width: 185px; height: 120px; }
 .find_item_name { font-size: 14px; color: #4998a1; position: absolute; top: 15px; left: 20px; width: 80px; line-height: 20px; z-index: 1; word-wrap: break-word; }
 .find_item_img { position: absolute; bottom: 5px; right: 10px; width: 80px; height: 80px; transition: transform .4s ease-out; }
