@@ -261,10 +261,9 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .sk_item_price { padding: 3px 0; height: 25px; }
 .sk_item_price_new { font-size: 18px; font-weight: 700; margin-right: 8px; color: #f10214; }
 .sk_item_price_origin { color: #999; font-size: 12px; }
-.sk_controls_item { position: absolute; display: block; z-index: 1; top: 50%; margin-top: -25px; width: 20px; height: 50px; background: #f1f1f1; background: rgba(0,0,0,.1); line-height: 50px; text-align: center; }
 .sk_controls_prev { left: 7px; }
 .sk_controls_next { right: 7px; }
-.sk_controls_item i { font-size: 20px; color: #272526; font-size: 12px; }
+
 /* 右边特殊展示 */
 .sk_special { position: relative; margin: 0 10px 0 0; }
 .sk_special_list { position: relative; width: 180px; height: 225px; }
@@ -318,7 +317,7 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .box_coupon .box_hd { background: #f03118; width: 740px; }
 .box_coupon .box_hd_dec { background-image: url('./img/sprite_sprite_coupon@1x.png'); background-position: 0 0; background-size: 76px 60px; background-repeat: no-repeat; width: 28px; height: 28px; }
 /* 购物券信息清单 */
-.coupon_list { padding: 10px 0; }
+.coupon_list { padding-bottom: 20px; background-color: #fff; }
 .coupon_list .coupon_item { position: relative; float: left; width: 197px; height: 195px; border-right: 1px solid #e7e7e7; }
 .coupon_list .coupon_item:last-child { border-right: none; margin-right: -1px; }
 .coupon_info { position: absolute; left: 15px; top: 15px; width: 100px; height: 180px; background-color: #fff; z-index: 1; border-top: 3px solid #e93524; box-shadow: 6px 6px 12px 0 rgba(0,0,0,.2); }
@@ -333,7 +332,7 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 /* 寻me */
 .box_xmi .box_hd { background: #4f629f; width: 340px; }
 .box_xmi .box_hd_dec { background-image: url('./img/sprite_sprite_coupon@1x.png'); background-position: -48px 0; background-size: 76px 60px; background-repeat: no-repeat; width: 28px; height: 28px; }
-.box_xmi .box_bd { width: 390px; overflow: hidden; }
+.box_xmi .box_bd { width: 390px; overflow: hidden; background: #fff; }
 .xmi_list { width: 2000px;}
 .xmi_item { float: left; width: 390px; }
 .xmi_lk { position: relative; padding: 25px 30px; width: 330px; height: 145px; overflow: hidden; }
@@ -345,18 +344,24 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .xmi_look { position: absolute; left: 240px; bottom: 25px; color: #999; width: 120px; height: 22px; }
 .xmi_look i { display: inline-block; background: url('./img/sprite_sprite_coupon@1x.png'); background-position: 0 -48px; background-size: 76px 60px; width: 18px; height: 12px; vertical-align: -2px; margin-right: 6px;}
 /* 进度点 */
-.xmi_point { font-size: 0; width: 95px; margin: auto;}
+.xmi_point { font-size: 0; width: 95px; margin: auto; margin-bottom: 2px;}
 .xmi_point li { display: inline-block; width: 8px; height: 8px; background-color: #c7c7c7; margin: 5px; border-radius: 50%; }
 .xmi_point li.active { background-color: #e21222;}
 
 /* -------------------------享品质样式-------------------------- */
-
+.quality { margin-bottom: 30px; }
 .contentpic-list .contentpic-item { float: left; }
-.contentpic-link { font-size: 0; margin: 0 10px 10px 0;}
-
+.contentpic-link { font-size: 0; margin: 0 10px 10px 0; width: 390px; overflow: hidden; }
 /* 内联中左边文字盒子 */
-.contentpic-link img { vertical-align: middle; }
-.contentpic-link .contentpic-main { position: absolute; top: 0; width: 100px; height: 170px; background-color: #66B687; padding: 0 20px; vertical-align: middle; }
+.contentpic-link img { vertical-align: middle; width: 400px; transition: transform .3s; height: 170px;}
+.contentpic-link:hover img { transform: translateX(-10px); }
+.contentpic-link .contentpic-main { position: absolute; z-index: 10; top: 0; width: 100px; height: 170px; background-color: #66B687; padding: 0 20px; vertical-align: middle; opacity: .9; }
+/* 特定颜色 */
+.contentpic-shop .contentpic-main { background: #DBCF6E; }
+.contentpic-brand .contentpic-main { background: #534b5d; }
+.contentpic-tec .contentpic-main { background: #3b838c; }
+.contentpic-market .contentpic-main { background: #d58717; }
+.contentpic-bar .contentpic-main { background: #7e5944; }
 .contentpic-main h4 { font-size: 22px; border-top: 2px solid #fff; border-bottom: 2px solid #fff; line-height: 44px; margin-top: 45px; text-align: center; font-weight: 100; color: #fff; }
 .contentpic-main p { font-size: 14px; color: #fff; margin-top: 8px; line-height: 16px; }
 /* 享品质-直播-头部 */
@@ -379,6 +384,26 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .alive-point i { background-color: #fff; }
 .active_controls_prev { left: 0; z-index: 10; }
 .active_controls_next { right: 0; z-index: 10; }
-.active_controls:hover a i { color: #fff; }
+.active_controls a:hover i { color: #e21222; }
+.active_controls .con_controls_item { background: rgba(0, 0, 0, .45); }
+.active_controls .con_controls_item i { color: #fff; }
+
+/* 享品质-好货 */
+.entry { height: 170px; width: 190px; font-size: 0; overflow: hidden; }
+.entry img { width: 200px; height: 170px; transition: transform .3s; }
+.entry:hover img { transform: translateX(-10px); }
+.entry + .entry { margin-right: 10px; }
+.entry-info { position: absolute; bottom: 0; width: 190px; left: 0; z-index: 10; background: #642663; padding-top: 10px;  opacity: .9;  }
+.entry-sign { background: #a93931; }
+.entry-info h4 { margin: 0 auto; font-size: 16px; border-top: 2px solid #fff; border-bottom: 2px solid #fff; line-height: 30px; width: 100px; text-align: center; font-weight: 100; color: #fff;}
+.entry-info p { font-size: 14px; color: #fff; text-align: center; margin: 8px 0; line-height: 20px;}
+
+/* --------------------爱生活------------------------ */
+/* 各种模型头部 */
+.life-beauty-title { background-color: #cd375e; }
+.life-home-title { background-color: #78538e; }
+.life-gay-title { background-color: #5e6c90; }
+.data-title {background-color: #488bad; }
+.data .con-code { width: 594.5px; }
 /* --------------------------------右边固定定位的导航条-------------------------------- */
 .right-sidebar { position: fixed; top: 0; right: 0; z-index: 100; width: 5px; height: 100%; background-color: #7a6e6e; }

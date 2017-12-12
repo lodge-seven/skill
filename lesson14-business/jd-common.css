@@ -15,16 +15,16 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .lf { float: left; }
 .p-relative { position: relative; z-index: 1; }
 
+.pr5 {padding-right: 5px; }
 .ml10 { margin-left: 10px; }
 .mr10 { margin-right: 10px; }
 .mrf2 { margin-right: -2px; }
 .hidden { display: none; }
 .clearfix:after { content: ''; display: block; clear: both; }
-
+.border-r { border-right: 1px solid #e6e6e6; }
 /* 伪导航切换 
    双浮动 把之前的内边距移到新的盒子中
 */
-
 .list .con-nav { border-left: 1px solid #E3E4E5; border-right: 1px solid #E3E4E5; padding-left: 0; padding-right: 0; }
 .con-nav:hover { border: 1px solid #ccc; border-bottom: #fff; background: #fff; }
 .con-summary { position: relative; z-index: 100; padding: 0 7px; }
@@ -35,14 +35,61 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .con-item a:hover { color: #c81623; }
 
 /* 文章组件 */
-
 .con-essay-title { font-weight: 700; color: #666; font-size: 12px; line-height: 24px; }
 .con-essay-info { line-height: 0; }
+
+/* 带二维码模型通用样式 */
+.con-code { margin-bottom: 30px; width: 590px; }
+/* 二维码头部 */
+.code-title { height: 26px; padding: 16px 20px; color: #fff; background: #974676; }
+.code-title h3 { float: left; font-size: 22px; line-height: 26px; font-weight: 100; }
+.code-title .code-pic { float: left; position: relative; margin: 3px 0 3px 15px; width: 20px; height: 20px; background: url('./img/pt_qrcode@1x.png') no-repeat center; }
+.code-tags { float: right; width: 415px; text-align: right; }
+.code-tags a { display: inline-block; margin-left: 10px; line-height: 24px; border: 1px solid rgba(255, 255, 255, .35); padding: 0 10px; color: #fff; background: rgba(255, 255, 255, .15); }
+.code-tags a:hover { border-color: #fff; }
+/* 二维码主要内容区 */
+.code-content { padding: 10px; background-color: #fff;}
+.code-content li { float: left; font-size: 0; }
+
+/* 二维码-1类 */
+.code-item1 { width: 183px; height: 260px; margin-right: 10px; }
+.code-item1 img { width: 193px; height: 260px; }
+/* 二维码-2类 */
+.code-item2 { position: relative; width: 376px; }
+.code-item2 a { display: inline-block; position: relative; width: 158px; height: 110px; padding: 20px 10px 0 20px; }
+.code-item2 p { position: absolute; z-index: 2; max-width: 100px; }
+.item2-title { display: block; font-size: 14px; color: #974676; line-height: 30px; }
+.item2-summary { display: block; font-size: 12px; width: 50px; }
+.item2-vetical { position: absolute; width: 1px; height: 260px; background-color: #e6e6e6; left: 50%; top: 0; }
+.item2-level { position: absolute; height: 1px; width: 376px; background-color: #e6e6e6; top: 50%; }
+.code-item2 img { float: right; transition: transform .5s; }
+.code-item2 a:hover img { transform: translateX(-10px); }
+/* 二维码3类 */
+.code-item3 { margin: 10px -10px 10px 0;}
+.code-item3 div { width: 183px; height: 130px; margin-right: 10px; }
+/* 二维码4类 */
+.code-item4 { height: 45px; }
+.code-item4:hover .code-control { display: block; }
+.item4-slider { width: 570px; overflow: hidden; height: 45px; }
+.item4-slider a { padding: 0 12px; }
+.item4-slider div { border-right: 1px solid #dedfe0; height: 20px; margin-top: 10px; }
+.item4-slider img { margin-top: -7px; }
+.code-control .con_controls_item { background-color: #fff;}
+.code-control .active_controls_prev { left: -10px; }
+.code-control .active_controls_next { right: -10px; }
+/* 点击移动图片位置小组件 */
+.con-move-wrap { overflow: hidden; }
+.con-move-wrap:hover img { transform: translateX(-10px); }
+.con-move-wrap img { transition: transform .3s; }
 
 /* 查看切换小点组件 */
 .sub-points { text-align: center; }
 .sub-points i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin: 0 7px; background-color: #c8c8c8; }
 .sub-points .active { background-color: #e01222; }
+
+/* 切换轮播按钮 */
+.con_controls_item { position: absolute; display: block; z-index: 1; top: 50%; margin-top: -25px; width: 20px; height: 50px; background: #f1f1f1; background: rgba(0,0,0,.1); line-height: 50px; text-align: center; }
+.con_controls_item i { font-size: 20px; color: #272526; font-size: 12px; }
 
 .con-b-top { border-top: 1px solid #eee; }
 /* 点击变红 */
@@ -70,9 +117,13 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .box_subtit_arrow, .coupon_entry_btn_ico { background-image: url('./img/sprite_index@1x.png'); background-position: -154px -40px; background-size: 218px 188px; background-repeat: no-repeat; width: 15px; height: 16px; }
 /* 共同-图片广告分区 */
 .ad-separated { background-color: #e0e0e0; margin-bottom: 30px; }
+.ad-separated a { width: 396px; height: 100px; }
+/* 伪类覆盖上一层半透明效果 */
+.ad-separated a:hover::after { display: block; }
+.ad-separated a::after { display:none; position: absolute; content: ''; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, .2); }
 /* 共同-标题头 */
 .con-title { text-align: center; background: url('./img/common_title.png') repeat-x center; height: 35px; margin-bottom: 20px; }
 .con-title h3 { display: inline-block; padding: 0 50px; font-size: 26px; color: #333; font-weight: 400; background-color: #f6f6f6; }
 .ad-wrap { font-size: 0; }
 /* 控制左右按钮的样式 */
-.con_controls_item { width: 20px; height: 50px; background-color: #f3f2f3; text-align: center; color: #797173; line-height: 50px; }
+.sub_controls .con_controls_item { width: 20px; height: 50px; background-color: #f3f2f3; text-align: center; color: #797173; line-height: 50px; }

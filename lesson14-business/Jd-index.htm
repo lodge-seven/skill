@@ -259,7 +259,7 @@
     </div>
 	<!-- E头部信息 -->
 
-	<!-- S主体对象（1 头部搜索导航 2 重点展示区 3 秒杀区 4 购物模型栅格模型 5 优惠券及寻觅 6 广告栏分隔模型 7 享品质模型） -->
+	<!-- S主体对象（1 头部搜索导航 2 重点展示区 3 秒杀区 4 购物模型栅格模型 5 优惠券及寻觅 6 广告栏分隔模型 7 享品质模型 8 带二维码标题模型） -->
 	<!-- 
 		12.10新增背景，改变网页结构，大盒子内部固定宽度释放，container向下层盒子移动，双12广告新增
 	-->
@@ -912,8 +912,8 @@
 					</ul>
 					<!-- 轮播组件 -->
 					<div class="sk_controls hidden">
-						<a href="" class="sk_controls_item sk_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
-						<a href="" class="sk_controls_item sk_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+						<a href="" class="con_controls_item sk_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+						<a href="" class="con_controls_item sk_controls_next"><i class="iconfont icon-zuoyou"></i></a>
 					</div>
 				</div>
 				<!-- 3.3 切换展示 -->
@@ -1175,10 +1175,10 @@
 			 里面的盒子居中，内层三个图片，无需更换链接显示水平，自动提升为内联
 		-->
 		<section class="ad-separated">
-			<div class="container ad-wrap">
-				<a href="#"><img src="./img/5a2e299aNd9182ba4.jpg" alt=""></a>
-				<a href="#"><img src="./img/5a29ee04N3abff8fc.jpg" alt=""></a>
-				<a href="#"><img src="./img/5a28db52N43762013.jpg" alt=""></a>
+			<div class="container ad-wrap clearfix">
+				<a href="#" class="lf p-relative"><img src="./img/5a2e299aNd9182ba4.jpg" alt=""></a>
+				<a href="#" class="lf p-relative"><img src="./img/5a29ee04N3abff8fc.jpg" alt=""></a>
+				<a href="#" class="lf p-relative"><img src="./img/5a28db52N43762013.jpg" alt=""></a>
 			</div>
 		</section>
 		
@@ -1192,6 +1192,7 @@
 			<div class="quality-content clearfix">
 				<!-- 图文模型（后期收藏）
 					 单元盒没有外边距，通过a的外边距合并
+					 这里格子大小不一，左边一样大小，右边不一样大小
 				-->
 				<ul class="lf contentpic-list">
 					<!-- 直播格子 
@@ -1208,7 +1209,7 @@
 						<!-- 与头部重叠 -->
 						<ul class="alive-slider">
 							<!-- 直播单元盒 -->
-							<li class="alive-item">
+							<li class="alive-item hidden">
 								<a href="#">
 									<!-- 阴影除了头部都覆盖 -->
 									<div class="shadow"></div>
@@ -1226,7 +1227,7 @@
 									<!-- 阴影除了头部都覆盖 -->
 									<div class="shadow"></div>
 									<div class="alive_pic">
-										<img src="./img/5a2cb54bN2f7d8dc1.jpg" alt="">
+										<img src="./img/5a2bcf6cN48c25df4.jpg" alt="">
 									</div>
 									<div class="alive-detail">
 										<h5 class="alive_title"><i></i>英得尔车载冰箱丨冬暖夏凉</h5>
@@ -1239,10 +1240,10 @@
 						<div class="sub-points alive-point">
 							<i></i><i class="active"></i><i></i>
 						</div>
-						<!-- 秒杀的样式提出来做封装 -->
+						<!-- 秒杀的样式之后提出来做封装 -->
 						<div class="active_controls">
-							<a href="#" class="sk_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
-							<a href="#" class="sk_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+							<a href="#" class="con_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+							<a href="#" class="con_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
 						</div>
 					</li>
 					<li class="p-relative contentpic-item">
@@ -1255,54 +1256,514 @@
 						</a>
 					</li>
 					<li class="p-relative contentpic-item">
-						<a href="#" class="d-block contentpic-link">
+						<a href="#" class="d-block contentpic-link contentpic-shop">
 							<div class="d-inlineblock contentpic-main">
-								<h4>新品收发</h4>
-								<p>上新品首发 看新奇好货</p>
+								<h4>会逛</h4>
+								<p>潮流服饰 5折清仓</p>
 							</div>
-							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+							<img src="./img/5a2e9287N84b58fbc.jpg" alt="">
 						</a>
 					</li>
 					<li class="p-relative contentpic-item">
-						<a href="#" class="d-block contentpic-link">
+						<a href="#" class="d-block contentpic-link contentpic-brand">
 							<div class="d-inlineblock contentpic-main">
-								<h4>新品收发</h4>
-								<p>上新品首发 看新奇好货</p>
+								<h4>奢侈大牌</h4>
+								<p>尽享品质生活 </p>
 							</div>
-							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+							<img src="./img/59bbab97Na203f924.jpg" alt="">
 						</a>
 					</li>
 					<li class="p-relative contentpic-item">
-						<a href="#" class="d-block contentpic-link">
+						<a href="#" class="d-block contentpic-link contentpic-tec">
 							<div class="d-inlineblock contentpic-main">
-								<h4>新品收发</h4>
-								<p>上新品首发 看新奇好货</p>
+								<h4>智能生活</h4>
+								<p>智能潮货，嗨购不停</p>
 							</div>
-							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+							<img src="./img/592935aaNf9c009fe.jpg" alt="">
 						</a>
 					</li>
 					<li class="p-relative contentpic-item">
-						<a href="#" class="d-block contentpic-link">
+						<a href="#" class="d-block contentpic-link contentpic-market">
 							<div class="d-inlineblock contentpic-main">
-								<h4>新品收发</h4>
-								<p>上新品首发 看新奇好货</p>
+								<h4>京东超市</h4>
+								<p>精选超值好货 天天特价</p>
 							</div>
-							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+							<img src="./img/592e3193Nd62486d2.jpg" alt="">
 						</a>
 					</li>
 					<li class="p-relative contentpic-item">
-						<a href="#" class="d-block contentpic-link">
+						<a href="#" class="d-block contentpic-link contentpic-bar">
 							<div class="d-inlineblock contentpic-main">
-								<h4>新品收发</h4>
-								<p>上新品首发 看新奇好货</p>
+								<h4>白条商城</h4>
+								<p>最高12期免息</p>
 							</div>
-							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+							<img src="./img/594737f8Na6453e6e.jpg" alt="">
+						</a>
+					</li>
+					<li class="lr p-relative entry">
+						<a href="#" class="d-block">
+							<img src="./img/59437174N541210b1.jpg" alt="">
+							<div class="entry-info">
+								<h4>全球尖货</h4>
+								<p>全球自营好货</p>
+							</div>
+						</a>
+					</li>
+					<li class="lr p-relative entry">
+						<a href="#" class="d-block">
+							<img src="./img/5923f3b6N8690b3e7.jpg" alt="">
+							<div class="entry-info entry-sign">
+								<h4>设计师推荐</h4>
+								<p>全球设计精选</p>
+							</div>
 						</a>
 					</li>
 				</ul>
 				<div class="lf"></div>
 			</div>
 		</section>
+
+		<!-- 6 广告栏分隔 -->
+		<section class="ad-separated">
+			<div class="container ad-wrap clearfix">
+				<a href="#" class="lf p-relative"><img src="./img/5a264a31N76182663.jpg" alt=""></a>
+				<a href="#" class="lf p-relative"><img src="./img/5a2752b4N5e07b939.jpg" alt=""></a>
+				<a href="#" class="lf p-relative"><img src="./img/5a28fcfaN3753fae2.jpg" alt=""></a>
+			</div>
+		</section>
+
+		<!-- 6 内容分割（这里单独提出来作为分割）  -->
+		<div class="container con-title">
+			<h3>爱生活</h3>
+		</div>
+
+		<!-- 8 带二维码标题模型（8.1 爱生活）
+			 a 封装头部起名code-title（带二维码标题模型）
+		-->
+		<section class="container life">
+			<!-- 8.1 爱生活（一行两列格子模型） -->
+			<div class="lifestyle clearfix ">
+				<!-- 单元格子-爱逛 -->
+				<div class="lf con-code life-shop mr10">
+					<div class="code-title">
+						<h3>爱逛</h3><div class="code-pic"></div>
+						<div class="code-tags">
+							<a href="#">潮男</a><a href="#">女装盛宴</a><a href="#">I尚设计</a><a href="#">舒适内衣</a><a href="#">美饰</a>
+						</div>
+					</div>
+					<!-- 内容全用浮动 -->
+					<ul class="code-content clearfix">
+						<li class="code-item1 con-move-wrap">
+							<a href="#" class="d-block"><img src="./img/5a2a7dcfN98fd8597.jpg" alt=""></a>
+						</li>
+						<li class="code-item2">
+							<!-- 内层元素定位 -->
+							<a href="#">
+								<p>
+									<span class="item2-title">潮流男装</span>
+									<span class="item2-summary">跨店3件7折</span>
+								</p>
+								<img src="./img/5a2a7decN756eb3a3.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">女装盛宴</span>
+									<span class="item2-summary">每满400-50</span>
+								</p>
+								<img src="./img/5a2a7e0eNab0d49c5.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">暖冬狂欢</span>
+									<span class="item2-summary">跨店3免1</span>
+								</p>
+								<img src="./img/5a2a7e2bNa1c86e53.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">鞋靴12.12</span>
+									<span class="item2-summary">5折清仓</span>
+								</p>
+								<img src="./img/5a2a7e40Na9248d94.jpg" alt="">
+							</a>
+							<div class="item2-vetical"></div>
+							<div class="item2-level"></div>
+						</li>
+						<li class="code-item3">
+							<div class="lf con-move-wrap "><a href="#" class="d-block"><img src="./img/5a2755ccN98f0be38.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/597944aeNd644dbd8.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/5a29fbb0Ncfcca488.jpg" alt=""></a></div>
+						</li>
+						<li class="p-relative code-item4">
+							<div class="item4-slider">
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a293607Nd0621461.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a251ec8Nbe6a807c.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a24def9N65d1b1c6.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265d0Ndd205e6e.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5811b21eN8acd4259.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265eaNd462419a.jpg" alt=""></a></div>
+							</div>
+							<div class="code-control hidden">
+								<a href="#" class="con_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+								<a href="#" class="con_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 单元格子-爱美丽 -->
+				<div class="lf con-code life-beauty">
+					<div class="code-title life-beauty-title">
+						<h3>爱美丽</h3><div class="code-pic"></div>
+						<div class="code-tags">
+							<a href="#">潮男</a><a href="#">女装盛宴</a><a href="#">I尚设计</a><a href="#">舒适内衣</a><a href="#">美饰</a>
+						</div>
+					</div>
+					<!-- 内容全用浮动 -->
+					<ul class="code-content clearfix">
+						<li class="code-item1 con-move-wrap">
+							<a href="#" class="d-block"><img src="./img/5a2a7dcfN98fd8597.jpg" alt=""></a>
+						</li>
+						<li class="code-item2">
+							<!-- 内层元素定位 -->
+							<a href="#">
+								<p>
+									<span class="item2-title">潮流男装</span>
+									<span class="item2-summary">跨店3件7折</span>
+								</p>
+								<img src="./img/5a2a7decN756eb3a3.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">女装盛宴</span>
+									<span class="item2-summary">每满400-50</span>
+								</p>
+								<img src="./img/5a2a7e0eNab0d49c5.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">暖冬狂欢</span>
+									<span class="item2-summary">跨店3免1</span>
+								</p>
+								<img src="./img/5a2a7e2bNa1c86e53.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">鞋靴12.12</span>
+									<span class="item2-summary">5折清仓</span>
+								</p>
+								<img src="./img/5a2a7e40Na9248d94.jpg" alt="">
+							</a>
+							<div class="item2-vetical"></div>
+							<div class="item2-level"></div>
+						</li>
+						<li class="code-item3">
+							<div class="lf con-move-wrap "><a href="#" class="d-block"><img src="./img/5a2755ccN98f0be38.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/597944aeNd644dbd8.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/5a29fbb0Ncfcca488.jpg" alt=""></a></div>
+						</li>
+						<li class="p-relative code-item4">
+							<div class="item4-slider">
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a293607Nd0621461.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a251ec8Nbe6a807c.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a24def9N65d1b1c6.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265d0Ndd205e6e.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5811b21eN8acd4259.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265eaNd462419a.jpg" alt=""></a></div>
+							</div>
+							<div class="code-control hidden">
+								<a href="#" class="con_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+								<a href="#" class="con_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 家电馆 -->
+				<div class="lf con-code life-home mr10">
+					<div class="code-title life-home-title">
+						<h3>家电馆</h3><div class="code-pic"></div>
+						<div class="code-tags">
+							<a href="#">潮男</a><a href="#">女装盛宴</a><a href="#">I尚设计</a><a href="#">舒适内衣</a><a href="#">美饰</a>
+						</div>
+					</div>
+					<!-- 内容全用浮动 -->
+					<ul class="code-content clearfix">
+						<li class="code-item1 con-move-wrap">
+							<a href="#" class="d-block"><img src="./img/5a2a7dcfN98fd8597.jpg" alt=""></a>
+						</li>
+						<li class="code-item2">
+							<!-- 内层元素定位 -->
+							<a href="#">
+								<p>
+									<span class="item2-title">潮流男装</span>
+									<span class="item2-summary">跨店3件7折</span>
+								</p>
+								<img src="./img/5a2a7decN756eb3a3.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">女装盛宴</span>
+									<span class="item2-summary">每满400-50</span>
+								</p>
+								<img src="./img/5a2a7e0eNab0d49c5.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">暖冬狂欢</span>
+									<span class="item2-summary">跨店3免1</span>
+								</p>
+								<img src="./img/5a2a7e2bNa1c86e53.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">鞋靴12.12</span>
+									<span class="item2-summary">5折清仓</span>
+								</p>
+								<img src="./img/5a2a7e40Na9248d94.jpg" alt="">
+							</a>
+							<div class="item2-vetical"></div>
+							<div class="item2-level"></div>
+						</li>
+						<li class="code-item3">
+							<div class="lf con-move-wrap "><a href="#" class="d-block"><img src="./img/5a2755ccN98f0be38.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/597944aeNd644dbd8.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/5a29fbb0Ncfcca488.jpg" alt=""></a></div>
+						</li>
+						<li class="p-relative code-item4">
+							<div class="item4-slider">
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a293607Nd0621461.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a251ec8Nbe6a807c.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a24def9N65d1b1c6.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265d0Ndd205e6e.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5811b21eN8acd4259.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265eaNd462419a.jpg" alt=""></a></div>
+							</div>
+							<div class="code-control hidden">
+								<a href="#" class="con_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+								<a href="#" class="con_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 搞基派 -->
+				<div class="lf con-code life-gay">
+					<div class="code-title life-gay-title">
+						<h3>搞基派</h3><div class="code-pic"></div>
+						<div class="code-tags">
+							<a href="#">潮男</a><a href="#">女装盛宴</a><a href="#">I尚设计</a><a href="#">舒适内衣</a><a href="#">美饰</a>
+						</div>
+					</div>
+					<!-- 内容全用浮动 -->
+					<ul class="code-content clearfix">
+						<li class="code-item1 con-move-wrap">
+							<a href="#" class="d-block"><img src="./img/5a2a7dcfN98fd8597.jpg" alt=""></a>
+						</li>
+						<li class="code-item2">
+							<!-- 内层元素定位 -->
+							<a href="#">
+								<p>
+									<span class="item2-title">潮流男装</span>
+									<span class="item2-summary">跨店3件7折</span>
+								</p>
+								<img src="./img/5a2a7decN756eb3a3.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">女装盛宴</span>
+									<span class="item2-summary">每满400-50</span>
+								</p>
+								<img src="./img/5a2a7e0eNab0d49c5.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">暖冬狂欢</span>
+									<span class="item2-summary">跨店3免1</span>
+								</p>
+								<img src="./img/5a2a7e2bNa1c86e53.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">鞋靴12.12</span>
+									<span class="item2-summary">5折清仓</span>
+								</p>
+								<img src="./img/5a2a7e40Na9248d94.jpg" alt="">
+							</a>
+							<div class="item2-vetical"></div>
+							<div class="item2-level"></div>
+						</li>
+						<li class="code-item3">
+							<div class="lf con-move-wrap "><a href="#" class="d-block"><img src="./img/5a2755ccN98f0be38.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/597944aeNd644dbd8.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/5a29fbb0Ncfcca488.jpg" alt=""></a></div>
+						</li>
+						<li class="p-relative code-item4">
+							<div class="item4-slider">
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a293607Nd0621461.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a251ec8Nbe6a807c.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a24def9N65d1b1c6.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265d0Ndd205e6e.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5811b21eN8acd4259.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265eaNd462419a.jpg" alt=""></a></div>
+							</div>
+							<div class="code-control hidden">
+								<a href="#" class="con_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+								<a href="#" class="con_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</section>
+
+		<!-- 8 一栏的带二维码
+			 只是共用了标题
+		-->
+		<section class="container data">
+			<div class="code-title data-title">
+				<h3>电脑数码</h3><div class="code-pic"></div>
+				<div class="code-tags">
+					<a href="#">潮男</a><a href="#">女装盛宴</a><a href="#">I尚设计</a><a href="#">舒适内衣</a><a href="#">美饰</a>
+				</div>
+			</div>	
+			<!-- 单元格子-爱逛 -->
+			<div class="data-content clearfix">
+				<div class="lf con-code life-shop border-r ">
+					<!-- 内容全用浮动 -->
+					<ul class="code-content clearfix">
+						<li class="code-item1 con-move-wrap">
+							<a href="#" class="d-block"><img src="./img/5a2a7dcfN98fd8597.jpg" alt=""></a>
+						</li>
+						<li class="code-item2">
+							<!-- 内层元素定位 -->
+							<a href="#">
+								<p>
+									<span class="item2-title">潮流男装</span>
+									<span class="item2-summary">跨店3件7折</span>
+								</p>
+								<img src="./img/5a2a7decN756eb3a3.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">女装盛宴</span>
+									<span class="item2-summary">每满400-50</span>
+								</p>
+								<img src="./img/5a2a7e0eNab0d49c5.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">暖冬狂欢</span>
+									<span class="item2-summary">跨店3免1</span>
+								</p>
+								<img src="./img/5a2a7e2bNa1c86e53.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">鞋靴12.12</span>
+									<span class="item2-summary">5折清仓</span>
+								</p>
+								<img src="./img/5a2a7e40Na9248d94.jpg" alt="">
+							</a>
+							<div class="item2-vetical"></div>
+							<div class="item2-level"></div>
+						</li>
+						<li class="code-item3">
+							<div class="lf con-move-wrap "><a href="#" class="d-block"><img src="./img/5a2755ccN98f0be38.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/597944aeNd644dbd8.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/5a29fbb0Ncfcca488.jpg" alt=""></a></div>
+						</li>
+						<li class="p-relative code-item4">
+							<div class="item4-slider">
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a293607Nd0621461.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a251ec8Nbe6a807c.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a24def9N65d1b1c6.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265d0Ndd205e6e.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5811b21eN8acd4259.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265eaNd462419a.jpg" alt=""></a></div>
+							</div>
+							<div class="code-control hidden">
+								<a href="#" class="con_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+								<a href="#" class="con_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- 单元格子-爱美丽 -->
+				<div class="lf con-code life-beauty">
+					<!-- 内容全用浮动 -->
+					<ul class="code-content clearfix">
+						<li class="code-item1 con-move-wrap">
+							<a href="#" class="d-block"><img src="./img/5a2a7dcfN98fd8597.jpg" alt=""></a>
+						</li>
+						<li class="code-item2">
+							<!-- 内层元素定位 -->
+							<a href="#">
+								<p>
+									<span class="item2-title">潮流男装</span>
+									<span class="item2-summary">跨店3件7折</span>
+								</p>
+								<img src="./img/5a2a7decN756eb3a3.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">女装盛宴</span>
+									<span class="item2-summary">每满400-50</span>
+								</p>
+								<img src="./img/5a2a7e0eNab0d49c5.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">暖冬狂欢</span>
+									<span class="item2-summary">跨店3免1</span>
+								</p>
+								<img src="./img/5a2a7e2bNa1c86e53.jpg" alt="">
+							</a>
+							<a href="#">
+								<p>
+									<span class="item2-title">鞋靴12.12</span>
+									<span class="item2-summary">5折清仓</span>
+								</p>
+								<img src="./img/5a2a7e40Na9248d94.jpg" alt="">
+							</a>
+							<div class="item2-vetical"></div>
+							<div class="item2-level"></div>
+						</li>
+						<li class="code-item3">
+							<div class="lf con-move-wrap "><a href="#" class="d-block"><img src="./img/5a2755ccN98f0be38.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/597944aeNd644dbd8.jpg" alt=""></a></div>
+							<div class="lf con-move-wrap"><a href="#" class="d-block"><img src="./img/5a29fbb0Ncfcca488.jpg" alt=""></a></div>
+						</li>
+						<li class="p-relative code-item4">
+							<div class="item4-slider">
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a293607Nd0621461.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a251ec8Nbe6a807c.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5a24def9N65d1b1c6.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265d0Ndd205e6e.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/5811b21eN8acd4259.jpg" alt=""></a></div>
+								<div class="lf"><a href="#" class="d-block"><img src="./img/585265eaNd462419a.jpg" alt=""></a></div>
+							</div>
+							<div class="code-control hidden">
+								<a href="#" class="con_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+								<a href="#" class="con_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- 6 广告栏分隔 -->
+		<section class="ad-separated">
+			<div class="container ad-wrap clearfix">
+				<a href="#" class="lf p-relative"><img src="./img/5a2a5cb3N3fe545b0.jpg" alt=""></a>
+				<a href="#" class="lf p-relative"><img src="./img/58523baaNe06b870c.jpg" alt=""></a>
+				<a href="#" class="lf p-relative"><img src="./img/5852294fN3307fd24.jpg" alt=""></a>
+			</div>
+		</section>
+
+		<!-- 6 内容分割（这里单独提出来作为分割）  -->
+		<div class="container con-title">
+			<h3>还没逛够</h3>
+		</div>
     </div>
 	<!-- E主体对象 -->
 
