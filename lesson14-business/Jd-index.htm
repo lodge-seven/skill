@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>小龙解说之京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
+    <title>京东(JD.COM)-正品低价、品质保障、配送及时、轻松购物！</title>
 	<link rel="stylesheet" href="./font/iconfont.css" type="text/css">
 	<link rel="stylesheet" href="./jd-common.css" type="text/css">
     <link rel="stylesheet" href="./jd-index.css" type="text/css">
@@ -258,7 +258,8 @@
         </div>
     </div>
 	<!-- E头部信息 -->
-	<!-- S主体对象（1 头部搜索导航 2 重点展示区 3 秒杀区） -->
+
+	<!-- S主体对象（1 头部搜索导航 2 重点展示区 3 秒杀区 4 购物模型栅格模型 5 优惠券及寻觅 6 广告栏分隔模型 7 享品质模型） -->
 	<!-- 
 		12.10新增背景，改变网页结构，大盒子内部固定宽度释放，container向下层盒子移动，双12广告新增
 	-->
@@ -733,15 +734,22 @@
 
 		<!-- 
 			3 秒杀组件（3.1 头部标题 3.2 秒杀商品轮播 3.3 切换展示）
-			制作模型
-			section>div 高度自适应
-			header 标题栏
-			采用封装将相同样式组合
-			box_hd：顶部标题栏宽高，文字居中，内边距
-			box_hd_arrow：覆盖，去掉顶角
-			box_hd_dec：顶部小尖角绝对于其父级的位置
-			box_tit：统一主标题样式
-			box_subtit，box_subtit_arrow：副标题统一样式，外边距居中
+			秒杀组件，发现组件，领券中心...制作模型：
+				a section>div 高度自适应
+				b header 标题栏
+				c 采用封装将相同样式组合
+					box_hd：顶部标题栏宽高，文字居中，内边距
+					box_hd_arrow：覆盖，三角形透明
+					box_hd_dec：顶部小尖角绝对于其父级的位置
+					box_tit：统一主标题样式
+					box_subtit，box_subtit_arrow：副标题统一样式，外边距居中
+			**新技能get5：box_hd_arrow的尖角制作。
+				当只有两条不平行的边框，它们组成一个矩形，按上右划分：上面是垂直边框，下面是水平边框。
+				做一个三角形至少需要两条不平行的边框线，并且一边是透明色，这里设水平边框透明。
+				上与右：直角三角形，直角所在为左上，x轴方向直角边是右边框的距离，y轴方向的直角边是上边框的距离。
+				下与右：直角所在为左下，其他一致。
+				上与左：直角所在为右上。
+				下与右：直角所在为右下。
 		-->
 		<section class="container sk">
 			<!-- 3.1 头部样式 -->
@@ -772,7 +780,7 @@
 					</div>
 				</div>
 			</header>
-			<!-- 主要内容区 -->
+			<!-- 3.2 3.3 主要内容区 -->
 			<div class="box_bd clearfix">
 				<!-- 3.2 秒杀商品轮播
 				 	a 轮播组件：列表溢出隐藏足够大宽度，五个单元格展示
@@ -808,6 +816,9 @@
 						<li class="sk_item">
 							<!-- 图片与说明 -->
 							<div class="sk_item_pic">
+								<div class="sk_tag">
+									<span>超级秒</span>
+								</div>
 								<a href="#" class="d-block">
 									<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
 									<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
@@ -838,6 +849,9 @@
 						<li class="sk_item">
 							<!-- 图片与说明 -->
 							<div class="sk_item_pic">
+								<div class="sk_tag">
+									<span>超级秒</span>
+								</div>
 								<a href="#" class="d-block">
 									<img src="./img/5a05a247N73c002ae.jpg" alt="" class="sk_item_img" >
 									<p class="sk_item_name">海信（Hisense）LED65EC780UC 65英寸 曲面4K智能平板电视 HDR动态显示 64位14核处理</p>
@@ -917,79 +931,140 @@
 				</div>
 			</div>	
 		</section>	
-		<!-- E京东秒杀 -->
-		<!-- S购物模型栅格 -->
-		<section class="container grid">
-			<div class="gridtable clearfix">
-				<div class="lf mr10 box_find clearfix">
-					<!-- 复制模型 -->
-					<div class="box_hd clearfix">
-						<i class="box_hd_arrow"></i>
-						<i class="box_hd_dec"></i>
-						<h3 class="lf box_tit">发现好货</h3>
-						<a href="#" class="lr box_subtit">发现品质生活<i class="box_subtit_arrow"></i></a>
-					</div>
-					<div class="box_bd">
-						<ul class="find_list clearfix">
-							<li class="find_item">
-								<a href="#" class="find_item_lk">
-									<p class="find_item_name">香阁儿粗跟短靴</p>
-									<img src="./img/5a213a7eN52548c59.png" alt="" class="find_item_img" />
-								</a>
-							</li>
-							<li class="find_item mrf2">
-								<a href="#" class="find_item_lk">
-									<p class="find_item_name">惠普小巧机身轻薄本</p>
-									<img src="./img/59312c81N467a5f76.jpg" alt="" class="find_item_img" />
-								</a>
-							</li>
-							<li class="find_item">
-								<a href="#" class="find_item_lk">
-									<p class="find_item_name">NB 996复古慢跑鞋</p>
-									<img src="./img/59cb4cc7N7e7e04a6.jpg" alt="" class="find_item_img" />
-								</a>
-							</li>
-							<li class="find_item mrf2">
-								<a href="#" class="find_item_lk">
-									<p class="find_item_name">范思蓝恩羊毛呢大衣</p>
-									<img src="./img/5a20d9eeN39e6ca26.jpg" alt="" class="find_item_img" />
-								</a>
-							</li>
-							<li class="find_item special_find_item">
-								<a href="#" class="find_item_lk">
-									<p class="find_item_name">骆驼牌 高帮牛皮短靴</p>
-									<img src="./img/5a17ec18N26692626.jpg" alt="" class="find_item_img" />
-								</a>
-							</li>
-							<li class="find_item special_find_item mrf2">
-								<a href="#" class="find_item_lk">
-									<p class="find_item_name">海鸥 镂空机械表</p>
-									<img src="./img/5a1d0b10N67b634f1.jpg" alt="" class="find_item_img" />
-								</a>
-							</li>
-						</ul>
-					</div>
+
+		<!-- 4 购物模型栅格模型（4.1 发现好货 4.2 会买专辑 4.3 排行榜） 
+			 头部：box_hd，封装，新增box_hd_arrow，用于去掉左上角，box_hd_dec左上角图标。
+		-->
+		<section class="container grid clearfix ">
+			<!-- 4.1 发现好货
+				 a 头部共用
+				 b 主要内容
+			-->
+			<div class="lf mr10 box_find">
+				<!-- a 复制模型 头部与秒杀一样 -->
+				<div class="box_hd clearfix">
+					<i class="box_hd_arrow"></i>
+					<i class="box_hd_dec"></i>
+					<h3 class="lf box_tit">发现好货</h3>
+					<a href="#" class="lr box_subtit">发现品质生活<i class="box_subtit_arrow"></i></a>
 				</div>
-				<div class="lf mr10 box_sub ">
-					<div class="box_hd clearfix">
-						<i class="box_hd_arrow"></i>
-						<i class="box_hd_dec"></i>
-						<h3 class="lf box_tit">会买专辑</h3>
-						<a href="#" class="lr box_subtit">甄选优质好物<i class="box_subtit_arrow"></i></a>
-					</div>
+				<!-- b 主要内容区 -->
+				<div class="box_bd">
+					<!-- 浮动后空间不足掉下来，高度自适应 -->
+					<ul class="find_list clearfix">
+						<li class="find_item">
+							<a href="#" class="find_item_lk">
+								<p class="find_item_name">香阁儿粗跟短靴</p>
+								<img src="./img/5a213a7eN52548c59.png" alt="" class="find_item_img" />
+							</a>
+						</li>
+						<li class="find_item mrf2">
+							<a href="#" class="find_item_lk">
+								<p class="find_item_name">惠普小巧机身轻薄本</p>
+								<img src="./img/59312c81N467a5f76.jpg" alt="" class="find_item_img" />
+							</a>
+						</li>
+						<li class="find_item">
+							<a href="#" class="find_item_lk">
+								<p class="find_item_name">NB 996复古慢跑鞋</p>
+								<img src="./img/59cb4cc7N7e7e04a6.jpg" alt="" class="find_item_img" />
+							</a>
+						</li>
+						<li class="find_item mrf2">
+							<a href="#" class="find_item_lk">
+								<p class="find_item_name">范思蓝恩羊毛呢大衣</p>
+								<img src="./img/5a20d9eeN39e6ca26.jpg" alt="" class="find_item_img" />
+							</a>
+						</li>
+						<li class="find_item special_find_item">
+							<a href="#" class="find_item_lk">
+								<p class="find_item_name">骆驼牌 高帮牛皮短靴</p>
+								<img src="./img/5a17ec18N26692626.jpg" alt="" class="find_item_img" />
+							</a>
+						</li>
+						<li class="find_item special_find_item mrf2">
+							<a href="#" class="find_item_lk">
+								<p class="find_item_name">海鸥 镂空机械表</p>
+								<img src="./img/5a1d0b10N67b634f1.jpg" alt="" class="find_item_img" />
+							</a>
+						</li>
+					</ul>
 				</div>
-				<div class="lf box_top ">
-					<div class="box_hd clearfix">
-						<i class="box_hd_arrow"></i>
-						<i class="box_hd_dec"></i>
-						<h3 class="lf box_tit">排行榜</h3>
-						<a href="#" class="lr box_subtit">专属你的购物指南<i class="box_subtit_arrow"></i></a>
+			</div>
+			<!-- 4.2 会买专辑 -->
+			<div class="lf mr10 box_sub ">
+				<div class="box_hd clearfix">
+					<i class="box_hd_arrow"></i>
+					<i class="box_hd_dec"></i>
+					<h3 class="lf box_tit">会买专辑</h3>
+					<a href="#" class="lr box_subtit">甄选优质好物<i class="box_subtit_arrow"></i></a>
+				</div>
+				<div class="box_bd p-relative">
+					<!-- 专辑列表，无限长度 -->
+					<div class="sub-show">
+						<div class="sub-list clearfix">
+							<!-- 专辑单元格组件 -->
+							<ul class="lf sub-item">
+								<li>
+									<a href="#" class='d-block'>
+										<p class="sub-title">开学在即，这些热销手机剁手值得血拼</p>
+										<img src="./img/542d0798N19d42ce3.jpg" alt="">
+										<img src="./img/5825a5a6Nde8ecb75.jpg" alt="">
+										<img src="./img/57e4a35bN230918c0.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="#" class='d-block'>
+										<p class="sub-title">运动时候不孤单，蓝牙耳机陪伴你</p>
+										<img src="./img/5853456aNc3ba98e6.jpg" alt="">
+										<img src="./img/580875bfNd5a37065.jpg" alt="">
+										<img src="./img/58981d4aN1128549f.jpg" alt="">
+									</a>	
+								</li>
+							</ul>
+							<ul class="lf sub-item">
+								<li>
+									<a href="#" class='d-block'>
+										<p class="sub-title">开学在即，这些热销手机剁手值得血拼</p>
+										<img src="./img/542d0798N19d42ce3.jpg" alt="">
+										<img src="./img/5825a5a6Nde8ecb75.jpg" alt="">
+										<img src="./img/57e4a35bN230918c0.jpg" alt="">
+									</a>
+								</li>
+								<li>
+									<a href="#" class='d-block'>
+										<p class="sub-title">运动时候不孤单，蓝牙耳机陪伴你</p>
+										<img src="./img/5853456aNc3ba98e6.jpg" alt="">
+										<img src="./img/580875bfNd5a37065.jpg" alt="">
+										<img src="./img/58981d4aN1128549f.jpg" alt="">
+									</a>	
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 切换左右tab -->
+					<div class="sub_controls hidden">
+						<a href="" class="con_controls_item sub_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+						<a href="" class="con_controls_item sub_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+					</div>
+					<!-- 可选tab -->
+					<div class="sub-points">
+						<i></i><i class="active"></i><i></i>
 					</div>
 				</div>
 			</div>
+			<!-- 4.3 排行榜 -->
+			<div class="lf box_top ">
+				<div class="box_hd clearfix">
+					<i class="box_hd_arrow"></i>
+					<i class="box_hd_dec"></i>
+					<h3 class="lf box_tit">排行榜</h3>
+					<a href="#" class="lr box_subtit">专属你的购物指南<i class="box_subtit_arrow"></i></a>
+				</div>
+			</div>
 		</section>
-		<!-- E购物模型栅格 -->
-		<!-- S栅格2 -->
+
+		<!-- 5 优惠券及寻觅 -->
 		<section class="container coupon">
 			<div class="coupontable clearfix">
 				<div class="lf mr10 box_coupon ">
@@ -1010,6 +1085,39 @@
 										<p class="coupon_btn">更多好券</p>
 									</div>
 									<img src="./img/55fbb8a6N64863ad3.jpg" alt="" class="coupon_pic">
+								</a>
+							</li>
+							<li class="coupon_item">
+								<a href="#" class="d-block" >
+									<div class="d-inlineblock coupon_info">
+										<p class="coupon_price" ><i>￥</i>600</p>
+										<p class="coupon_desc" ><span>仅可购买自营阿玛尼钟表商品</span></p>
+										<p class="coupon_limit" ><span>消费满999元可用</span></p>
+										<p class="coupon_btn">更多服饰箱包券</p>
+									</div>
+									<img src="./img/5a2754f1N35db9cc0.jpg" alt="" class="coupon_pic">
+								</a>
+							</li>
+							<li class="coupon_item">
+								<a href="#" class="d-block" >
+									<div class="d-inlineblock coupon_info">
+										<p class="coupon_price" ><i>￥</i>1500</p>
+										<p class="coupon_desc" ><span>仅可购买自营冰洗冷全品类部分</span></p>
+										<p class="coupon_limit" ><span>消费满10000元可用</span></p>
+										<p class="coupon_btn">更多数码家电券</p>
+									</div>
+									<img src="./img/5a2a31ffN8e614f14.jpg" alt="" class="coupon_pic">
+								</a>
+							</li>
+							<li class="coupon_item">
+								<a href="#" class="d-block" >
+									<div class="d-inlineblock coupon_info">
+										<p class="coupon_price" ><i>￥</i>1000</p>
+										<p class="coupon_desc" ><span>仅可购买家纺指定商品</span></p>
+										<p class="coupon_limit" ><span>消费满1199元可用</span></p>
+										<p class="coupon_btn">更多家居家纺券</p>
+									</div>
+									<img src="./img/5a1e14baNc52b13e6.jpg" alt="" class="coupon_pic">
 								</a>
 							</li>
 						</ul>
@@ -1062,9 +1170,149 @@
 				</div>
 			</div>
 		</section>
-		<!-- E栅格2 -->
+		
+		<!-- 6 广告栏分隔模型
+			 里面的盒子居中，内层三个图片，无需更换链接显示水平，自动提升为内联
+		-->
+		<section class="ad-separated">
+			<div class="container ad-wrap">
+				<a href="#"><img src="./img/5a2e299aNd9182ba4.jpg" alt=""></a>
+				<a href="#"><img src="./img/5a29ee04N3abff8fc.jpg" alt=""></a>
+				<a href="#"><img src="./img/5a28db52N43762013.jpg" alt=""></a>
+			</div>
+		</section>
+		
+		<!-- 7 享品质（7.1 共用标题模型 7.2 主要内容区） -->
+		<section class="container quality">
+			<!-- 7.1 共用标题栏 -->
+			<div class="con-title">
+				<h3>享品质</h3>
+			</div>
+			<!-- 7.2 主要内容 -->
+			<div class="quality-content clearfix">
+				<!-- 图文模型（后期收藏）
+					 单元盒没有外边距，通过a的外边距合并
+				-->
+				<ul class="lf contentpic-list">
+					<!-- 直播格子 
+						 写的老纠结了
+					-->
+					<li class="lr p-relative alive">
+						<!-- 头部，重叠上层 -->
+						<nav class="p-relative alive-header clearfix">
+							<a href="#" class="d-block">
+								<h4 class="lf">京东直播</h4>
+								<span class="lr box_subtit">更多<i class="box_subtit_arrow"></i></span>
+							</a>
+						</nav>
+						<!-- 与头部重叠 -->
+						<ul class="alive-slider">
+							<!-- 直播单元盒 -->
+							<li class="alive-item">
+								<a href="#">
+									<!-- 阴影除了头部都覆盖 -->
+									<div class="shadow"></div>
+									<div class="alive_pic">
+										<img src="./img/5a2e376aNba51ac9f.jpg" alt="">
+									</div>
+									<div class="alive-detail">
+										<h5 class="alive_title"><i></i>英得尔车载冰箱丨冬暖夏凉</h5>
+										<p class="alive_summary">H18今天限量五折抢购</p>
+									</div>
+								</a>
+							</li>
+							<li class="alive-item">
+								<a href="#">
+									<!-- 阴影除了头部都覆盖 -->
+									<div class="shadow"></div>
+									<div class="alive_pic">
+										<img src="./img/5a2cb54bN2f7d8dc1.jpg" alt="">
+									</div>
+									<div class="alive-detail">
+										<h5 class="alive_title"><i></i>英得尔车载冰箱丨冬暖夏凉</h5>
+										<p class="alive_summary">H18今天限量五折抢购</p>
+									</div>
+								</a>
+							</li>
+						</ul>
+						<div class="alive-play"></div>
+						<div class="sub-points alive-point">
+							<i></i><i class="active"></i><i></i>
+						</div>
+						<!-- 秒杀的样式提出来做封装 -->
+						<div class="active_controls">
+							<a href="#" class="sk_controls_item active_controls_prev"><i class="iconfont icon-zuoyou1"></i></a>
+							<a href="#" class="sk_controls_item active_controls_next"><i class="iconfont icon-zuoyou"></i></a>
+						</div>
+					</li>
+					<li class="p-relative contentpic-item">
+						<a href="#" class="d-block contentpic-link">
+							<div class="d-inlineblock contentpic-main">
+								<h4>新品收发</h4>
+								<p>上新品首发 看新奇好货</p>
+							</div>
+							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+						</a>
+					</li>
+					<li class="p-relative contentpic-item">
+						<a href="#" class="d-block contentpic-link">
+							<div class="d-inlineblock contentpic-main">
+								<h4>新品收发</h4>
+								<p>上新品首发 看新奇好货</p>
+							</div>
+							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+						</a>
+					</li>
+					<li class="p-relative contentpic-item">
+						<a href="#" class="d-block contentpic-link">
+							<div class="d-inlineblock contentpic-main">
+								<h4>新品收发</h4>
+								<p>上新品首发 看新奇好货</p>
+							</div>
+							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+						</a>
+					</li>
+					<li class="p-relative contentpic-item">
+						<a href="#" class="d-block contentpic-link">
+							<div class="d-inlineblock contentpic-main">
+								<h4>新品收发</h4>
+								<p>上新品首发 看新奇好货</p>
+							</div>
+							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+						</a>
+					</li>
+					<li class="p-relative contentpic-item">
+						<a href="#" class="d-block contentpic-link">
+							<div class="d-inlineblock contentpic-main">
+								<h4>新品收发</h4>
+								<p>上新品首发 看新奇好货</p>
+							</div>
+							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+						</a>
+					</li>
+					<li class="p-relative contentpic-item">
+						<a href="#" class="d-block contentpic-link">
+							<div class="d-inlineblock contentpic-main">
+								<h4>新品收发</h4>
+								<p>上新品首发 看新奇好货</p>
+							</div>
+							<img src="./img/5a2f72a4N51e67a84.jpg" alt="">
+						</a>
+					</li>
+				</ul>
+				<div class="lf"></div>
+			</div>
+		</section>
     </div>
 	<!-- E主体对象 -->
+
+	<!-- S右边导航
+		 固定到一侧，不随高度变化
+	-->
+	<div class="right-sidebar">
+		
+	</div>
+	<!-- E右边导航 -->
     <footer></footer>
 </body>
 </html>

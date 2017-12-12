@@ -1,6 +1,6 @@
 @charset 'utf-8';
 /* 去除默认 */
-body, p, ul, input, h3, h4, dl, dt, dd { margin: 0; padding: 0; }
+body, p, ul, input, h3, h4, h5, dl, dt, dd { margin: 0; padding: 0; }
 a { text-decoration: none; color: #999; }
 ul { list-style: none; }
 em, i { font-style: normal; }
@@ -21,7 +21,7 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .hidden { display: none; }
 .clearfix:after { content: ''; display: block; clear: both; }
 
-/* 小龙封装-伪导航切换 
+/* 伪导航切换 
    双浮动 把之前的内边距移到新的盒子中
 */
 
@@ -34,10 +34,15 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .con-item { display: inline-block; font-size: 12px; text-align: left; line-height: 24px; }
 .con-item a:hover { color: #c81623; }
 
-/* 小龙封装-文章组件 */
+/* 文章组件 */
 
 .con-essay-title { font-weight: 700; color: #666; font-size: 12px; line-height: 24px; }
 .con-essay-info { line-height: 0; }
+
+/* 查看切换小点组件 */
+.sub-points { text-align: center; }
+.sub-points i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin: 0 7px; background-color: #c8c8c8; }
+.sub-points .active { background-color: #e01222; }
 
 .con-b-top { border-top: 1px solid #eee; }
 /* 点击变红 */
@@ -63,3 +68,11 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 /* 共同-摘要符号 */
 .box_subtit_arrow { position: absolute; right: 0; top: 4px; }
 .box_subtit_arrow, .coupon_entry_btn_ico { background-image: url('./img/sprite_index@1x.png'); background-position: -154px -40px; background-size: 218px 188px; background-repeat: no-repeat; width: 15px; height: 16px; }
+/* 共同-图片广告分区 */
+.ad-separated { background-color: #e0e0e0; margin-bottom: 30px; }
+/* 共同-标题头 */
+.con-title { text-align: center; background: url('./img/common_title.png') repeat-x center; height: 35px; margin-bottom: 20px; }
+.con-title h3 { display: inline-block; padding: 0 50px; font-size: 26px; color: #333; font-weight: 400; background-color: #f6f6f6; }
+.ad-wrap { font-size: 0; }
+/* 控制左右按钮的样式 */
+.con_controls_item { width: 20px; height: 50px; background-color: #f3f2f3; text-align: center; color: #797173; line-height: 50px; }

@@ -1,7 +1,7 @@
 ﻿@charset 'utf-8';
 /* --------------------顶部信息-------------------------- */
 .jd-h { height: 30px; background: #E3E4E5; border-bottom: 1px solid #ddd; }
-.jd-h .content-top, .container { width: 1190px; margin: auto; }
+.jd-h .content-top, .container { width: 1190px; margin-left: auto; margin-right: auto; }
 /* logo大图 行高一致 */
 .jd-h .content-top { position: relative; line-height: 30px; }
 .content-top .logo { width: 190px; height: 170px; background: url('./img/logo.v3.jpg') no-repeat; box-shadow: 0 -12px 10px rgba(0,0,0,.2); }
@@ -246,6 +246,8 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .sk_item { float: left; width: 170px; height: 225px; padding: 0 14px 0 15px; border-right: 1px solid #e7e7e7; }
 .sk_item_pic { position: relative; text-align: center; }
 .sk_item_pic:hover .sk_item_img { transform: translateY(-3px);}
+/* 第一个超级秒图标 */
+.sk_item_pic .sk_tag { position: absolute; z-index: 1; top:0; left: 0; width: 30px; height: 40px; background: url('./img/sprite_index@1x.png') no-repeat -55px -40px; line-height: 14px; padding-top: 3px; color: #fff; }
 /* transform变换位置
    当选中其父级时网上平移（y轴）
    当移除时缓慢回来（transition加入时间流逝的感觉）
@@ -286,18 +288,39 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .find_item_name { font-size: 14px; color: #4998a1; position: absolute; top: 15px; left: 20px; width: 80px; line-height: 20px; z-index: 1; word-wrap: break-word; }
 .find_item_img { position: absolute; bottom: 5px; right: 10px; width: 80px; height: 80px; transition: transform .4s ease-out; }
 .find_item_lk:hover .find_item_img { transform: translateX(-5px); }
+/* 第二块：会买专辑 */
 .box_sub .box_hd { background: #76488e; background-image: linear-gradient(90deg,#76488e,#662d72); width: 340px; }
-.box_sub .box_hd_dec { background: url('./img/sup_hd_dec@1x.png'); width: 28px; height: 28px;  }
+.box_sub .box_hd_dec { background: url('./img/sup_hd_dec@1x.png'); width: 28px; height: 28px; }
+/* 内容 */
+.box_sub .box_bd { height: 378px; padding-top: 8px; background-color: #fff; }
+.box_sub .box_bd:hover .sub_controls { display: block; }
+.sub-show { width: 390px; overflow: hidden; }
+.sub-show .sub-list { width: 2000px; }
+.sub-list .sub-item { margin: 0 15px 18px; }
+.sub-item li { padding-top: 18px; font-size: 0; }
+.sub-item li:first-child { margin-bottom: 18px; }
+.sub-item li + li { border-top: 1px solid #eee; }
+.sub-item p { font-size: 14px; color: #666; line-height: 16px; text-indent: 10px; margin-bottom: 15px; }
+.sub-item img { margin: 0 5px; }
+/* 左右切换 */
+.sub_controls a { position: absolute; top: 160px; }
+.sub_controls a i { font-size: 12px; }
+.sub_controls a:hover i { color: #c81623; }
+.sub_controls_prev { left: 0; }
+.sub_controls_next { right: 0; }
 
+/* 第三块：排行榜 */
 .box_top .box_hd { background: #e77005; background-image: linear-gradient(90deg,#e77005,#e45d04); width: 340px; }
 .box_top .box_hd_dec { background-image: url('./img/sprite_index@1x.png'); background-position: -190px 0; background-size: 218px 188px; background-repeat: no-repeat; width: 28px; height: 28px; }
 
 /* -------------------------购物券模型与寻觅------------------------- */
+.coupon { margin-bottom: 30px; }
 .box_coupon .box_hd { background: #f03118; width: 740px; }
 .box_coupon .box_hd_dec { background-image: url('./img/sprite_sprite_coupon@1x.png'); background-position: 0 0; background-size: 76px 60px; background-repeat: no-repeat; width: 28px; height: 28px; }
 /* 购物券信息清单 */
 .coupon_list { padding: 10px 0; }
 .coupon_list .coupon_item { position: relative; float: left; width: 197px; height: 195px; border-right: 1px solid #e7e7e7; }
+.coupon_list .coupon_item:last-child { border-right: none; margin-right: -1px; }
 .coupon_info { position: absolute; left: 15px; top: 15px; width: 100px; height: 180px; background-color: #fff; z-index: 1; border-top: 3px solid #e93524; box-shadow: 6px 6px 12px 0 rgba(0,0,0,.2); }
 .coupon_price { margin-top: 7px; line-height: 36px; font-size: 34px; font-weight: 700; color: #f10214;}
 .coupon_price i { font-size: 12px; font-weight: 400; }
@@ -321,8 +344,41 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .xmi_desc i { color: #4f629f; }
 .xmi_look { position: absolute; left: 240px; bottom: 25px; color: #999; width: 120px; height: 22px; }
 .xmi_look i { display: inline-block; background: url('./img/sprite_sprite_coupon@1x.png'); background-position: 0 -48px; background-size: 76px 60px; width: 18px; height: 12px; vertical-align: -2px; margin-right: 6px;}
-
 /* 进度点 */
 .xmi_point { font-size: 0; width: 95px; margin: auto;}
 .xmi_point li { display: inline-block; width: 8px; height: 8px; background-color: #c7c7c7; margin: 5px; border-radius: 50%; }
 .xmi_point li.active { background-color: #e21222;}
+
+/* -------------------------享品质样式-------------------------- */
+
+.contentpic-list .contentpic-item { float: left; }
+.contentpic-link { font-size: 0; margin: 0 10px 10px 0;}
+
+/* 内联中左边文字盒子 */
+.contentpic-link img { vertical-align: middle; }
+.contentpic-link .contentpic-main { position: absolute; top: 0; width: 100px; height: 170px; background-color: #66B687; padding: 0 20px; vertical-align: middle; }
+.contentpic-main h4 { font-size: 22px; border-top: 2px solid #fff; border-bottom: 2px solid #fff; line-height: 44px; margin-top: 45px; text-align: center; font-weight: 100; color: #fff; }
+.contentpic-main p { font-size: 14px; color: #fff; margin-top: 8px; line-height: 16px; }
+/* 享品质-直播-头部 */
+.alive { height: 350px; width: 390px; overflow: hidden;}
+.alive .alive-header a { height: 38px; width: 350px; background-color: rgba(0, 0, 0, .75); color: #fff; padding: 0 20px; }
+.alive-header h4 { font-size: 16px; font-weight: 400; line-height: 38px; }
+.alive-header .box_subtit { margin-top: 9px; }
+/* 享品质-直播-信息 */
+/* 单元格与标题重合 */
+.alive-slider { position: absolute; top: 0; width: 2000px; }
+.alive-slider .alive-item { float: left; }
+/* 直播组件 */
+.alive_pic img { height: 350px; width: 390px; }
+.shadow { position: absolute; top: 38px; width: 390px; height: 313px; z-index: 10; background-color: rgba(0, 0, 0, .5);  }
+.alive-play { position: absolute; z-index: 10; top: 50%; left: 50%; width: 65px; height: 65px; margin-top: -32px; margin-left: -32px; background: url('./img/sprite_entrylive@1x.png') no-repeat 0 -105px; }
+.alive-detail { position: absolute; z-index: 11; top: 50%; margin-top: 80px; width: 390px; }
+.alive_title { font-size: 16px; line-height: 26px; color: #fff; font-weight: 700; text-align: center; }
+.alive_summary { font-size: 14px; line-height: 24px; color: #fff; text-align: center; }
+.alive-point { position: absolute; z-index: 10; bottom: 10px; width: 390px; }
+.alive-point i { background-color: #fff; }
+.active_controls_prev { left: 0; z-index: 10; }
+.active_controls_next { right: 0; z-index: 10; }
+.active_controls:hover a i { color: #fff; }
+/* --------------------------------右边固定定位的导航条-------------------------------- */
+.right-sidebar { position: fixed; top: 0; right: 0; z-index: 100; width: 5px; height: 100%; background-color: #7a6e6e; }
