@@ -22,6 +22,7 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .hidden { display: none; }
 .clearfix:after { content: ''; display: block; clear: both; }
 .border-r { border-right: 1px solid #e6e6e6; }
+.border-b { border-bottom: 1px solid #e6e6e6; }
 /* 伪导航切换 
    双浮动 把之前的内边距移到新的盒子中
 */

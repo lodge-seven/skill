@@ -291,7 +291,7 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .box_sub .box_hd { background: #76488e; background-image: linear-gradient(90deg,#76488e,#662d72); width: 340px; }
 .box_sub .box_hd_dec { background: url('./img/sup_hd_dec@1x.png'); width: 28px; height: 28px; }
 /* 内容 */
-.box_sub .box_bd { height: 378px; padding-top: 8px; background-color: #fff; }
+.box_sub .box_bd { height: 375px; padding-top: 8px; background-color: #fff; }
 .box_sub .box_bd:hover .sub_controls { display: block; }
 .sub-show { width: 390px; overflow: hidden; }
 .sub-show .sub-list { width: 2000px; }
@@ -311,7 +311,22 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 /* 第三块：排行榜 */
 .box_top .box_hd { background: #e77005; background-image: linear-gradient(90deg,#e77005,#e45d04); width: 340px; }
 .box_top .box_hd_dec { background-image: url('./img/sprite_index@1x.png'); background-position: -190px 0; background-size: 218px 188px; background-repeat: no-repeat; width: 28px; height: 28px; }
-
+.box_top .box_bd { width: 390px; background: #fff; height: 383px; }
+.top-nav li { float: left; padding: 6px 0 7px; }
+.top-nav .nav-line { position: absolute; bottom: 0; width: 58px; height: 2px; background-color: #c81623; font-size: 0; padding: 0; margin-left: 10px; }
+.top-nav li:hover a { color: #c81623; }
+.top-link { text-align: center; color: #666; font-size: 14px; line-height: 18px; width: 77px; border-right: 1px solid #d2d1d1; }
+.top-nav li:last-child .top-link { border-right: none; }
+.top-goods-list { padding: 10px; }
+.top-goods { float: left; width: 122px; text-align: center; padding: 10px 0; }
+.top-goods .top-summary { height: 32px; line-height: 16px; overflow: hidden; padding: 0 11px; text-align: left; }
+.top-goods:hover .top-summary { color: #c81623; }
+/* 排名 */
+.top-goods .top-goods-rank { position: absolute; top: 0; left: 10px; color: #fff; width: 30px; height: 40px; background-image: url('./img/sprite_index@1x.png'); background-position: -100px -100px;padding: 0; text-align: center; line-height: 40px; font-size: 22px; }
+.top-goods .rank2 { background-position: -50px -100px; }
+.top-goods .rank3 { background-position: 0 -100px; }
+.top-goods .rank4 { background-position: -100px -100px; }
+.top-goods .rank1 { background-position: -104px -40px; }
 /* -------------------------购物券模型与寻觅------------------------- */
 .coupon { margin-bottom: 30px; }
 .box_coupon .box_hd { background: #f03118; width: 740px; }
@@ -371,7 +386,14 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .alive-header .box_subtit { margin-top: 9px; }
 /* 享品质-直播-信息 */
 /* 单元格与标题重合 */
-.alive-slider { position: absolute; top: 0; width: 2000px; }
+.alive-slider { position: absolute; top: 0; width: 2000px; animation-name: ulmove3; animation-duration: 20s; animation-iteration-count: infinite;  }
+/* 加动画 */
+@keyframes ulmove3 { 
+	0%   { margin-left: 0px; }
+	25%  { margin-left: -390px; }
+	50%  { margin-left: -780px; }
+	100% { margin-left: -1170px; }
+}
 .alive-slider .alive-item { float: left; }
 /* 直播组件 */
 .alive_pic img { height: 350px; width: 390px; }
@@ -398,12 +420,100 @@ nav .menu { width: 790px; height: 40px; margin: auto; }
 .entry-info h4 { margin: 0 auto; font-size: 16px; border-top: 2px solid #fff; border-bottom: 2px solid #fff; line-height: 30px; width: 100px; text-align: center; font-weight: 100; color: #fff;}
 .entry-info p { font-size: 14px; color: #fff; text-align: center; margin: 8px 0; line-height: 20px;}
 
-/* --------------------爱生活------------------------ */
+/* -------------------带二维码的特殊样式------------------------ */
 /* 各种模型头部 */
 .life-beauty-title { background-color: #cd375e; }
 .life-home-title { background-color: #78538e; }
 .life-gay-title { background-color: #5e6c90; }
 .data-title {background-color: #488bad; }
 .data .con-code { width: 594.5px; }
+
+/* ----------------------图片与说明-------------------------- */
+.pic-explain { overflow: hidden; margin-bottom: 30px; }
+.explain-item { width: 140px; height: 190px; margin-right: 10px; }
+.explain-item:last-child { margin-right: 0; }
+.explain-content { position: absolute; bottom: 0; width: 140px; height: 80px; background-color: #916C57; opacity: .9; }
+.explain-title { font-size: 20px; text-align: center; line-height: 24px; color: #fff; margin-top: 10px; font-weight: 100; }
+.explain-summary { font-weight: 700; line-height: 35px; color: #fff; text-align: center; }
+
+/* --------------------------懒加载商品自适应--------------------------- */
+.lazy-goods { margin-bottom: 30px; }
+.cancel-margin { margin-right: -10px; }
+.lazy-item { float: left; padding: 4px; padding-bottom: 6px; border: 1px solid #fff; margin-right: 10px; margin-bottom: 10px; background: #fff; }
+.lazy-item:hover { border-color: #f10214; }
+.lazy-link { text-align: center; }
+.lazy-item img { height: 220px; }
+.lazy-info { padding: 10px; text-align: left; }
+.lazy-title { height: 36px; width: 200px; margin-bottom: 5px; line-height: 18px; color: #666; overflow: hidden; }
+.lazy-item:hover .lazy-title { color: #f10214; }
+.lazy-price { font-size: 12px; color: #f10214; }
+.lazy-price i { margin-right: 3px; }
 /* --------------------------------右边固定定位的导航条-------------------------------- */
 .right-sidebar { position: fixed; top: 0; right: 0; z-index: 100; width: 5px; height: 100%; background-color: #7a6e6e; }
+.right-sidebar .right-nav { position: absolute; left: -30px; margin-top: -108px; }
+.right-sidebar .func-nav { top: 50%; }
+.right-nav li { position: relative; margin-bottom: 1px; }
+.right-nav .tag { position: relative; z-index: 10; width: 35px; height: 35px; border-radius: 4px 0 0 4px ; line-height: 35px; text-align: center; color: #fff; background: #7a6e6e; }
+.right-nav li a { background: #7a6e6e; }
+/* 动画效果必须有预设，否则无效 */
+.right-nav li .text { position: absolute; top: 0; left: 0; line-height: 35px; color: #fff; border-radius: 4px 0 0 4px; font-size: 12px; transition: left 0.5s; width: 60px; height: 35px; text-align: center;  }
+.right-nav li:hover a { background: #c81623; }
+.right-nav li:hover .text { left: -58px; }
+.tag i { display: block; background: url('./img/toolbars.png') no-repeat -50px 0; width: 34px; height: 35px; }
+.user i { background-position: -88px -175px; }
+.heart i { background-position: -50px -50px; }
+.step i { background-position: -50px -100px; }
+.info i { background-position: -190px -150px; }
+.tab i { background-position: -50px -150px; }
+.top i { background-position: -50px -250px; }
+.pen i { background-position: -50px -300px; }
+/* 底部导航 */
+.right-sidebar .bottom-nav { bottom: 0; }
+/* --------------------------------左边固定定位的导航条-------------------------------- */
+/* 从中间移动？ */
+.left-sidebar { position: fixed; z-index: 100; top: 50%; left: 50%; width: 35px; margin: -268.5px 0 0 -665px; }
+.left-list li { width: 34px; transition: background-color 0.3s; background: rgb(145,136,136); }
+.left-list .left-item:hover, .left-list .active { background-color: #d70b1c; }
+.left-list li + li { border-top: 1px solid #b1aaaa; }
+.left-list a { color: #fff; text-align: center; font-size: 12px; line-height: 14px; padding: 7px 5px; }
+.left-list .top { background-color: #5e4a4a; }
+.left-list .top a { padding: 6px 5px 3px; }
+.left-list .top i:before { position: relative; content:''; display: inline-block; width: 0; height: 0; border: 4px solid transparent; border-bottom-color: #fff; margin-top: -3px; top: -4px; }
+/* ------------------------底部-------------------------- */
+footer { height: 500px; background-color: #eaeaea; padding-bottom: 67px; }
+/* 京东准则 */
+.rule { border-bottom: 1px solid #dedede; }
+.rule-list { height: 42px; overflow: hidden; padding: 30px 0; }
+.rule-item { float: left; width: 297px; text-align: center; font-size: 0; }
+.rule-warp { display: inline-block; }
+.rule-title { float: left; height: 42px; width: 36px; margin-right: 6px; background: url('./img/ico_service.png') no-repeat ; }
+.rule-summary { float: left; line-height: 42px; font-size: 18px; color: #444; font-weight: 700; }
+.rapid { background-position: 0 -43px; }
+.good { background-position: 0 -86px; }
+.save { background-position: 0 -129px; }
+/* 关于京东 */
+.aboutJd-list { padding: 20px 0; color: #666; border-bottom: 1px solid #dedede; }
+.aboutJd-item { float: left; width: 198px; }
+.aboutJd-item h5 { font-size: 14px; line-height: 22px; margin-bottom: 5px; color: #666; }
+.adoutJd-nav-list a { line-height: 22px; color: #666; }
+.aboutJd-wrap { width: 200px; height: 150px; text-align: center; }
+.aboutJd-positon { background: url('./img/ico_footer.png') no-repeat 0 0; }
+.aboutJd-detail { padding-top: 15px; width: 180px; height: 54px; text-align: left; margin: 0 auto; }
+.aboutJd-more { width: 180px; margin: 0 auto; text-align: right; }
+.aboutJd-more i { font-size: 12px; }
+/* 京东备案 */
+.net { padding: 15px 0; text-align: center; }
+.net-list { display: inline-block; }
+.net-list li { float: left; }
+.net-list a { color: #666; line-height: 16px; padding: 0 10px; border-right: 1px solid #ccc; }
+.net-list li:last-child a { border-right: none; }
+.arrow { padding: 10px 0; }
+.net-arrow a { color: #999; }
+/* 版权 */
+.copyright a { width: 103px; height: 32px; background: url('./img/ico_footer.png') no-repeat; }
+.copyright .copyright1 { background-position: 0 -151px; }
+.copyright .copyright2 { background-position: -104px -151px; }
+.copyright .copyright3 { background-position: 0 -184px; }
+.copyright .copyright4 { background-position: -104px -184px; }
+.copyright .copyright5 { background-position: 0 -217px; }
+.copyright .copyright6 { background-position: -104px -217px; }
