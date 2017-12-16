@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+	<head> 
+		<!--声明当前文档的编码集：utf-8国际编码  gbk gb2313中文编码-->
+		<meta http-equiv='Content-type' content='text/html; charset=utf-8' />
+		<title> 语义化标签 - 木马老师 </title>
+		<meta name='keywords' content='潭州教育'>
+		<meta name='description' content='描述'>
+		
+		<!-- css -->
+		<style type='text/css'> 
+			*{margin: 0;padding: 0;}	
+			body{font:40px '微软雅黑'; text-align:center;}
+			ul{list-style:none;}
+			a{text-decoration:none;color:#000;}
+			.clearfix:after{content:'';display: block;clear:both;}
+		
+
+			header{
+				height: 100px;
+				background: red;
+
+			}
+
+			nav{
+				height: 150px;
+				background: pink;
+			}
+			nav li{
+				float:left;
+				margin:0 20px;
+			}
+
+			article{
+				float:left;
+				width: 500px;
+				height: 300px;
+				background: orange;
+				
+			}
+
+			section{
+				float:right;
+				width: 500px;
+				height: 300px;
+				background: green;
+			}
+
+			hgroup{
+				background: #ffcc99;
+			}
+
+			figure{
+				background: #00cc33;
+			}
+
+			aside{
+				position:fixed;
+				right: 0;
+				bottom: 10px;
+				width: 200px;
+				height: 300px;
+				background: #006699;
+			}
+
+			footer{
+				height: 200px;
+				background: #000;
+				color:#fff;
+			}
+		</style>
+
+	</head> 
+<body>
+
+	<!-- 头部  更具有-->
+	
+	<header>头部</header>
+
+	
+	<!-- 导航 -->
+	<nav class='nav-box'>  
+		导航
+		<ul class='clearfix'>
+			<li><a href="">首页</a></li>
+			<li><a href="">导航</a></li>
+			<li><a href="">购物</a></li>
+		</ul>
+	</nav>
+	<!-- 页面中独立的内容 新闻  帖子-->
+	<div class='clearfix'>
+		<article>
+			article
+		</article>
+		
+
+		<!-- 定义文档中的节 一个独立的区域  div -->
+		<section>
+			section
+		</section>
+	</div>
+
+	<!-- 标题标签的组合 -->
+	<hgroup>
+		<h2>我是标题1</h2>
+		<h3>我是标题1</h3>
+	</hgroup>
+
+	<!-- 定义独立的流内容  组合标签 figure可以单独写   figcaption出现figure一定要出现-->
+	<figure>
+		<figcaption>这是一张图片</figcaption>
+		<img src="https://img11.360buyimg.com/babel/s100x100_jfs/t6799/255/2406899536/3642/5b5df27b/598c1b8dN6c7fb7dd.jpg!q90.webp" alt="">
+	</figure>
+	
+
+	<!-- 侧边栏 -->
+	<aside>
+		侧边栏
+	</aside>
+
+	<!-- 底部 -->
+	<footer>
+		底部
+	
+	</footer>
+
+</body> 
+</html>
