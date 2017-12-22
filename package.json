@@ -1,0 +1,32 @@
+{
+  "name": "gruntxx",
+  "version": "1.0.0",
+  "description": "discribe a grunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lodge-seven/gruntxx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lodge-seven/gruntxx/issues"
+  },
+  "homepage": "https://github.com/lodge-seven/gruntxx#readme",
+  "dependencies": {
+    "autoprefixer": "^7.2.3",
+    "cssnext": "^1.8.4",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-uglify": "^3.2.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.9.0",
+    "precss": "^2.0.0"
+  }
+}
