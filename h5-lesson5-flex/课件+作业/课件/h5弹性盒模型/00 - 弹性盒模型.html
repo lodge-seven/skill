@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head> 
+		<!--声明当前文档的编码集：utf-8国际编码  gbk gb2313中文编码-->
+		<meta http-equiv='Content-type' content='text/html; charset=utf-8' />
+		<title>弹性盒模型 - 给伸缩容器的属性  - 木马老师 </title>
+		<meta name='keywords' content='潭州教育'>
+		<meta name='description' content='描述'>
+		
+		<!-- css -->
+		<style type='text/css'> 
+			*{margin: 0;padding: 0;}	
+			body{font:50px '微软雅黑';}
+			ul{list-style:none;}
+			a{text-decoration:none;color:#000;}
+			.clearfix:after{content:'';display: block;clear:both;}
+			
+			div{
+				/*
+					弹性盒模型  伸缩容器
+
+					任何容器都可以设置flex
+
+					float clear vertical-align
+				*/
+				display:flex;
+
+
+
+
+				/*flex-direction  伸缩容器的方向  就规定了主轴和交叉轴的方向   flex-direction */
+				flex-direction:row-reverse;/*竖直*/
+				flex-direction:column;/*竖直*/
+				flex-direction:column-reverse;/*反向竖直*/
+				flex-direction:row;/*水平*/
+				
+
+
+				/*flex-wrap  规定换行 */
+				flex-wrap:nowrap;/*默认*/
+				flex-wrap:wrap;/*换行*/
+				flex-wrap:wrap-reverse;/*反向换行*/
+			
+
+				/*flex-flow:; 以上两种复合写法*/
+				flex-flow:wrap;
+
+
+
+
+
+
+
+
+				/*justify-content   项目在主轴上的对齐方式*/
+				justify-content:flex-start;/*主轴的起点对齐*/
+				justify-content:flex-end;/*主轴的终点对齐*/
+				justify-content:center;/*居中*/
+				justify-content:space-between;/*两端对齐*/
+				justify-content:space-around;/*项目两侧距离相等  有点像加了margin*/
+
+				
+
+				/*align-items  交叉轴的对齐方式*/
+				align-items:stretch;/*默认  父级没有高度的时候默认沾满*/
+				align-items:flex-start;
+				align-items:flex-end;
+				align-items:center;
+				align-items:baseline;/*和第一行文字的基线对齐*/
+
+
+
+
+				/* align-content 多行的交叉轴的对齐方式 */
+				align-content:stretch;/*默认*/
+				align-content:flex-start;
+				align-content:flex-end;
+				align-content:center;
+				align-content:space-between;
+				align-content:space-around;
+
+
+
+				height: 500px;
+				max-width: 900px;
+				border: 5px solid blue;
+				margin:auto;
+				/* line-height:600px; */
+			}
+
+
+
+
+			p{
+				
+				/* flex:1; *//*规定伸缩项目（子级）占伸缩容器的  五分之一*/
+				/* width: 500px; */
+				width: 250px;
+				height: 200px;
+
+				background: red;
+			}
+			p:nth-child(2){background: #ff66ff;}
+			p:nth-child(3){background: orange;}
+			p:nth-child(4){background: blue;}
+			p:nth-child(5){background: #993333;}
+	
+
+		</style>
+
+	</head> 
+<body>
+	
+	<div>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+
+</body> 
+</html>
