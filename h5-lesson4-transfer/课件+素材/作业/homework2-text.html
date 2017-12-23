@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作业2-特效背景字</title>
+    <style>
+        /* 
+            加前缀的clip：只有webkit内核能识别text，其他家还没有这个功能
+            背景不能平铺，要有移动的感觉，用的是背景位置变换，动画效果是无限次的从左到右 
+        */
+        body { margin: 0; padding: 0; font: 12px '微软雅黑'; }
+        p {  margin: 10px auto 0; width: 485px; font-size: 120px; font-weight: bold;  background:  url('./images/1.jpg') no-repeat left; animation: move 5s infinite alternate; color: rgba(255, 0, 0, 0); -webkit-background-clip:text; }
+        @keyframes move {
+            to {
+                background-position: right center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <p>遮罩效果</p>
+    </div>
+</body>
+</html>
