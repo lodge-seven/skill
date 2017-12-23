@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+	<head> 
+		<!--声明当前文档的编码集：utf-8国际编码  gbk gb2313中文编码-->
+		<meta http-equiv='Content-type' content='text/html; charset=utf-8' />
+		<title>弹性盒模型 - 给伸缩容器的属性  - 木马老师 </title>
+		<meta name='keywords' content='潭州教育'>
+		<meta name='description' content='描述'>
+		
+		<!-- css -->
+		<style type='text/css'> 
+			*{margin: 0;padding: 0;}	
+			body{font:50px '微软雅黑';}
+			ul{list-style:none;}
+			a{text-decoration:none;color:#000;}
+			.clearfix:after{content:'';display: block;clear:both;}
+			
+			div{
+
+				display:flex;
+				height: 600px;
+				max-width: 1000px;
+				border: 5px solid blue;
+				margin:auto;
+				flex-flow:wrap;
+				
+			}
+
+
+
+
+			p{
+				/* width: 100px; */
+				/* height: 200px; */
+				background: red;
+
+				/* flex-grow:1;
+				flex-shrink:1; */
+
+				/* flex-basis:auto; */
+
+
+				flex:1; /* (0 1 auto) 平分盒子 每个盒子占多分之一 */
+				/* flex:auto; *//*(1 1 auto) 平分内容之后剩下空间几个盒子平分*/
+				/* flex:none; *//*(0 0 auto)内容的宽度*/
+
+			}
+
+			/*
+				order:定义子元素（项目）的排列顺序  值：数字  默认是0 可以负值  数字越小越靠前
+
+
+
+				flex-grow:规定拉伸项目占伸缩容器盒子放大的比例 默认是0 单位是数字  不支持负值
+
+
+
+				flex-shrink 规定项目缩小的比例 默认值是1  数值越小的时候父级宽度不够不收缩  数值越大缩小的越多
+
+				flex-basis 设置项目的初始宽度
+
+
+
+				align-self 单个项目与其他项目不一样的对齐方式
+
+			*/
+			p:nth-child(1){order:1;/* flex-grow:1;flex-shrink:3; */}
+			p:nth-child(2){background: #ff66ff;order:5;/* flex-grow:2; */}
+			p:nth-child(3){background: orange;order:3; /* flex:2; */}
+
+
+			p:nth-child(4){background: blue;order:4;
+				align-self:stretch;/*默认*/
+				align-self:flex-start;
+				align-self:flex-end;
+				align-self:center;
+				align-self:auto;/*项目沾满整个容器的高度*/
+				align-self:baseline;
+				
+				
+			
+			}
+			p:nth-child(5){background: #993333;order:2;}
+	
+
+		</style>
+
+	</head> 
+<body>
+	
+	<div>
+		<p>啦啦啦啦啦啦啦啦</p>
+		<p>1</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+	</div>
+
+</body> 
+</html>
