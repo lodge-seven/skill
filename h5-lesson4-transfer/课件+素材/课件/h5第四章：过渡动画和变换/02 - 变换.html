@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head> 
+		<!--声明当前文档的编码集：utf-8国际编码  gbk gb2313中文编码-->
+		<meta http-equiv='Content-type' content='text/html; charset=utf-8' />
+		<title> 变换 - 木马老师 </title>
+		<meta name='keywords' content='潭州教育'>
+		<meta name='description' content='描述'>
+		
+		<!-- css -->
+		<style type='text/css'> 
+			*{margin: 0;padding: 0;}	
+			body{font:12px '微软雅黑';}
+			ul{list-style:none;}
+			a{text-decoration:none;color:#000;}
+			.clearfix:after{content:'';display: block;clear:both;}
+
+			div{
+				/* overflow: hidden; */
+				width: 500px;
+				height: 500px;
+				border: 5px solid red;
+				margin: 50px auto 0;
+				
+
+				
+			}
+			img{
+				width: 100%;
+				height: 100%;
+				transition: 1s;
+				/* transform-origin:left top; */
+			}
+
+			div:hover img{
+				/*
+				
+				变化 
+					rotate  旋转  deg角度  turn圈 rad弧度 grad梯度
+					transform-origin 变换基点   需要注意放到元素本身样式里  不要hover
+					scale 缩放   单位是倍数
+					translate 位移 X,Y  只写一个值代表x
+					skew 倾斜
+				*/
+				transform:rotate(360deg);
+				transform:scale(0.5) /* rotate(360deg) */;
+				transform:translateY(50%) translateX(100px)  /* translate(x,y) */;
+				transform:skewX(50deg)/* skewY(50deg) skew(50deg,50deg) */;
+
+				transform:rotate(360deg) scale(0.5) translate(100px,100px);
+				
+
+			}
+			
+			p{
+				background: red;
+			}
+
+
+		</style>
+
+	</head> 
+<body>
+	
+	<div>
+		<img src="images/1.jpg" alt="">
+	</div>
+	<p>木马老师真的太帅了</p>
+
+</body> 
+</html>
