@@ -76,14 +76,15 @@ module.exports = function(grunt) {
         autoprefixer（处理浏览器私有前缀）
         cssnext（css未来的语法）
         precss（Sass） 
+        processors: [ require('autoprefixer')(), require('precss')() ]
     */
     postcssConfig.options = {
-        map: true,
-        processors: [ require('autoprefixer')(), require('precss')() ]
+        map: false, // 目前不用map，又没有压缩
+        processors: [ require('autoprefixer')()]
     };
     // 设置源文件和用postcss编译后的文件
     postcssConfig.dist = {
-        src: 'css/*.css'
+        src: './new_profile/css/*.css'
     };
 
     // 3 加入到grunt配置参数中

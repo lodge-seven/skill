@@ -1,0 +1,25 @@
+@charset 'utf-8';
+@rem: 1939rem;
+/* 头部导航 */
+.header { background-color: #fff; font-size: 0; margin-left: 12px; }
+.header-item { display: inline-block; line-height: 40/@rem;  padding: 0 30/@rem; margin: 20/@rem 0; }
+.header-item + .header-item { border-left: 2px solid rgb(209, 209, 209);  }
+.header-item span { font-size: 16/@rem; color: rgb(104, 104, 104); vertical-align: middle; margin-left: 12/@rem;  }
+.header-item img { vertical-align: middle; width: 26/@rem; height: 26/@rem; }
+
+/* 主体对象 */
+
+/* ------------- 1 标题 ------------ */
+.container { margin: 0 30/@rem; }
+.common-title h1 {  display: flex; justify-content: center; flex-direction: column; height: 66/@rem; min-height: 30px; font-weight: 400; font-size: 20/@rem; color: #111;  }
+
+/* ------------- 2 搜索 ------------ */
+.search { border: 1px solid #E5E5E5;  border-radius: 4px; background: #fff; flex-wrap: wrap; }
+.search-group { font-size: 0; flex: 1; }
+.search-group input { line-height: 30px; height: 30px; padding: 0 10/@rem; color: rgb(77, 75, 75); font-size: 14/@rem; border:none; border: 1px solid rgb(240, 240, 240); margin: 15/@rem 0 15/@rem 15/@rem; }
+.search-button { flex: none; display: flex; align-items: center; margin-right: 30/@rem; }
+.search-button .search-btn { color: rgb(175, 87, 94); border: 1px solid rgb(175, 87, 94);  }
+.search-button input { padding: 9/@rem 18/@rem; border: 1px solid rgb(240, 240, 240); color: #111; margin-left: 10/@rem; }
+
+/* ------------- 2 表格 ------------ */
+.common-list { overflow: auto; }
