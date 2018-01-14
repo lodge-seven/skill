@@ -1,4 +1,35 @@
 @charset 'utf-8';
+/* 新加弹性 */
+.contain-model {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+}
+.container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.common-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
 /* 头部导航 */
 .header {
   background-color: #fff;
@@ -7,77 +38,247 @@
 }
 .header-item {
   display: inline-block;
-  line-height: 0.02062919rem;
-  padding: 0 0.01547189rem;
-  margin: 0.0103146rem 0;
+  line-height: 0.01754386rem;
+  padding: 0 0.01754386rem;
+  margin: 0.01461988rem 0;
 }
 .header-item + .header-item {
   border-left: 2px solid #d1d1d1;
 }
 .header-item span {
-  font-size: 0.00825168rem;
-  color: #686868;
+  font-size: 0.00818713rem;
+  color: #666;
   vertical-align: middle;
-  margin-left: 0.00618876rem;
+  margin-left: 0.00701754rem;
 }
 .header-item img {
   vertical-align: middle;
-  width: 0.01340897rem;
-  height: 0.01340897rem;
+  width: 0.01403509rem;
+  height: 0.01345029rem;
+}
+.header-item .personality {
+  width: 0.01754386rem;
+  height: 0.01754386rem;
 }
 /* 主体对象 */
 /* ------------- 1 标题 ------------ */
 .container {
-  margin: 0 0.01547189rem;
+  margin: 0 0.01754386rem;
 }
 .common-title h1 {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 0.03403816rem;
-  min-height: 30px;
-  font-weight: 400;
-  font-size: 0.0103146rem;
-  color: #111;
+  height: 66px;
+  line-height: 60px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
 }
 /* ------------- 2 搜索 ------------ */
 .search {
   border: 1px solid #E5E5E5;
   border-radius: 4px;
   background: #fff;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .search-group {
   font-size: 0;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .search-group input {
-  line-height: 30px;
-  height: 30px;
-  padding: 0 0.0051573rem;
-  color: #4d4b4b;
-  font-size: 0.00722022rem;
+  line-height: 28px;
+  height: 28px;
+  width: 108px;
+  padding-left: 10px;
+  color: #999;
+  font-size: 12px;
   border: none;
-  border: 1px solid #f0f0f0;
-  margin: 0.00773595rem 0 0.00773595rem 0.00773595rem;
+  border: 1px solid #e8e8e8;
+  margin: 0.00877193rem 0 0 0.00877193rem;
+}
+/*下边距也确保有间距*/
+.search-group input:last-child {
+  margin-bottom: 0.00877193rem;
 }
 .search-button {
-  flex: none;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  margin-right: 0.01547189rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 0.01754386rem;
 }
 .search-button .search-btn {
-  color: #af575e;
-  border: 1px solid #af575e;
+  color: #FF6D63;
+  border: 1px solid #FF6D63;
 }
 .search-button input {
-  padding: 0.00464157rem 0.00928314rem;
-  border: 1px solid #f0f0f0;
-  color: #111;
-  margin-left: 0.0051573rem;
+  padding: 0.00350877rem 0.01052632rem;
+  border: 1px solid #e8e8e8;
+  color: #000;
+  margin-left: 0.00584795rem;
+  font-size: 12px;
 }
 /* ------------- 2 表格 ------------ */
 .common-list {
   overflow: auto;
+  margin-top: 20px;
+  border-radius: 4px 4px 0 0;
+}
+.data-sheet {
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 0;
+  text-align: center;
+  white-space: nowrap;
+}
+.data-title tr {
+  background: #2B9CED;
+  font-size: 16px;
+  color: #fff;
+  height: 60px;
+}
+.data-content {
+  background-color: #fff;
+}
+.data-content td {
+  border-left: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  height: 0.07017544rem;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.list-operation {
+  font-size: 0;
+}
+.list-operation a {
+  width: 48%;
+  height: 25px;
+  font-size: 14px;
+  color: #2B9CED;
+}
+.list-operation a + a {
+  border-left: 2px solid #e5e5e5;
+}
+/* ------------- 3 翻页组件 ------------ */
+.page {
+  background-color: #fff;
+  margin: 0.02923977rem 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  overflow: auto;
+}
+.page-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.page-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  white-space: nowrap;
+  padding: 0 10px;
+  margin: auto;
+}
+.page-content span {
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  min-width: 40px;
+  text-align: center;
+  background-color: #F0F0F0;
+  margin-right: 10px;
+  color: #333;
+  cursor: pointer;
+}
+.page-content .previous-page,
+.page-content .next-page {
+  width: 60px;
+}
+.page-alter {
+  font-size: 16px;
+  color: #333;
+}
+.page-alter input {
+  background-color: #f0f0f0;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+.page-alter a {
+  font-size: 18px;
+  color: #55B0F1;
+  margin-left: 20px;
+}
+/* ------------- 4 框架logo ------------ */
+.logo {
+  color: #fff;
+  font-size: 21px;
+  line-height: 80px;
+  width: 230px;
+  text-align: center;
+  background-color: #4F5F6F;
+}
+/* ------------- 5 侧边栏 ------------ */
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 100vh;
+}
+.sidebar {
+  width: 230px;
+  height: 100%;
+  background-color: #4F5F6F;
+  overflow: auto;
+}
+.sidebar-list {
+  overflow: hidden;
+}
+.sidebar-list li {
+  height: 60px;
+  width: 230px;
+  font-size: 14px;
+  padding-left: 10px;
+  line-height: 60px;
+  white-space: nowrap;
+}
+.sidebar-list img {
+  vertical-align: -3px;
+  margin-right: 0.00760234rem;
+}
+.main-frame {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+/* ------------- 6 媒体查询 ------------ */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 30px;
+    overflow: hidden;
+  }
+  .sidebar-list li {
+    padding-left: 8px;
+  }
 }

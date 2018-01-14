@@ -17,8 +17,12 @@ function changeRem() {
         b 设置其rem为宽度1/10，比例优化的计算：
             当前的参照物为64，30为对照对象，那么30/64 * y/10 = 30/64 * 1rem = 30rem/64rem = 0.46875rem = 0.046875y
     */
-    if (width > 700)
-    html.style.fontSize = width + 'px';
-    else
+    if(width < 700) 
     html.style.fontSize = '700px';
+    else if(width > 1710)
+    html.style.fontSize = '1710px';
+    else
+    html.style.fontSize = width + 'px';
 }
+
+// 窗口缩小

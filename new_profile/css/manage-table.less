@@ -1,25 +1,72 @@
 @charset 'utf-8';
-@rem: 1939rem;
+@rem: 1710rem;
+
+/* 新加弹性 */
+.contain-model { display: flex; flex-direction: column; height: 100vh; }
+.container { flex: 1; display: flex; flex-direction: column; }
+.common-list { display: flex; flex: 1; }
+
 /* 头部导航 */
 .header { background-color: #fff; font-size: 0; margin-left: 12px; }
-.header-item { display: inline-block; line-height: 40/@rem;  padding: 0 30/@rem; margin: 20/@rem 0; }
+.header-item { display: inline-block; line-height: 30/@rem;  padding: 0 30/@rem; margin: 25/@rem 0; }
 .header-item + .header-item { border-left: 2px solid rgb(209, 209, 209);  }
-.header-item span { font-size: 16/@rem; color: rgb(104, 104, 104); vertical-align: middle; margin-left: 12/@rem;  }
-.header-item img { vertical-align: middle; width: 26/@rem; height: 26/@rem; }
+.header-item span { font-size: 14/@rem; color: #666; vertical-align: middle; margin-left: 12/@rem;  }
+.header-item img { vertical-align: middle; width: 24/@rem; height: 23/@rem; }
+.header-item .personality { width: 30/@rem; height: 30/@rem; }
 
 /* 主体对象 */
 
 /* ------------- 1 标题 ------------ */
 .container { margin: 0 30/@rem; }
-.common-title h1 {  display: flex; justify-content: center; flex-direction: column; height: 66/@rem; min-height: 30px; font-weight: 400; font-size: 20/@rem; color: #111;  }
+.common-title h1 {  height: 66px; line-height: 60px; font-weight: 500; font-size: 18px; color: #000;  }
 
 /* ------------- 2 搜索 ------------ */
 .search { border: 1px solid #E5E5E5;  border-radius: 4px; background: #fff; flex-wrap: wrap; }
 .search-group { font-size: 0; flex: 1; }
-.search-group input { line-height: 30px; height: 30px; padding: 0 10/@rem; color: rgb(77, 75, 75); font-size: 14/@rem; border:none; border: 1px solid rgb(240, 240, 240); margin: 15/@rem 0 15/@rem 15/@rem; }
+.search-group input { line-height: 28px; height: 28px; width: 108px; padding-left: 10px; color: #999; font-size: 12px; border:none; border: 1px solid #e8e8e8; margin: 15/@rem 0 0 15/@rem; }
+/*下边距也确保有间距*/
+.search-group input:last-child { margin-bottom: 15/@rem; }
 .search-button { flex: none; display: flex; align-items: center; margin-right: 30/@rem; }
-.search-button .search-btn { color: rgb(175, 87, 94); border: 1px solid rgb(175, 87, 94);  }
-.search-button input { padding: 9/@rem 18/@rem; border: 1px solid rgb(240, 240, 240); color: #111; margin-left: 10/@rem; }
+.search-button .search-btn { color: #FF6D63; border: 1px solid #FF6D63;  }
+.search-button input { padding: 6/@rem 18/@rem; border: 1px solid #e8e8e8; color: #000; margin-left: 10/@rem; font-size: 12px; }
 
 /* ------------- 2 表格 ------------ */
-.common-list { overflow: auto; }
+.common-list { overflow: auto; margin-top: 20px; border-radius: 4px 4px 0 0;  }
+.data-sheet { table-layout: fixed; width: 100%; border-spacing: 0; text-align: center; white-space: nowrap; }
+.data-title tr { background: #2B9CED; font-size: 16px; color: #fff; height: 60px;  } 
+.data-content { background-color: #fff; }
+.data-content td { border-left: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; height: 120/@rem; white-space: normal; text-overflow:ellipsis; overflow : hidden; }
+.list-operation { font-size: 0; }
+.list-operation a { width: 48%; height: 25px; font-size: 14px; color: #2B9CED; }
+.list-operation a + a { border-left: 2px solid #e5e5e5; }
+
+/* ------------- 3 翻页组件 ------------ */
+.page { background-color: #fff; margin: 50/@rem 0; border: 1px solid #e5e5e5; border-radius: 4px; overflow: auto;  }
+.page-group { display: flex; height: 60px; align-items: center;  }
+.page-content { display: flex; flex-wrap: nowrap; white-space: nowrap; padding: 0 10px; margin: auto;  }
+.page-content span { font-size: 14px; height: 40px; line-height: 40px; min-width: 40px; text-align: center; background-color: #F0F0F0; margin-right: 10px; color: #333; cursor: pointer; }
+.page-content .previous-page, .page-content .next-page { width: 60px; }
+.page-alter { font-size: 16px; color: #333; }
+.page-alter input { background-color: #f0f0f0; border:none; width: 40px; height: 40px; margin: 0 10px; font-size: 16px; color: #333; text-align: center; }
+.page-alter a { font-size: 18px; color: #55B0F1; margin-left: 20px; }
+
+
+/* ------------- 4 框架logo ------------ */
+.logo { color: #fff; font-size: 21px; line-height: 80px; width: 230px; text-align: center; background-color: #4F5F6F; }
+
+/* ------------- 5 侧边栏 ------------ */
+.main-container { display: flex; align-items: stretch; height: 100vh; }
+.sidebar { width: 230px; height: 100%; background-color: #4F5F6F; overflow: auto; }
+.sidebar-list { overflow: hidden; }
+.sidebar-list li { height: 60px; width: 230px;  font-size: 14px; padding-left: 10px; line-height: 60px; white-space: nowrap; }
+.sidebar-list img { vertical-align: -3px; margin-right: 13/@rem; }
+.main-frame { flex: 1;}
+// .main-container { display: flex; flex-direction: column; }
+// .main-frame { flex: 1; height: 90vh; }
+// .sidebar { display: flex; flex: 1; align-items: center; flex-wrap: nowrap; }
+
+/* ------------- 6 媒体查询 ------------ */
+@media screen and (max-width: 700px) {
+    .sidebar { width: 30px; overflow: hidden; }
+    .sidebar-list li { padding-left: 8px; }
+}
