@@ -10,7 +10,7 @@
 .header { background-color: #fff; font-size: 0; margin-left: 12px; }
 .header-item { display: inline-block; line-height: 30/@rem;  padding: 0 30/@rem; margin: 25/@rem 0; }
 .header-item + .header-item { border-left: 2px solid rgb(209, 209, 209);  }
-.header-item span { font-size: 14/@rem; color: #666; vertical-align: middle; margin-left: 12/@rem;  }
+.header-item span { font-size: 14px; color: #666; vertical-align: middle; margin-left: 12/@rem;  }
 .header-item img { vertical-align: middle; width: 24/@rem; height: 23/@rem; }
 .header-item .personality { width: 30/@rem; height: 30/@rem; }
 
@@ -28,7 +28,7 @@
 .search-group input:last-child { margin-bottom: 15/@rem; }
 .search-button { flex: none; display: flex; align-items: center; margin-right: 30/@rem; }
 .search-button .search-btn { color: #FF6D63; border: 1px solid #FF6D63;  }
-.search-button input { padding: 6/@rem 18/@rem; border: 1px solid #e8e8e8; color: #000; margin-left: 10/@rem; font-size: 12px; }
+.search-button input { padding: 6px 18px; border: 1px solid #e8e8e8; color: #000; margin-left: 10/@rem; font-size: 12px; }
 
 /* ------------- 2 表格 ------------ */
 .common-list { overflow: auto; margin-top: 20px; border-radius: 4px 4px 0 0;  }
@@ -58,9 +58,10 @@
 .main-container { display: flex; align-items: stretch; height: 100vh; }
 .sidebar { width: 230px; height: 100%; background-color: #4F5F6F; overflow: auto; }
 .sidebar-list { overflow: hidden; }
-.sidebar-list li { height: 60px; width: 230px;  font-size: 14px; padding-left: 10px; line-height: 60px; white-space: nowrap; }
+.sidebar-list li a { height: 60px; width: 230px;  font-size: 14px; padding-left: 10px; line-height: 60px; white-space: nowrap; }
 .sidebar-list img { vertical-align: -3px; margin-right: 13/@rem; }
 .main-frame { flex: 1;}
+.sidebar-list li:hover a { color: #fff; background: #2B9CED; }
 // .main-container { display: flex; flex-direction: column; }
 // .main-frame { flex: 1; height: 90vh; }
 // .sidebar { display: flex; flex: 1; align-items: center; flex-wrap: nowrap; }
@@ -68,5 +69,5 @@
 /* ------------- 6 媒体查询 ------------ */
 @media screen and (max-width: 700px) {
     .sidebar { width: 30px; overflow: hidden; }
-    .sidebar-list li { padding-left: 8px; }
+    .sidebar-list li a { padding-left: 8px; }
 }

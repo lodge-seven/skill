@@ -46,7 +46,7 @@
   border-left: 2px solid #d1d1d1;
 }
 .header-item span {
-  font-size: 0.00818713rem;
+  font-size: 14px;
   color: #666;
   vertical-align: middle;
   margin-left: 0.00701754rem;
@@ -94,7 +94,8 @@
   color: #999;
   font-size: 12px;
   border: none;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #e6d8d8;
+  border-radius: 2px;
   margin: 0.00877193rem 0 0 0.00877193rem;
 }
 /*下边距也确保有间距*/
@@ -118,8 +119,8 @@
   border: 1px solid #FF6D63;
 }
 .search-button input {
-  padding: 0.00350877rem 0.01052632rem;
-  border: 1px solid #e8e8e8;
+  padding: 6px 18px;
+  border: 1px solid #e6d8d8;
   color: #000;
   margin-left: 0.00584795rem;
   font-size: 12px;
@@ -255,7 +256,7 @@
 .sidebar-list {
   overflow: hidden;
 }
-.sidebar-list li {
+.sidebar-list li a {
   height: 60px;
   width: 230px;
   font-size: 14px;
@@ -272,13 +273,17 @@
       -ms-flex: 1;
           flex: 1;
 }
+.sidebar-list li:hover a {
+  color: #fff;
+  background: #2B9CED;
+}
 /* ------------- 6 媒体查询 ------------ */
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 30px;
     overflow: hidden;
   }
-  .sidebar-list li {
+  .sidebar-list li a {
     padding-left: 8px;
   }
 }
