@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-作业二-商品展示</title>
+    <style>
+        body,ul { margin: 0; padding: 0 }
+        ul { list-style: none; display: table; margin: 40px auto 25px; }
+        ul li { float: left; }
+        a { display: block; text-align: center; text-decoration: none; color: #666; font-size: 12px; }
+        li a { padding: 0 25px;  }
+        ul li + li { border-left: 1px solid #999; }
+        .clearfix::after { content: ''; display: block; clear: both; overflow: hidden; zoom: 1; }
+
+        .container { border: 1px solid #999; width: 1180px; height: 587px; margin: auto; }
+        .goods-list > div { float: left; }
+        .good-little a { float: left; width: 199px;}
+        .second { width: 211px; border-left: 1px solid #ccc; }
+        .frist img { width: 199px; }
+        .second img { width: 211px; }
+        .third { border-top: 1px solid #ccc; }
+        .g1 { width: 330px; border-right: 1px solid #ccc; }
+        .g2 { width: 228px; border-right: 1px solid #ccc; }
+        .g2 img { width: 228px; }
+        .g3 { width: 208px; border-right: 1px solid #ccc; }
+        .g3 img { width: 208px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="clearfix">
+            <li><a href="#">护肤</a></li>
+            <li><a href="#">彩妆</a></li>
+            <li><a href="#">美发</a></li>
+            <li><a href="#">美体</a></li>
+            <li><a href="#">香氛</a></li>
+            <li><a href="#">肌肤</a></li>
+            <li><a href="#">唇部</a></li>
+            <li><a href="#">产品</a></li>
+            <li><a href="#">精华</a></li>
+            <li><a href="#">修护</a></li>
+        </ul>
+        <div class="goods-list clearfix">
+            <div class="g1">
+                <a href="#"><img src="./images/demo3/1.jpg" alt=""></a>
+            </div>
+            <div class="g2">
+                <a href="#"><img src="./images/demo3/2.jpg" alt=""></a>
+                <a href="#"><img src="./images/demo3/3.jpg" alt=""></a>
+            </div>
+            <div class="g3">
+                <a href="#"><img src="./images/demo3/4.jpg" alt=""></a>
+                <a href="#"><img src="./images/demo3/5.jpg" alt=""></a>
+                <a href="#"><img src="./images/demo3/6.jpg" alt=""></a>
+            </div>
+            <div class="g4">
+                <div class="good-little clearfix">
+                    <a href="#" class="frist"><img src="./images/demo3/7.jpg" alt=""></a>
+                    <a href="#" class="second"><img src="./images/demo3/8.jpg" alt=""></a>
+                </div>
+                <a href="#" class="third"><img src="./images/demo3/9.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

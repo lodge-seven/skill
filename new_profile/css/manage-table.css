@@ -1,34 +1,18 @@
 @charset 'utf-8';
 /* 新加弹性 */
 .contain-model {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   height: 100vh;
 }
 .container {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 .common-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 /* 头部导航 */
 .header {
@@ -38,9 +22,9 @@
 }
 .header-item {
   display: inline-block;
-  line-height: 0.01754386rem;
-  padding: 0 0.01754386rem;
-  margin: 0.01461988rem 0;
+  line-height: 0.1754386rem;
+  padding: 0 0.1754386rem;
+  margin: 0.14619883rem 0;
 }
 .header-item + .header-item {
   border-left: 2px solid #d1d1d1;
@@ -49,21 +33,21 @@
   font-size: 14px;
   color: #666;
   vertical-align: middle;
-  margin-left: 0.00701754rem;
+  margin-left: 0.07017544rem;
 }
 .header-item img {
   vertical-align: middle;
-  width: 0.01403509rem;
-  height: 0.01345029rem;
+  width: 0.14035088rem;
+  height: 0.13450292rem;
 }
 .header-item .personality {
-  width: 0.01754386rem;
-  height: 0.01754386rem;
+  width: 0.1754386rem;
+  height: 0.1754386rem;
 }
 /* 主体对象 */
 /* ------------- 1 标题 ------------ */
 .container {
-  margin: 0 0.01754386rem;
+  margin: 0 0.1754386rem;
 }
 .common-title h1 {
   height: 66px;
@@ -77,14 +61,11 @@
   border: 1px solid #E5E5E5;
   border-radius: 4px;
   background: #fff;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .search-group {
   font-size: 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .search-group input {
   line-height: 28px;
@@ -94,25 +75,18 @@
   color: #999;
   font-size: 12px;
   border: none;
-  border: 1px solid #e6d8d8;
-  border-radius: 2px;
-  margin: 0.00877193rem 0 0 0.00877193rem;
+  border: 1px solid #e8e8e8;
+  margin: 0.0877193rem 0 0 0.0877193rem;
 }
 /*下边距也确保有间距*/
 .search-group input:last-child {
-  margin-bottom: 0.00877193rem;
+  margin-bottom: 0.0877193rem;
 }
 .search-button {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: none;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-right: 0.01754386rem;
+  align-items: center;
+  margin-right: 0.1754386rem;
 }
 .search-button .search-btn {
   color: #FF6D63;
@@ -120,9 +94,9 @@
 }
 .search-button input {
   padding: 6px 18px;
-  border: 1px solid #e6d8d8;
+  border: 1px solid #e8e8e8;
   color: #000;
-  margin-left: 0.00584795rem;
+  margin-left: 0.05847953rem;
   font-size: 12px;
 }
 /* ------------- 2 表格 ------------ */
@@ -150,7 +124,7 @@
 .data-content td {
   border-left: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
-  height: 0.07017544rem;
+  height: 0.70175439rem;
   white-space: normal;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -170,26 +144,19 @@
 /* ------------- 3 翻页组件 ------------ */
 .page {
   background-color: #fff;
-  margin: 0.02923977rem 0;
+  margin: 0.29239766rem 0;
   border: 1px solid #e5e5e5;
   border-radius: 4px;
   overflow: auto;
 }
 .page-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 60px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 .page-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   white-space: nowrap;
   padding: 0 10px;
   margin: auto;
@@ -239,12 +206,8 @@
 }
 /* ------------- 5 侧边栏 ------------ */
 .main-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  align-items: stretch;
   height: 100vh;
 }
 .sidebar {
@@ -266,12 +229,10 @@
 }
 .sidebar-list img {
   vertical-align: -3px;
-  margin-right: 0.00760234rem;
+  margin-right: 0.07602339rem;
 }
 .main-frame {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 .sidebar-list li:hover a {
   color: #fff;

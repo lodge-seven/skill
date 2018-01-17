@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-作业三-老土的导航</title>
+    <style>
+        body,ul { margin: 0; padding: 0 }
+        .clearfix::after { content: ''; display: block; clear: both; overflow: hidden; zoom: 1; }
+        ul { list-style: none; margin-top: 10px; }
+        ul li { float: left; }
+        a { display: block; height: 30px; padding: 10px 30px 0; text-align: center; text-decoration: none; color: #fff; font-size: 12px;  }
+        .container { background: url('./images/demo1/bg01.png') repeat-x; width: 1000px; margin: auto; }
+        .time-group { height: 35px; line-height: 35px; }
+        .time-group span { font-size: 10px; color: rgb(57, 96, 129); }
+        .active a { background: url('./images/demo1/bg02.png') no-repeat 0px 0px; margin-top: -4px; height: 35px; padding-top: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <ul class="clearfix">
+            <li><a href="#">科技首页</a></li>
+            <li class="active"><a href="#" >IT业界</a></li>
+            <li><a href="#">创世纪</a></li>
+            <li><a href="#">苹果汇</a></li>
+            <li><a href="#">电信</a></li>
+            <li><a href="#">互联网</a></li>
+            <li><a href="#">数码</a></li>
+            <li><a href="#">家电</a></li>
+            <li><a href="#">A股</a></li>
+            <li><a href="#">港股</a></li>
+            <li><a href="#">美股</a></li>
+        </ul>
+        <div class="time-group">
+            <span>北京时间：10月30日 20:51:46</span>
+            <span>美国东部时间：10月30日 08:52:06</span>
+        </div>
+    </div>
+</body>
+</html>
