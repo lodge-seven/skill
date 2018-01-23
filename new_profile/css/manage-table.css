@@ -75,7 +75,7 @@
   color: #999;
   font-size: 12px;
   border: none;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #cec3c3;
   margin: 0.0877193rem 0 0 0.0877193rem;
 }
 /*下边距也确保有间距*/
@@ -94,7 +94,7 @@
 }
 .search-button input {
   padding: 6px 18px;
-  border: 1px solid #e8e8e8;
+  border: 1px solid #cec3c3;
   color: #000;
   margin-left: 0.05847953rem;
   font-size: 12px;

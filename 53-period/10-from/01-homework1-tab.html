@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-作业1-选项卡</title>
+    <style>
+        /* 初始化 */
+        body, ul, p { margin: 0; padding: 0; font-family: '微软雅黑'; }
+        ul { list-style: none; }
+        /* 共用 */
+        .p-relative { position: relative; }
+        .p-absolute { position: absolute; }
+        .fl { float: left; }
+        .clearfix::after { content: ''; display: block; clear: both; overflow: hidden; zoom: 1;}
+        .button { display: block; color: #000; text-decoration: none; }
+        .tab-content li { float: left; }
+        .d-block { display: block; }
+        
+        /* 风格 */
+        .tab-wrap { width: 998px; border: 1px solid #ddd; margin: 100px auto 0; }
+        .tab-header { height: 36px; border-right: 1px solid #fff; }
+        .tab-header-normal { border-left: 1px solid #fff; }
+        .tab-header:hover { border-right: 1px solid #ddd; }
+        .tab-header .tab-content li { display: none; }
+        .tab-header:hover .tab-content li { display: block; }
+        .tab-header-normal:hover { border-left: 1px solid #ddd; }
+        .tab-title, .tab-header:hover .tab-title { font-size: 10px; padding: 0 10px; height: 32px; line-height: 32px; border-top: 4px solid transparent; color: #000; }
+        .tab-header:hover .tab-title { height: 33px; line-height: 34px; border-top: 4px solid #e09d0d; border-bottom: 1px solid #fff; border-left: none; border-right: none; margin-top: -1px; }
+
+        .tab-content { width: 1000px; left: 0; }
+        .tab-content li { border: 1px solid transparent; margin: 56px 0; }
+        .tab-content a { width: 198px; height: 132px; }
+        .tab-content img { width: 100%; height: 100%; }
+        .tab-content p { width: 198px; background: rgba(0, 0, 0, .8); text-align: center; line-height: 30px; color: #fff; font-size: 14px; bottom: 0; }
+        .tab-content li:hover { border: 1px solid #e09d0d; }
+    </style>
+</head>
+<body>
+    <ul class="p-relative tab-wrap clearfix">
+        <li class="fl tab-header active">
+            <a class="button tab-title" href=#>我喜欢看图</a>
+            <div class="p-absolute tab-content">
+                <ul>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/1.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/2.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/3.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/4.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/5.gif" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="fl tab-header tab-header-normal">
+            <a class="button tab-title" href=#>猜我喜欢</a>
+            <div class="p-absolute tab-content">
+                <ul>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/1.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/2.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/3.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/4.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/5.gif" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="fl tab-header tab-header-normal">
+            <a class="button tab-title" href=#>猜你喜欢</a>
+            <div class="p-absolute tab-content">
+                <ul>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/1.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/2.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/3.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/4.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/5.gif" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="fl tab-header tab-header-normal">
+            <a class="button tab-title" href=#>猜它喜欢</a>
+            <div class="p-absolute tab-content">
+                <ul>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/3.jpg" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/5.gif" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/5.gif" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/5.gif" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="p-relative button" href="#">
+                            <img src="./images/demo2/5.gif" alt="呵呵">
+                            <p class="p-absolute">12星座你今天facebook</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
