@@ -5,29 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>02-作业二-登录</title>
+    <style>
+        body, input, form { padding: 0; margin: 0; font-family: '微软雅黑'; }
+        input[type='text'] { display: block; }
+        a { text-decoration: none; color: #000; }
+        .btn { display: block;  }
+
+        .login-wrap { padding: 50px 0; background: url('./images/demo3/dlbg.jpg') no-repeat; }
+        .login-group, .company { width: 340px;  background: #F5EAE9; margin: 0 5% 0 auto; }
+        .login-group { width: 256px; padding: 30px 40px 20px 44px;  }
+        .login-group input[type='text'] { height: 40px; line-height: 40px; width: 255px; font-size: 16px; font-weight: 100; background: url('./images/demo3/mima.jpg') no-repeat 0 -2px; outline: none; border: 1px solid #ddd; text-indent: 3em; margin-bottom: 25px; }
+        .login-group input[type='text'].login-name { background: url('./images/demo3/zhanghao.jpg') no-repeat 0 -2px; }
+
+        .login-remember { font-size: 12px; color: #999; }
+        .login-remember a { margin: 0 10px; }
+
+        .login-btn { width: 254px; height: 40px; background: url('./images/demo3/but.jpg') no-repeat; margin-top: 30px; }
+
+        .company { border-top: 1px solid #ddd; padding: 30px 0 50px; font-size: 14px; vertical-align: middle; text-align: center; }
+        .company img { vertical-align: middle;  }
+    </style>
 </head>
 <body>
-    <form action="#">
-        <div>
-            <label for=""></label>
-            <input type="text">
-        </div>
-        <div>
-            <label for=""></label>
-            <input type="text">
-        </div>
-        <div>
-            <input type="checkbox" name="remember" id="remember">记住账号
-            <a href="#">欢迎注册</a>
-            <a href="#">忘记密码？</a>
-        </div>
-        <a href="#" class="btn">登录</a>
-        <div>
+    <!-- S登录组件( 1 输入组件 2 合作商 ) -->
+    <div class="login-wrap">
+        <!-- 1 输入组件 -->
+        <form class="login-group" action="#">
+            <input class="login-name" type="text" placeholder="请输入账号">
+            <input class="login-psd" type="text" placeholder="请输入密码">
+            <div class="login-remember">
+                <input type="checkbox" name="remember" id="remember">记住账号
+                <a href="#">欢迎注册</a>
+                <a href="#">忘记密码？</a>
+            </div>
+            <a href="#" class="btn login-btn"></a>
+        </form>
+        <!-- 2 合作商 -->
+        <div class="company">
             合作网站账号登录：
             <img src="./images/demo3/qqlogin.png" alt="">
             <img src="./images/demo3/taobao.png" alt="">
             <img src="./images/demo3/weixin.png" alt="">
         </div>
-    </form>
+    </div>
+    <!-- E登录组件 -->
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-作业三-简约登录</title>
+    <style>
+        body, input { margin: 0; padding: 0; font-size: 14px; font-family: '微软雅黑'; }
+        
+        .container { width: 350px; padding: 40px; border: 1px solid #999; border-radius: 20px; margin: 50px auto 0; }
+        .group { position: relative; margin-bottom: 20px; }
+        .group input[type = 'text'] { width: 290px; height: 40px; line-height: 40px; vertical-align: middle; border-radius: 6px; border: 1px solid #999; margin-left: 10px; outline: none; }
+        .tip { display: none; position: absolute; width: 280px; height: 40px; background: #56A9D3; right: -310px; top: -10px; padding: 10px; border-radius: 10px; color: #fff;  }
+        form div input:focus + .tip { display: block; }
+        .tip:before { content: ''; position: absolute; left: -10px; top: 50%; width: 0; height: 0; border: 10px solid transparent; border-right-color: #56A9D3; border-left: none; margin-top:-10px; }
+        .btn { float: right; line-height: 30px; height: 30px; padding: 0 30px; font-size: 12px; background: #044172; border: none; border-radius: 4px; color: #fff; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#">
+            <div class="group">
+                用户名 <input type="text">
+                <div class="tip">用户你好呵呵呵</div>
+            </div>
+            <div class="group">
+                用户名 <input type="text">
+                <div class="tip">用户你好呵呵呵</div>
+            </div>
+            <div class="group">
+                用户名 <input type="text">
+                <div class="tip">用户你好呵呵呵用户你好呵呵呵用户你好呵呵呵用户你好呵呵呵用户你好呵呵呵</div>
+            </div>
+            <div class="group">
+                用户名 <input type="text">
+            </div>
+            <div class="group">
+                用户名 <input type="text">
+            </div>
+            <input type="submit" class="btn" value="帅的人刷脸">
+            <input type="button" class="btn" value="注册">
+        </form>
+    </div>
+</body>
+</html>
