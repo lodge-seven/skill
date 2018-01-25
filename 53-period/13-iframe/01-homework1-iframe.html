@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-作业1-框架</title>
+    <style>
+        body, ul { margin: 0; padding: 0; }
+        html, body { height: 100%; background: url('./images/mxcp1.jpg'); background-size: 100% 100%;  }
+        a { display: block; width: 202px; height: 84px; text-align: center; }
+        ul { list-style: none; }
+        li { background: #fff; margin-bottom: 4px; }
+        iframe { width: 100%; height: 80vh; }
+
+        .container { padding: 5% 5% 0; overflow: hidden; }
+        .left { float: left; margin-right: 3%; }
+        .right { overflow: hidden; padding: 6px; border-radius: 10px; border: 1px solid #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- BFC两栏自适应：左边固定，右边自适应 -->
+        <ul class="left">
+            <li>
+                <a href="https://www.tmall.com/" target="a">
+                    <img src="./images/1.png" width="155" height="83" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.baidu.com/" target="a">
+                    <img src="./images/2.png" width="155" height="83" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.jd.com/" target="a">
+                    <br><br>
+                    <img src="./images/3.png" width="155" height="43" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="http://www.sina.com.cn/" target="a">
+                    <img src="./images/4.png" width="130" height="70" alt="">
+                </a>
+            </li>
+        </ul>
+        <div class="right">
+            <iframe name="a" src="https://map.baidu.com/" frameborder="0"></iframe>
+        </div>
+    </div>
+</body>
+</html>

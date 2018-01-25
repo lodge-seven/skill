@@ -7,11 +7,15 @@
     <title>01-作业一-快递信息</title>
     <style>
         body, h1 { margin: 0; padding: 0; font-family: '微软雅黑'; }
-        fieldset { border: 1px solid #fff; }
-        table { width: 100%;border-spacing: 0 20px; }
+        fieldset { border: 1px solid #fff; padding: 30px 20px 20px; margin-bottom: 30px; }
+        table { width: 100%; border-spacing: 0 20px; }
+        select { width: 180px; }
         input[type='text'] { width: 170px; height: 24px; line-height: 24px; border: none; outline: none; }
-        .wrap { width: 600px; background: rgb(128, 124, 124); padding: 0 20px; color: #fff;}
+        .short input[type='text'] { width: 50px; }
+        .long input[type='text'] { width: 434px; }
+        .wrap { width: 600px; background: rgb(77, 71, 71); padding: 0 20px; color: #fff;}
         h1 { text-align: center; color: #fff; padding: 24px 0; font-size: 24px; }
+        .submit { text-align: center; padding-bottom: 20px; margin-top: -10px; }
     </style>
 </head>
 <body>
@@ -52,9 +56,9 @@
                     </tr>
                     <tr>
                         <td>地区：</td>
-                        <td>
+                        <td colspan="3">
                             <select name="address" id="address">
-                                <option value="北京">www</option>
+                                <option value="北京">北京</option>
                             </select>
                         </td>
                     </tr>
@@ -62,16 +66,18 @@
                         <td>包装：</td>
                         <td colspan="3">
                             <label for="a"><input type="checkbox" name="" id="a">纸箱</label>
-                            <label for="b"><input type="checkbox" name="" id="b">纸箱</label>
-                            <label for="c"><input type="checkbox" name="" id="c">纸箱</label>
+                            <label for="b"><input type="checkbox" name="" id="b">木箱</label>
+                            <label for="c"><input type="checkbox" name="" id="c">快递袋</label>
+                            <label for="d"><input type="checkbox" name="" id="d">其他</label>
                         </td>
                     </tr>
                     <tr>
                         <td>付款方式：</td>
                         <td colspan="3">
-                            <label for="a"><input type="checkbox" name="" id="a">纸箱</label>
-                            <label for="b"><input type="checkbox" name="" id="b">纸箱</label>
-                            <label for="c"><input type="checkbox" name="" id="c">纸箱</label>
+                            <label for="a1"><input type="checkbox" name="" id="a1">现金</label>
+                            <label for="b1"><input type="checkbox" name="" id="b1">支付宝</label>
+                            <label for="c1"><input type="checkbox" name="" id="c1">网银</label>
+                            <label for="d1"><input type="checkbox" name="" id="d1">ATM</label>
                         </td>
                     </tr>
                 </table>
@@ -81,18 +87,22 @@
                 <table>
                     <tr>
                         <td>货物名称：</td>
-                        <td colspan="5"><input type="text"></td>
+                        <td class="long" colspan="5"><input type="text"></td>
                     </tr>
                     <tr>
                         <td>数量：</td>
-                        <td><input type="text"></td>
+                        <td class="short"><input type="text"></td>
                         <td>重量：</td>
-                        <td><input type="text"></td>
+                        <td class="short"><input type="text"></td>
                         <td>发货时间：</td>
                         <td><input type="text"></td>
                     </tr>
                 </table>
             </fieldset>
+            <div class="submit">
+                <input type="button" value="确定">
+                <input type="button" value="取消">
+            </div>
         </form>
     </div>
 </body>
