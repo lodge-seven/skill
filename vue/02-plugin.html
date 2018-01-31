@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-组件化开发</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <!-- 
+        一个vue实例里面不能再出现实例对象
+        拥有预定义选项的vue实例
+        以前的开发是每个人做一个页面，套入后端模板引擎，使得套入的部分通过这个模板进行渲染，比如ejs，PHP的Smarty，Java的JSP
+        进行模块化开发就像是面向对象编程
+        1 注册组件，生成一个自定义标签，这就是一个组件的实例
+        2 vue调用，无相应调用则无效果哦
+    -->
+    <ol id="app1">
+        <todo-item
+            v-for="item in list"
+            :todo="item"
+            :a="a"
+            :key="item.id"
+        ></todo-item>
+    </ol>
+    <div class="app2">{{ b }}</div>
+    <!-- <div class="app2">{{ b }}</div> -->
+    <script>
+        
+        Vue.component('todo-item', {
+            props: ['todo','a'],
+            template: '<li>{{ a }},呵呵</li>'
+        })
+        /*  
+            这是app1这个dom的作用域，而不是todo-item的作用域，数据从父级传到子级则在父级设置值，子级通过冒泡拿取
+        */
+        var app1 = new Vue({
+            el: "#app1",
+            data: {
+                list: [
+                    { id: 0, text: '吃的' },
+                    { id: 1, text: '吃的' },
+                    { id: 2, text: '吃的' },
+                    { id: 3, text: '吃的' }
+                ],
+                a: 2
+            }
+        })
+        var app2 = new Vue({
+            el: ".app2",
+            data: {
+                b: '完美'
+            }
+        })
+    </script>
+</body>
+</html>

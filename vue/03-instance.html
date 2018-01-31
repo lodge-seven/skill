@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-vue实例</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <!--  
+        vue实例与MVVM模型
+        模型与视图分离使我们不用去操作dom修改值,只要找到储存值的变量,修改就可以,避免了dom复杂的操作.VM是vue实例,帮助构建模型与视图中修改的数据通过表达式去进行匹配,数据传递更直接
+        vue组件树,自定义节点
+    -->
+    <span>{{ name }}</span>
+    <script>
+        var data = {
+            name: '犬夜叉',
+            sex: '男',
+            race: '半妖' 
+        }
+        
+        var vm = new Vue({
+            data: data
+        })
+
+        console.log(vm.name === data.name);
+        // 响应，一方更改，会把之前变量的值也更改，可知，vue的修改是直接找到数据存储位置进行更改，那么指针下的值也会变动，只有在实例创建data中存在的属性才是响应式的。
+        /* vm.name = '犬犬大将';
+        console.log(vm.name, data.name);
+
+        vm.name = '杀生丸';
+        console.log(vm.name, data.name); */
+        // 后添加的属性不会触发响应
+        vm.age = 50;
+        data.age = 90;
+        console.log(vm.age, data.age);
+    </script>
+</body>
+</html>

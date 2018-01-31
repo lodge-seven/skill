@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-简单练习</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app1">
+        <!-- v-bind：指令，vue提供的特殊的响应行为， -->
+        <span v-bind:title="message.title" >{{ message.content }}</span>
+    </div>
+    <div id="app2">
+        <p v-if=" a == '2' ? true : false">现在是逮捕时间</p>
+        <p v-else >现在你可以去吃饭了</p>
+    </div>
+    <div id="app3">
+        <ul v-for="todo in todos">
+            <li>{{ todo.text }}</li>
+        </ul>
+    </div>
+    <div id="app4">
+        <p>你点击一哈哈{{ message }}。</p>
+        <button @click="research">来点击撒大爷</button>
+        <!-- <p v-model="message" ></p> -->
+        <input type="text" v-model="message">
+    </div>
+    <script>
+        // Object.defineProperty是用来操作一个对象的它有两种用法
+//（1）、
+        var obj={name:"小孩"};
+        Object.defineProperty(obj,'sex',{
+            configurable:true,//此属性是否可以删除（delete）,默认是false.
+            enumerable:true,//是否可以枚举例如通过for in，默认是false
+            writable:true,//此属性是否可以改，默认是false
+            value:"man",
+        });
+        //通过（1），我们给obj这个对象添加了一个'sex'属性，通过以上的配置，这个属性可以删除、
+        //可以枚举、可以修改，
+
+        //（2）、配置项中的writable属性由两个方法（get、set）代替，此时这个属性时可修改的。
+        //writable和这两个方法不能同时出现在配置项
+        Object.defineProperty(obj,'sex',{
+            configurable:true,//此属性是否可以删除（delete）,默认是false
+            enumerable:true,//是否可以枚举例如通过for in，默认是false
+            get(){//当获取obj.sex值得时候会调用执行get方法，获取的值就是这个函数的返回值
+                console.log("你调用了get方法") 
+                return 'man';
+            },
+            set(newVal){//当给这个属性赋值的时候会调用执行set方法,即使所赋的值和原值相同也会调用
+                console.log('你修改了obj的sex属性，调用了set方法');
+                console.log(newVal);//此时val就是赋予obj的sex属性的新值
+            }
+        });
+        obj.sex="woman";//你修改了obj的sex属性，调用了set方法  woman
+        console.log(obj.sex);//你调用了get方法   woman
+        //可以复制代码进行验证，从而加深印象。
+
+        // 起步
+        /* 
+            1 声明式渲染
+            数据是响应式，说明数据是动态的，根据vue去获取，vue会自动对页面中数据的变化做出响应
+            找到id为app1的dom对象，绑定其title属性的值为message
+            每一个vue应用都是通过Vue函数创建一个新的Vue实例开始的
+            var vm = new Vue({})
+            参考MVVM模型
+        */
+        var app1 = new Vue({
+            el: "#app1",
+            data: {
+                message: 
+                    {
+                        title: "您有新的消息请注意查收",
+                        content: "王者荣耀-五军对战-输的不要不要"
+                    }
+            }
+        })
+
+        /* 
+            2 条件与循环
+            v-if是条件，if(){}这样的表达式，里面为真时，才会去渲染哦
+            一个过滤的效果
+        */
+        var app2 = new Vue({
+            el: "#app2",
+            data: {
+                seen: false,
+                a: '1'
+            }
+        })
+        
+        /* 
+            3 遍历 
+            拿到实例对象，可以直接找到数据，然后进行追加
+        */
+        var app3 = new Vue({
+            el: "#app3",
+            data: {
+                todos: 
+                    [
+                        { text: '没钱' },
+                        { text: '事少' },
+                        { text: '死的早' }
+                    ],
+                demo: '可惜不是你'
+            }
+        });
+        console.log(app3);
+        app3.todos.push({ text: '脑子是个好东西' });
+
+        /*  
+            4 处理用户操作
+            v-on
+        */
+        var app4 = new Vue({
+            el: "#app4",
+            data: {
+                message: "我的肚子哦"
+            },
+            methods: {
+                research: function() {
+                    // dom操作由vue接盘
+                    this.message = '谢谢大爷'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
