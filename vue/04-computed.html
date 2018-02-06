@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-计算属性</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="example" >
+        <p>原始消息{{ message }}</p>
+        <p>计算之后消息{{ now }}</p>
+        <p>计算之后消息{{ nows() }}</p>
+        <p>{{ full }}</p>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#example",
+            data: {
+                message: "",
+                full1: "a",
+                full2: "b"
+            },
+            // 计算是有缓存的，这意味着没有更新依赖，就使用缓存，有更新才会发生改变，这减少了开销
+            computed: {
+                reversedMessage: function() {
+                    return this.message.split('').reverse().join('') + this.message.length;
+                },
+                now: function() {
+                    return Date.now();
+                },
+                /* full: function() {
+                    return this.full1 + this.full2;
+                }, */
+                full: function() {
+                        return this.full1 + this.full2;
+                }    
+            },
+            methods: {
+                nows: function() {
+                    return Date.now();
+                }
+            },
+            watch: {
+                full1: function(val) {
+                    this.full = val + this.full2;
+                }
+            }
+        })
+        
+        vm.full = 'John Doe';
+        vm.message = "呵呵=话题结束";
+    </script>
+</body>
+</html>

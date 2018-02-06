@@ -14,6 +14,8 @@
         vue组件树,自定义节点
     -->
     <span>{{ name }}</span>
+    <!-- 值的绑定：用于响应更新html属性 -->
+    <button v-bind:disabled="isButtonDisabled" >按钮</button>
     <script>
         var data = {
             name: '犬夜叉',
@@ -35,7 +37,8 @@
         // 后添加的属性不会触发响应
         vm.age = 50;
         data.age = 90;
-        console.log(vm.age, data.age);
+        // console.log(vm.age, data.age);
+        
     </script>
 </body>
 </html>

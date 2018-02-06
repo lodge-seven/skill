@@ -1,0 +1,28 @@
+@charset 'utf-8';
+/* 去除默认 */
+body, p, ul, input, h3, h4, h5, dl, dt, dd { margin: 0; padding: 0; }
+a { text-decoration: none; color: #999; }
+ul { list-style: none; }
+em, i { font-style: normal; }
+
+/* 后期媒体查询自适应 目前最小宽度确定 */
+body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif; color: #999; background: #F6F6F6; min-width: 1190px; }
+
+/* 常用样式集成 */
+.d-block { display: block; }
+.d-inlineblock { display: inline-block; }
+.lr { float: right; }
+.lf { float: left; }
+.p-relative { position: relative; z-index: 1; }
+
+.pr5 {padding-right: 5px; }
+.ml10 { margin-left: 10px; }
+.mr10 { margin-right: 10px; }
+.mrf2 { margin-right: -2px; }
+.hidden { display: none; }
+.clearfix:after { content: ''; display: block; clear: both; }
+.border-r { border-right: 1px solid #e6e6e6; }
+.border-b { border-bottom: 1px solid #e6e6e6; }
+/* 伪导航切换 
+   双浮动 把之前的内边距移到新的盒子中
+*/

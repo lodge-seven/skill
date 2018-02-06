@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-监听</title>
+    <!-- <script src="https://unpkg.com/vue"></script> -->
+</head>
+<body>
+    <div id="watch">
+        <p>是/否</p>
+        <input type="text" v-model="question">
+        <p>{{ answer }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script>
+        var watch = new Vue({
+            el: "#watch",
+            data: {
+                question: "",
+                answer: "我给你回答"
+            },
+            watch: {
+                // 有变化就执行
+                question: function(news, old) {
+                    this.answer = "请等待";
+                    this.getAnswer()
+                }
+            },
+            methods: {
+                getAnswer: _.debounce(
+                    function() {
+                        if(this.question.indexOf('?') === -1){
+                            this.answer = '确定吗?'
+                            return
+                        }
+                    }
+                )
+            }
+        })
+    </script>
+</body>
+</html>
