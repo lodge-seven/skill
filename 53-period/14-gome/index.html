@@ -5,17 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>国美电器-没有淘宝京东好</title>
+    <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
-    <!-- S 头部 （1 顶部导航）-->
+    <!-- S 头部 （1 顶部导航 2 搜索展示）-->
     <div class="gome-h">
-        <!-- 1 顶部导航 -->
-        <ul class="fl">
-            <li><a href="#">国美会员<i>箭头</i></a></li>
-            <li><a href="#">登录</a></li>
-            <li><a href="#">注册有礼</a></li>
-        </ul>
-        <div class="fr"></div>
+        <!-- 1 顶部导航 （1.1 会员相关 1.2 购物导航）
+            需要div的原因是清浮动
+        -->
+        <div class="clearfix">
+            <ul class="fl list-li-horizontal">
+                <li><a href="#">国美会员<i>箭头</i></a></li>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册有礼</a></li>
+            </ul>
+            <ul class="fr list-li-horizontal">
+                <li><a href="#">我的订单</a></li>
+                <li><a href="#">我的国美<i>箭头</i></a></li>
+                <li><a href="#">企业采购</a></li>
+                <li><a href="#">服务中心<i>箭头</i></a></li>
+                <li><a href="#">网站导航<i>箭头</i></a></li>
+                <li><a href="#">手机国美</a></li>
+            </ul>
+        </div>
+        <!-- 2 搜索展示（2.1 logo 2.2 搜索 2.3 购物车）
+            定宽三栏bfc模型
+        -->
+        <div class="clearfix">
+            <div class="fl logo-group">
+                <a href="#" class="d-inlineblock logo"></a>
+                <a href="#" class="d-inlineblock ad"></a>
+            </div>
+            <div class="search-group">
+                <div class="search">
+                    <select name="shop-type" id="">
+                        <option value="商品">商品</option>
+                        <option value="店铺">店铺</option>
+                        <option value="话题">话题</option>
+                        <option value="圈子">圈子</option>
+                    </select>
+                    <input type="text" placeholder="取暖器">
+                    <a href="#" class="d-inlineblock">搜索</a>
+                </div>
+                <span>美的电饭煲</span>
+                <span>首投返30</span>
+                <span>Airpods</span>
+                <span>低至5折</span>
+                <span>魅蓝s6</span>
+                <span>记录仪99元</span>
+                <span>领券减800</span>
+                <span>戴尔笔记本</span>
+            </div>
+            <div class="fr">
+                <i>购物车</i><a href="#">购物车空了<i>箭头</i></a>
+            </div>
+        </div>
+        <!-- 3 产品分类 -->
+        <div class="header-classify clearfix">
+            <a href="#" class="fl fix-nav">全部商品分类</a>
+            <ul class="fl list-li-horizontal">
+                <li><a href="#">圈子</a></li>
+                <li><a href="#">真划算</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">服装城</a></li>
+                <li><a href="#">超市</a></li>
+                <li><a href="#">电器城</a></li>
+                <li><a href="#">国美电器</a></li>
+                <li><a href="#">汽车</a></li>
+                <li><a href="#">家居家装</a></li>
+                <li><a href="#">|</a></li>
+                <li><a href="#">智能</a></li>
+                <li><a href="#">管家</a></li>
+                <li><a href="#">金融</a></li>
+            </ul>
+            <ul>
+                <li><a href="#" class="d-block"></a></li>
+            </ul>
+        </div>
     </div>
     <!-- E 头部 -->
 

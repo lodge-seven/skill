@@ -11,8 +11,8 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 /* 常用样式集成 */
 .d-block { display: block; }
 .d-inlineblock { display: inline-block; }
-.lr { float: right; }
-.lf { float: left; }
+.fr { float: right; }
+.fl { float: left; }
 .p-relative { position: relative; z-index: 1; }
 
 .pr5 {padding-right: 5px; }
@@ -23,6 +23,6 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .clearfix:after { content: ''; display: block; clear: both; }
 .border-r { border-right: 1px solid #e6e6e6; }
 .border-b { border-bottom: 1px solid #e6e6e6; }
-/* 伪导航切换 
-   双浮动 把之前的内边距移到新的盒子中
-*/
+
+/* 偷个懒 把水平的列表共用 */
+.list-li-horizontal li { float: left; }
