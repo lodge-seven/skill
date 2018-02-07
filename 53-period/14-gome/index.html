@@ -6,32 +6,57 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>国美电器-没有淘宝京东好</title>
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./font/iconfont.css" type="text/css">
 </head>
 <body>
     <!-- S 头部 （1 顶部导航 2 搜索展示）-->
     <div class="gome-h">
         <!-- 1 顶部导航 （1.1 会员相关 1.2 购物导航）
-            需要div的原因是清浮动
+            需要两层div的原因是 1 整行背景导航颜色 2 清浮动 
         -->
-        <div class="clearfix">
-            <ul class="fl list-li-horizontal">
-                <li><a href="#">国美会员<i>箭头</i></a></li>
-                <li><a href="#">登录</a></li>
-                <li><a href="#">注册有礼</a></li>
-            </ul>
-            <ul class="fr list-li-horizontal">
-                <li><a href="#">我的订单</a></li>
-                <li><a href="#">我的国美<i>箭头</i></a></li>
-                <li><a href="#">企业采购</a></li>
-                <li><a href="#">服务中心<i>箭头</i></a></li>
-                <li><a href="#">网站导航<i>箭头</i></a></li>
-                <li><a href="#">手机国美</a></li>
-            </ul>
+        <div class="top-nav">
+            <div class="container clearfix">
+                <!-- 1.1 会员相关 
+                    con-link/shop-link/login-link: 后来发现卵用不大 用一个就好
+                    top-menu: 下拉菜单样式
+                -->
+                <ul class="fl list-li-horizontal">
+                    <li class="top-menu">
+                        <a href="#" class="con-link shop-link" >国美会员<i class="iconfont icon-icon-arrow-down"></i></a>
+                        <!-- s 下拉菜单组件 -->
+                        <div class="vip-menu">
+                            <div>
+                                <i class="lion"></i>欢迎来到国美 , <a href="#" class="login">请登录 !</a>
+                            </div>
+                            <p class="vip-title clearfix">
+                                <span>我的特权</span><a href="#" class="club">会员俱乐部</a>
+                            </p>
+                            <ul class="vip-slider list-li-horizontal clearfix">
+                                <li>车啦</li>
+                                <li>车啦</li>
+                                <li>车啦</li>
+                            </ul>
+                        </div>
+                        <!-- e 下拉菜单组件 -->
+                    </li>
+                    <li><a href="#" class="con-link login-link">登录</a><a href="#" class="con-link register-login gift-icon" >注册有礼</a></li>
+                </ul>
+                <!-- 1.2 购物相关 -->
+                <ul class="fr list-li-horizontal">
+                    <li><a href="#" class="con-link shop-link" >我的订单</a></li>
+                    <li class="top-menu"><a href="#" class="con-link shop-link" >我的国美<i class="iconfont icon-icon-arrow-down"></i></a></li>
+                    <li><a href="#" class="con-link shop-link" >企业采购</a></li>
+                    <li class="top-menu"><a href="#" class="con-link shop-link service-icon" >服务中心<i class="iconfont icon-icon-arrow-down"></i></a></li>
+                    <li class="top-menu"><a href="#" class="con-link shop-link" >网站导航<i class="iconfont icon-icon-arrow-down"></i></a></li>
+                    <li class="top-menu"><a href="#" class="con-link shop-link" ><i class="iconfont icon-shouji fl"></i>手机国美<i class="iconfont icon-icon-arrow-down"></i></a></li>
+                </ul>
+            </div>
         </div>
         <!-- 2 搜索展示（2.1 logo 2.2 搜索 2.3 购物车）
             定宽三栏bfc模型
         -->
-        <div class="clearfix">
+        <div class="container clearfix">
             <div class="fl logo-group">
                 <a href="#" class="d-inlineblock logo"></a>
                 <a href="#" class="d-inlineblock ad"></a>
@@ -61,7 +86,7 @@
             </div>
         </div>
         <!-- 3 产品分类 -->
-        <div class="header-classify clearfix">
+        <div class="container header-classify clearfix">
             <a href="#" class="fl fix-nav">全部商品分类</a>
             <ul class="fl list-li-horizontal">
                 <li><a href="#">圈子</a></li>

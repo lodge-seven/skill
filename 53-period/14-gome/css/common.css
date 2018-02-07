@@ -6,7 +6,7 @@ ul { list-style: none; }
 em, i { font-style: normal; }
 
 /* 后期媒体查询自适应 目前最小宽度确定 */
-body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif; color: #999; background: #F6F6F6; min-width: 1190px; }
+body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif; color: #999; background: rgb(221, 153, 153); min-width: 1200px; }
 
 /* 常用样式集成 */
 .d-block { display: block; }
@@ -14,7 +14,6 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .fr { float: right; }
 .fl { float: left; }
 .p-relative { position: relative; z-index: 1; }
-
 .pr5 {padding-right: 5px; }
 .ml10 { margin-left: 10px; }
 .mr10 { margin-right: 10px; }
@@ -26,3 +25,17 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 
 /* 偷个懒 把水平的列表共用 */
 .list-li-horizontal li { float: left; }
+
+/* 共用容器：规定长度 */
+.container { width: 1200px; margin: 0 auto; }
+
+/* 共用头部列表 */
+.con-link { color: #5e5e5e; }
+.con-link:hover { color: #f5004b; }
+
+/* 共用国美小图标们 */
+.gift-icon::after,
+.service-icon::before { content: ''; display: inline-block; vertical-align: -1px; margin: 0 0 0 3px; width: 12px; height: 13px; background: url('../images/ui.png') no-repeat -145px -1496px; }
+.service-icon::before { margin: 0 3px 0 0; background-position: 0 -513px; width: 20px; height: 20px; transform:scale(.7,.7); vertical-align: -5px; }
+.tel-icon::before { background-position: 0 -513px; width: 20px; }
+.lion { display: inline-block; background: url('../images/ui.png') no-repeat 0 -337px; width: 55px; height: 55px; vertical-align: middle; margin-right: 15px; }
