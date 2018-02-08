@@ -1,25 +1,37 @@
 @charset 'utf-8';
+/* ------------0 广告 ----------- */
+.gome-ad { height: 80px; background: rgb(127, 243, 240); }
 /* ------------1 头部 ----------- */
 /* 1.1 顶部导航.top-nav */
 .top-nav { background: #f8f8f8; border-bottom: 1px solid #ccc9c9; }
-.top-nav .con-link { line-height: 30px; }
 /* 注意：使用原始的行高哦 */
 .top-nav .icon-icon-arrow-down { vertical-align: -1px; color: #999; font-size: 12px; padding-left: 3px; line-height: normal; }
 .top-nav .icon-shouji { color: #dd00a7; }
 .login-link { padding: 0 10px; }
 .shop-link { display: block; padding: 0 10px; }
 .top-nav .register-login { color: #f5004b; }
-/* 选中下拉菜单
-    给予其父级一个高度，父级浮动所以不会在文档流中，这样就不会影响到父级同下级的布局同时改变子级高度时不会撑开
-*/
-.top-menu { position: relative; z-index: 1; height: 30px; }
-.top-menu .con-link { position: relative; border: 1px solid #fff; border-bottom: none; line-height: 29px; z-index: 2; background: #f8f8f8; }
-/* 改变高度为了与绝对定位盒子重合 */
-.top-menu:hover .con-link { color: #f5004b; border-color: rgb(219, 216, 216); height: 30px; }
-.top-menu:hover .icon-icon-arrow-down:before { display: inline-block; transform: rotate(180deg); vertical-align: 3px; }
-/* 下拉菜单组件 */
-.vip-menu { position: absolute; padding: 15px; z-index: 1; margin-top: -1px; width: 290px; height: 185px; background: #fff; border: 1px solid rgb(219, 216, 216); }
-.vip-menu .login { color: rgb(21, 147, 197); }
+/* 下拉菜单组件-会员 */
+.vip-menu { padding: 15px; z-index: 1; width: 290px; height: 185px; background: #fff; }
+.vip-menu .login,
+.my-menu .login { color: #069; }
 .vip-title { margin-top: 20px; border-top: 1px solid #ddd; line-height: 42px; }
 .vip-title .club { float: right; }
-/* 下拉的会员相关信息 */
+/* 下拉的会员滑块相关信息 */
+.vip-slider { width: 190px; margin: 0 auto; overflow: hidden; }
+.vip-slider-show { width: 1000px; }
+.vip-slider-item { text-align: center; margin: 0 16px 0 0; }
+.vip-slider-item i { font-size: 40px; line-height: 45px; margin-bottom: 5px; }
+/* 下拉菜单组件-我的国美 */
+.my-menu { width: 240px; height: 280px; background: rgb(248, 248, 248); }
+.my-partOne { padding: 10px; background: #fff; }
+.my-title { font-weight: bolder; margin-bottom: 5px; }
+.my-function a { width: 50%; }
+.my-bond { font-size: 0; padding-top: 10px; border-top: 1px solid #ddd; }
+.my-bond-item { display: inline-block; width: 25%; font-size: 12px; text-align: center; }
+.my-bond-title { margin-bottom: 5px; }
+.my-partTwo .little-lion { margin-left: 8px; }
+.my-history { margin: 0 0 10px 10px; font-weight: bolder; }
+/* 下拉菜单组件-服务 */
+.service-menu { padding: 10px; width: 220px; display: block;  }
+.top-menu-title { font-size: 12px; font-weight: bolder; margin-bottom: 10px; }
+.service-summary a {width: 33%; }
