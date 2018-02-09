@@ -4,6 +4,7 @@ body, p, ul, input, h3, h4, h5, dl, dt, dd { margin: 0; padding: 0; }
 a { text-decoration: none; color: #999; }
 ul { list-style: none; }
 em, i { font-style: normal; }
+button { border: none; font-family: Microsoft YaHei; outline: none; }
 
 /* 后期媒体查询自适应 目前最小宽度确定 */
 body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif; color: #999; background: rgb(221, 153, 153); min-width: 1200px; }
@@ -13,6 +14,9 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .d-inlineblock { display: inline-block; }
 .fr { float: right; }
 .fl { float: left; }
+.ta-right { text-align: right; }
+.ta-left { text-align: left; }
+.ta-center { text-align: center; }
 .p-relative { position: relative; z-index: 1; }
 .pr5 {padding-right: 5px; }
 .ml10 { margin-left: 10px; }
@@ -23,12 +27,13 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .border-r { border-right: 1px solid #e6e6e6; }
 .border-b { border-bottom: 1px solid #e6e6e6; }
 .btn { display: block; text-align: center; line-height: 25px; cursor: pointer; color: #fff; font-weight: 400; margin-top: 4px; }
+.btn-inline { display: inline-block; text-align: center; line-height: 25px; cursor: pointer; color: #fff; font-weight: 400;}
 .purple { background: #dd00a7; }
 /* 偷个懒 把水平的列表共用 */
 .list-li-horizontal li { float: left; }
 
-/* 共用容器：规定长度 */
-.container { width: 1200px; margin: 0 auto; }
+/* 共用容器：规定长度背景色 */
+.container { width: 1200px; margin: 0 auto; background: #fff; }
 
 /* 共用头部列表-水平导航栏 */
 .con-link { color: #5e5e5e; line-height: 30px; }
@@ -57,7 +62,22 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .tel-icon::before { background-position: 0 -513px; width: 20px; }
 .lion { display: inline-block; background: url('../images/ui.png') no-repeat 0 -337px; width: 55px; height: 55px; vertical-align: middle; margin-right: 15px; }
 .little-lion { display: inline-block; background: url('../images/ui.png') no-repeat 0 -397px; width: 50px; height: 50px; }
-/* 取消 */
+/* 火与美后缀图标 */
+.hot::after { content: ''; display: inline-block; width: 11px; height: 14px; margin-left: 2px; background: url('../images/ui.png') no-repeat 0 -454px; }
+.beauty::after { background-position: -20px -452px; }
+/* 二维码 */
+.gome-qrcode { display: block; height: 170px; width: 130px; background: url('../images/ui.png') no-repeat 0 -799px; }
+/* 购物车 */
+.fuck-car { display: inline-block; background: url('../images/ui.png') no-repeat -100px -701px; width: 27px; height: 20px; vertical-align: -4px; }
+/* 后缀个数 */
+.num-index { position: absolute; top: -20px; right: -10px; height: 20px; padding: 0 7px; line-height: 20px; background: #999; color: #fff; }
+.num-index::after { content: ''; position: absolute; bottom: -9px; left: 4px; width: 0; height: 0; border: 5px solid transparent; border-left: none; border-top: 5px solid #999;  }
+/* 小三角 */
+.triangle { display: inline-block; width: 0; height: 0; border: 5px solid transparent; border-bottom: none; border-top: 5px solid #999; vertical-align: 2px; }
+/* 国美logo */
+.logo { display: inline-block; background: url('../images/logo.png') no-repeat 0 0; width: 125px; height: 56px; }
+.ad { display: inline-block; background: url('../images/T1QvbbB_dT1RCvBVdK.gif') no-repeat 0 0; width: 100px; height: 50px; }
+/* x取消 */
 .cancel-link { position: absolute; top: 5px; right: 5px; padding: 5px; width: 12px; height: 12px; }
 .cancel-link:hover { background-color: rgba(101, 104, 105, 0.384);  }
 .cancel { display: block; background: url('../images/ui.png') no-repeat -60px -466px; width: 12px; height: 12px; }
