@@ -1,8 +1,10 @@
 @charset 'utf-8';
+
 /* ------------0 广告 ----------- */
 .gome-ad { height: 80px; background: rgb(127, 243, 240); }
+
 /* ------------1 头部 ----------- */
-/* 1.1 顶部导航.top-nav */
+/* ==========================1.1 顶部导航.top-nav========================== */
 .top-nav { background: #f8f8f8; }
 /* 注意：使用原始的行高哦 */
 .top-nav .icon-icon-arrow-down { vertical-align: -1px; color: #999; font-size: 12px; padding-left: 3px; line-height: normal; }
@@ -53,10 +55,11 @@
 .web-summary:nth-child(5) a { width: 100%; }
 /* 下拉菜单组件-二维码 */
 .qrcode-menu { right: 0px; padding: 15px; width: 130px; height: 170px; }
-/* 1.2 顶部搜索.top-search */
-.top-search { padding-top: 30px; }
+/* ===================================1.2 顶部搜索.top-search======================= */
+.search-wrap { background-color: #fff; }
+.top-search { padding: 30px 0; }
 /* 搜索-左边栏布局 */
-.logo-group { font-size: 0; }
+.logo-group { font-size: 0;  margin-right: 130px; }
 .logo-group a + a { margin-left: 20px; }
 /* 搜索-中间布局 */
 /* 去掉溢出隐藏 */
@@ -72,6 +75,30 @@
 .gome-search-btn { position: relative; font-size: 16px; height: 30px; width: 90px; vertical-align: top; }
 .search-recommend { width: 500px; height: 18px; overflow: hidden; }
 /* 搜索-右边栏布局 */
-.car-link:hover .empty-car { color: #f5004b; text-decoration: underline; }
-.car-link:hover .triangle { transform: rotate(180deg); }
+.car-link { width: 150px; height: 39px; line-height: 39px;}
 .empty-car { margin: 0 15px 0 8px; }
+.car-look { display: block; position: relative; padding: 0 10px 0 20px; width: 120px; background-color: #fff; }
+.car-look:hover .empty-car { color: #f5004b; text-decoration: underline; }
+.fuck-car-nothing { display: none; position: absolute; top: 39px; right: 0; width: 284px; height: 102px; line-height: 102px; text-align: center; background-color: #fff; }
+.fuck-car-link { margin: 0 4px; color: #444; text-decoration: underline; }
+.car-link:hover .triangle { transform: rotate(180deg); }
+.car-link:hover, 
+.car-link:hover .fuck-car-nothing { box-shadow: 0 0 18px rgba(0,0,0,.09); }
+.car-link:hover .fuck-car-nothing { display: block; }
+/* ===========================1.3产品分类.header-classify============================ */
+.classify-wrap { height: 40px; line-height: 40px; background-color: #f8f8f8; }
+.header-classify { background-color: #f8f8f8; }
+.fix-nav { width: 186px; padding-left: 14px; background-color: #f1f1f1; font-size: 15px; font-weight: bolder; color: #666; }
+.middle-nav li { padding: 0 13px; font-size: 15px; }
+.middle-nav a { color: #444; }
+.middle-nav .space { display: inline-block; margin: 13px 0; padding: 0; width: 1px; height: 14px; background: rgb(163, 162, 162); }
+.ad-nav-slider { width: 194px; height: 38px; overflow: hidden; }
+.ad-slider-item { width: 170px; height: 40px; }
+
+/* ------------ 2 中心展示区 ------------- */
+.big-slider-wrap { border-top: 1px solid #dd00a7; width: 100%; overflow: hidden; }
+.big-slider::after { content: ''; width: 100%; height: 40px; background: red; }
+.big-slider-item { width: 100%; height: 450px; }
+.big-slider-item a { width: 750px; height: 450px; }
+/* ------------ n 右侧边栏 ------------- */
+.fix-right-slider { position: fixed; right: 0; top: 0; z-index: 999; width: 36px; height: 100%; background: #5c5c5c; }

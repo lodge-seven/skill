@@ -17,7 +17,7 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .ta-right { text-align: right; }
 .ta-left { text-align: left; }
 .ta-center { text-align: center; }
-.p-relative { position: relative; z-index: 1; }
+.p-relative { position: relative; }
 .pr5 {padding-right: 5px; }
 .ml10 { margin-left: 10px; }
 .mr10 { margin-right: 10px; }
@@ -62,9 +62,15 @@ body { font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,
 .tel-icon::before { background-position: 0 -513px; width: 20px; }
 .lion { display: inline-block; background: url('../images/ui.png') no-repeat 0 -337px; width: 55px; height: 55px; vertical-align: middle; margin-right: 15px; }
 .little-lion { display: inline-block; background: url('../images/ui.png') no-repeat 0 -397px; width: 50px; height: 50px; }
+/* 小箭头 */
+.little-arrows { position: absolute; top: 12px; right: 8px; background: url('../images/ui.png') -20px -1348px; width: 9px; height: 5px; border: 1px solid transparent; }
+.little-arrows-bottom { background-position: -20px -1353px; top: 22px;  }
+.little-arrows:hover { border: 1px solid rgb(201, 198, 198); margin-top: 1px; background-color: rgb(236, 232, 232); }
 /* 火与美后缀图标 */
 .hot::after { content: ''; display: inline-block; width: 11px; height: 14px; margin-left: 2px; background: url('../images/ui.png') no-repeat 0 -454px; }
 .beauty::after { background-position: -20px -452px; }
+.hot2 { position: relative; }
+.hot2::after { position: absolute; right: -10px; background-position: -130px -721px; width: 20px; }
 /* 二维码 */
 .gome-qrcode { display: block; height: 170px; width: 130px; background: url('../images/ui.png') no-repeat 0 -799px; }
 /* 购物车 */

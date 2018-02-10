@@ -18,6 +18,7 @@
         </div>
     </div>
     <!-- E 广告 -->
+
     <!-- S 头部 （1 顶部导航 2 搜索展示 3 产品分类）-->
     <div class="gome-h">
         <!-- 背景色及范围圈定 -->
@@ -215,17 +216,20 @@
             -->
         <div>
 
-        <div class="top-nav">
+        <div class="top-nav search-wrap">
             <div class="container top-search clearfix">
                 <div class="fl logo-group">
                     <a href="#" class="d-inlineblock logo"></a>
                     <a href="#" class="d-inlineblock ad"></a>
                 </div>
                 <div class="fr car-link p-relative">
-                    <a href="#"><i class="fuck-car p-relative"><i class="num-index">0</i></i><span class="empty-car">购物车空了</span><i class="triangle"></i></a>
-
+                    <!-- 不能使用堆叠顺序 所以把弹出效果提前 -->
+                    <div class="fuck-car-nothing">
+                        <a href="#" class="fuck-car-link club">购物车</a>中还没有商品，赶紧选购吧！
+                    </div>
+                    <a href="#" class="car-look"><i class="fuck-car p-relative"><i class="num-index">0</i></i><span class="empty-car">购物车空了</span><i class="triangle"></i></a>
                 </div>
-                <div class="search-group ta-center">
+                <div class="search-group">
                     <div class="d-inlineblock ta-left">
                         <div class="search">
                             <form action="#">
@@ -256,30 +260,65 @@
                 </div>
             </div>
         </div>
-        <!-- 3 产品分类 -->
-        <div class="container header-classify clearfix">
-            <a href="#" class="fl fix-nav">全部商品分类</a>
-            <ul class="fl list-li-horizontal">
-                <li><a href="#">圈子</a></li>
-                <li><a href="#">真划算</a></li>
-                <li><a href="#">|</a></li>
-                <li><a href="#">服装城</a></li>
-                <li><a href="#">超市</a></li>
-                <li><a href="#">电器城</a></li>
-                <li><a href="#">国美电器</a></li>
-                <li><a href="#">汽车</a></li>
-                <li><a href="#">家居家装</a></li>
-                <li><a href="#">|</a></li>
-                <li><a href="#">智能</a></li>
-                <li><a href="#">管家</a></li>
-                <li><a href="#">金融</a></li>
-            </ul>
-            <ul>
-                <li><a href="#" class="d-block"></a></li>
-            </ul>
+        <!-- 3 产品分类（3.1 标题 3.2 中部导航 3.3 轮播广告） -->
+        <div class="top-nav classify-wrap">
+            <div class="container header-classify clearfix">
+                <a href="#" class="fl fix-nav">全部商品分类</a>
+                <ul class="fl list-li-horizontal middle-nav">
+                    <li><a href="#" class="club">圈子</a></li>
+                    <li><a href="#" class="club">真划算</a></li>
+                    <li class="space"></li>
+                    <li><a href="#" class="club">服装城</a></li>
+                    <li><a href="#" class="club">超市</a></li>
+                    <li><a href="#" class="club">电器城</a></li>
+                    <li><a href="#" class="club">国美电器</a></li>
+                    <li><a href="#" class="club">汽车</a></li>
+                    <li><a href="#" class="club">家居家装</a></li>
+                    <li class="space"></li>
+                    <li><a href="#" class="club">智能</a></li>
+                    <li><a href="#" class="club hot hot2">管家</a></li>
+                    <li><a href="#" class="club">金融</a></li>
+                </ul>
+                <div class="fr p-relative ad-nav-slider">
+                    <a href="#" class="little-arrows"></a>
+                    <a href="#" class="little-arrows little-arrows-bottom"></a>
+                    <ul class="">
+                        <li><a href="#" class="d-block ad-slider-item"><img src="./images/T1jCVjB5dT1RCvBVdK.png" alt=""></a></li>
+                        <li><a href="#" class="d-block ad-slider-item"><img src="./images/T1GrbbB5ZT1RCvBVdK.png" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <!-- E 头部 -->
 
+    <!-- S 中心展示区
+        在一个大的轮播基础上加盒子模型
+    -->
+    <div class="top-nav big-slider-wrap">
+        <ul class="big-slider">
+            <li class="big-slider-item">
+                <a href="#" class="d-block"><img src="./images/T1CFdjBC_T1RCvBVdK.jpg" alt=""></a>
+            </li>
+            <li class="big-slider-item">
+                <a href="#" class="d-block"><img src="./images/T1CFdjBC_T1RCvBVdK.jpg" alt=""></a>
+            </li>
+        </ul>
+        <!-- <div class="">
+            <ul class="p-relative">
+                <li>
+                    <a href="#" class="club">手机</a>
+                    <a href="#" class="club">充值</a>
+                    <a href="#" class="club">相机</a>
+                    <a href="#" class="club">智能数码</a>
+                </li>
+            </ul>
+        </div> -->
+    </div>
+    <!-- E 中心展示区 -->
+
+    <!-- S 侧边栏  -->
+    <div class="fix-right-slider"></div>
+    <!-- E 侧边栏  -->
 </body>
 </html>
