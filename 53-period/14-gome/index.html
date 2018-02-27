@@ -22,7 +22,7 @@
     <!-- S 头部 （1 顶部导航 2 搜索展示 3 产品分类）-->
     <div class="gome-h">
         <!-- 背景色及范围圈定 -->
-        <div class="top-nav border-b">
+        <div class="top-nav  border-b">
             <!-- 1 顶部导航 （1.1 会员相关 1.2 购物导航）
                 需要两层div的原因是 1 整行背景导航颜色 2 清浮动 
             -->
@@ -293,29 +293,640 @@
     <!-- E 头部 -->
 
     <!-- S 中心展示区
-        在一个大的轮播基础上加盒子模型
+        在一个大的轮播基础上加盒子模型 （1 大轮播 2 左边导航栏 3 右边功能区）
     -->
-    <div class="top-nav big-slider-wrap">
+    <div class="p-relative top-nav big-slider-wrap">
+        <!-- 1 定位大轮播 
+            定位是因为单元盒子需要铺满宽度，定位到中间，不用定位也可以做出来
+        -->
+        <div class="big-slider-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <ul class="big-slider">
-            <li class="big-slider-item">
-                <a href="#" class="d-block"><img src="./images/T1CFdjBC_T1RCvBVdK.jpg" alt=""></a>
+            <li class="big-slider-item ghjkl32hidden">
+                <a href="#" class="d-block"><img src="./images/T1qddjByAT1RCvBVdK.jpg" alt=""></a>
             </li>
             <li class="big-slider-item">
                 <a href="#" class="d-block"><img src="./images/T1CFdjBC_T1RCvBVdK.jpg" alt=""></a>
             </li>
         </ul>
-        <!-- <div class="">
-            <ul class="p-relative">
-                <li>
-                    <a href="#" class="club">手机</a>
-                    <a href="#" class="club">充值</a>
-                    <a href="#" class="club">相机</a>
-                    <a href="#" class="club">智能数码</a>
+        <div class="container clearfix">
+            <!-- 2 定位左边导航栏 -->
+            <ul class="fl left-slider-nav">
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">手机</a>
+                    <a href="#" class="club left-slider-link">充值</a>
+                    <a href="#" class="club left-slider-link">相机</a>
+                    <a href="#" class="club left-slider-link">智能数码</a>
+                    <!-- 两栏 -->
+                    <div class="left-slider-menu">
+                        <div class="fr left-slider-ad">
+                            <a href="#" class="d-inlineblock">sss<img src="./images/华为-手机.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160705155524.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/三星手机.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160705155529.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160708122040.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160714121530.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160711182201.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160711182202.jpg" alt=""></a>
+                            <p class="big-ad">
+                                <a href="#" class="d-inlineblock"><img src="./images/T1GFhjBCdT1RCvBVdK.jpg" alt=""></a>                            
+                            </p>
+                        </div>
+                        <div class="left-slider-list">
+                            <p class="list-labels">
+                                <a href="#" class="d-inlineblock">潮3C<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">手机<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">数码<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">以旧换新<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">手机充值<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">美通卡<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">延保服务<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">办公室生活<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">智享生活<i class="left-arrows"></i></a>
+                            </p>
+                            <dl class="list-type clearfix">
+                                <dt>手机通讯</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">iPhone</a>
+                                    <a href="#" class="club">华为</a>
+                                    <a href="#" class="club">小米</a>
+                                    <a href="#" class="club">荣耀</a>
+                                    <a href="#" class="club">三星</a>
+                                    <a href="#" class="club">OPPO</a>
+                                    <a href="#" class="club">vivo</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>运营商</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">中国移动</a>
+                                    <a href="#" class="club">中国联通</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>手机配件</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">移动电源</a>
+                                    <a href="#" class="club">存储卡/读卡器</a>
+                                    <a href="#" class="club">蓝牙耳机</a>
+                                    <a href="#" class="club">有线耳机</a>
+                                    <a href="#" class="club">保护套</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>摄像摄影</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">数码相机</a>
+                                    <a href="#" class="club">单反相机</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>摄照配件</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">单反相机</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>智能设备</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">有线耳机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>视听娱乐</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">中国移动</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>电子教育</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>充话费</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">单反相机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>充流量</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">电脑</a>
+                    <a href="#" class="club left-slider-link">办公配件</a>
+                    <div class="left-slider-menu">
+                        <div class="fr left-slider-ad">
+                            <a href="#" class="d-inlineblock"><img src="./images/20160705155524.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock">sss<img src="./images/华为-手机.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/三星手机.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160714121530.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160708122040.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160705155529.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160711182202.jpg" alt=""></a>
+                            <a href="#" class="d-inlineblock"><img src="./images/20160711182201.jpg" alt=""></a>
+                            <p class="big-ad">
+                                <a href="#" class="d-inlineblock"><img src="./images/T1GFhjBCdT1RCvBVdK.jpg" alt=""></a>                            
+                            </p>
+                        </div>
+                        <div class="left-slider-list">
+                            <p class="list-labels">
+                                <a href="#" class="d-inlineblock">潮3C<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">电脑办公<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">精品配件<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">以旧换新<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">手机充值<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">美通卡<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">延保服务<i class="left-arrows"></i></a>
+                                <a href="#" class="d-inlineblock">办公室生活<i class="left-arrows"></i></a>
+                            </p>
+                            <dl class="list-type clearfix">
+                                <dt>手机通讯</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">iPhone</a>
+                                    <a href="#" class="club">华为</a>
+                                    <a href="#" class="club">小米</a>
+                                    <a href="#" class="club">荣耀</a>
+                                    <a href="#" class="club">三星</a>
+                                    <a href="#" class="club">OPPO</a>
+                                    <a href="#" class="club">vivo</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>视听娱乐</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">中国移动</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>电子教育</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>充话费</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">单反相机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                </dd>
+                            </dl>
+                            <dl class="list-type clearfix">
+                                <dt>充流量</dt>
+                                <dd class="clearfix">
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                    <a href="#" class="club">手机</a>
+                                    <a href="#" class="club">对讲机</a>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">电视</a>
+                    <a href="#" class="club left-slider-link">影音</a>
+                    <a href="#" class="club left-slider-link">智能</a>
+                    <a href="#" class="club left-slider-link">国美管家</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">空调</a>
+                    <a href="#" class="club left-slider-link">冰箱</a>
+                    <a href="#" class="club left-slider-link">洗衣机</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">厨房卫浴</a>
+                    <a href="#" class="club left-slider-link">生活电器</a>
+                    <a href="#" class="club left-slider-link">净化器</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">家具</a>
+                    <a href="#" class="club left-slider-link">建材</a>
+                    <a href="#" class="club left-slider-link">家装服务</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">家纺</a>
+                    <a href="#" class="club left-slider-link">家居</a>
+                    <a href="#" class="club left-slider-link">家电服务</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">食品酒水</a>
+                    <a href="#" class="club left-slider-link">母婴玩具</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">医疗保健</a>
+                    <a href="#" class="club left-slider-link">美妆个护</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">服饰鞋帽</a>
+                    <a href="#" class="club left-slider-link">箱包奢品</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">运动户外</a>
+                    <a href="#" class="club left-slider-link">钟表首饰</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">汽车整车</a>
+                    <a href="#" class="club left-slider-link">汽车用品</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">文化艺术</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">旅行</a>
+                    <a href="#" class="club left-slider-link">电影票</a>
+                    <a href="#" class="club left-slider-link">演出票</a>
+                    <a href="#" class="club left-slider-link">游戏</a>
+                </li>
+                <li class="left-slider-item">
+                    <a href="#" class="club left-slider-link">金融理财</a>
+                    <a href="#" class="club left-slider-link">基金理财</a>
                 </li>
             </ul>
-        </div> -->
+            <!-- 3 定位右边功能区 -->
+            <div class="fr right-slider-func">
+                <div class="right-slider-content clearfix">
+                    <p class="right-slider-title"><span>快讯</span><a href="#" class="fr club">更多<i class="left-arrows-black"></i></a></p>
+                    <p class="right-slider-summary clearfix">
+                        <a href="#" class="right-slider-tip">公告</a><a href="#" class="right-slider-link club">2018年春节期间服务时间安排公告</a>
+                    </p>
+                    <p class="right-slider-summary clearfix">
+                        <a href="#" class="right-slider-tip">特惠</a><a href="#" class="right-slider-link club">数码畅销好货限量9.9元抢</a>
+                    </p>
+                    <p class="right-slider-summary clearfix">
+                        <a href="#" class="right-slider-tip">资讯</a><a href="#" class="right-slider-link club">填问卷 等你来拿500美豆</a>
+                    </p>
+                    <p class="right-slider-summary clearfix">
+                        <a href="#" class="right-slider-tip">资讯</a><a href="#" class="right-slider-link club">春节假期车票开抢 你还在等什么</a>
+                    </p>
+                </div>
+                <div class="top-list-layout right-slider-icon">
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>充值</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>票务</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>游戏</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>旅行</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>梅英宝</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>基金</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>视频</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>找服务</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>金融</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>定期</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>转让</span> 
+                    </a>
+                    <a href="#">
+                        <i class="iconfont icon-piaowu"></i>
+                        <span>帮助</span> 
+                    </a>
+                </div>
+                <div class="p-relative right-slider-ad">
+                    <div >
+                        <p>[美店主新年礼]</p>
+                        <p>首单立送现金券</p>
+                    </div>
+                    <img src="./images/T10.hjBmET1RCvBVdK.jpg" alt="">
+                </div>
+            </div>
+        </div>
     </div>
     <!-- E 中心展示区 -->
+
+    <!-- S 购物主体 （1 实惠 2 新潮 3 品牌） -->
+    <section class="container shopping clearfix">
+        <!-- 1 实惠 -->
+        <div class="fl bargains">
+            <!-- 1.1 购物共用标题 -->
+            <h2 class="shop-title">
+                <span class="shop-main"> · 实惠</span><span class="shop-summary">BARGAINS</span>
+            </h2>
+            <!-- 1.2 购物共用主体 -->
+            <div class="shop-body clearfix">
+                <div class="fl">
+                    <img class="d-block" src="./images/T1H6djB5JT1RCvBVdK.jpg" alt="">
+                </div>
+                <div class="fl shop-space">
+                    <div>
+                        <img class="d-block" src="./images/T1VPLjB5ZT1RCvBVdK.jpg" alt="">
+                    </div> 
+                    <div>
+                        <img class="d-block" src="./images/T1OwL_BjxT1RCvBVdK.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 2 新潮 -->
+        <div class="fl fashion">
+            <h2 class="shop-title">
+                <span class="shop-main"> · 新潮</span><span class="shop-summary">FASHION</span>
+            </h2>
+            <div class="shop-body clearfix">
+                <div class="fl">
+                    <img class="d-block" src="./images/T1MhJgB5JT1RCvBVdK.jpg" alt="">
+                </div>
+                <div class="fl shop-space">
+                    <div>
+                        <img class="d-block" src="./images/T1FnVjB5dT1RCvBVdK.jpg" alt="">
+                    </div> 
+                    <div>
+                        <img class="d-block" src="./images/T1R.LTB5ET1RCvBVdK.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 3 品牌 -->
+        <div class="fl brands">
+            <h2 class="shop-title">
+                <span class="shop-main"> · 品牌</span><span class="shop-summary">BRANDS</span>
+            </h2>
+            <div class="shop-body clearfix">
+                <div class="fl shop-space">
+                    <div>
+                        <img class="d-block" src="./images/T1nZVgBX_T1RCvBVdK.jpeg" alt="">
+                    </div>
+                    <div>
+                        <img class="d-block" src="./images/T1RBhjB4WT1RCvBVdK.jpg" alt="">
+                    </div>
+                </div>
+                <!-- 3.1 小型购物主体 -->
+                <div class="fl shop-space-little">
+                    <img class="d-block" src="./images/T16cxjB5KT1RCvBVdK.jpeg" alt="">
+                    <img class="d-block" src="./images/T15ddjB5bT1RCvBVdK.jpeg" alt="">
+                    <img class="d-block" src="./images/T1.gdvB5LT1RCvBVdK.jpg" alt="">
+                    <img class="d-block" src="./images/T1pcYTB5ZT1RCvBVdK.png" alt="">
+                    <img class="d-block" src="./images/T1uk_gB5bT1RCvBVdK.jpeg" alt="">
+                    <img class="d-block" src="./images/T16y_gBC_T1RCvBVdK.jpeg" alt="">                    
+                    <img class="d-block" src="./images/T1k2hgBXdT1RCvBVdK.jpeg" alt="">                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- E 购物主体 -->
+
+    <!-- S 领券中心 -->
+    <section class="container ticket clearfix">
+        <a href="#" class="fl p-relative center">
+            <img src="./images/T1K9ZvB5Kj1RCvBVdK.jpg" alt="">
+        </a>
+        <ul class="fl ticket-list list-li-horizontal">
+            <li>
+                <a href="#" class="d-block">
+                    <img src="./images/T1gdxQBXZT1RCvBVdK.jpg" alt="">
+                </a>
+            </li>
+            <li>
+                <a href="#" class="d-block">
+                    <img src="./images/T1UohQB4hT1RCvBVdK.jpg" alt="">
+                </a>                            
+            </li>
+            <li>
+                <a href="#" class="d-block">                
+                    <img src="./images/T1zuWgB4xT1RCvBVdK.jpg" alt="">                
+                </a>            
+            </li>
+            <li>
+                <a href="#" class="d-block">                
+                    <img src="./images/T12vYgB4hT1RCvBVdK.jpg" alt="">                
+                </a>        
+            </li>
+            <li>
+                <a href="#" class="d-block">                
+                    <img src="./images/T1ddJjB4hT1RCvBVdK.jpg" alt="">                
+                </a>            
+            </li>
+        </ul>
+        <a href="#" class="fl">
+            <img src="./images/T13MDvBjC_1RCvBVdK.jpg" alt="">
+        </a>
+    </section>
+    <!-- E 领券中心 -->
+
+    <!-- S 金融 -->
+    <section class="container finance">
+        <!-- 1.1 购物共用标题 -->
+        <h2 class="shop-title">
+            <span class="finance-title">金融</span><span class="shop-summary">FINANCE</span>  
+        </h2>
+        <div class="finance-body clearfix">
+            <a href="#" class="fl p-relative">
+                <img src="./images/T1nkhvBsWg1RCvBVdK.jpeg" alt="">
+                <span class="finance-btn">金融频道 > </span>
+            </a>
+            <ul class="fl ticket-list list-li-horizontal">
+                <li>
+                    <a href="#" class="d-block">
+                        <img src="./images/T1BshgB5KT1RCvBVdK.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="d-block">
+                        <img src="./images/T1jGLQB5KT1RCvBVdK.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="d-block">
+                        <img src="./images/T1KqDvB4CT1RCvBVdK.jpeg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="d-block">
+                        <img src="./images/T1zoE_B4ZT1RCvBVdK.jpeg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- E 金融 -->
+
+    <!-- S 热门话题 -->
+    <section class="hot-topic">
+        <div class="container clearfix">
+            <div class="fl">
+                <div class="topic-title clearfix">
+                    <h2 class="fl">热门话题</h2>
+                    <a href="#" class="fr club">发布话题></a>
+                </div>
+                <div class="clearfix topic-wrap">
+                    <!-- s 话题单元 -->
+                    <div class="fl p-relative">
+                        <div class="topic-link">
+                            <a href="#" class="d-block">
+                                <img class="topic-img" src="./images/T1YtD_ByYT1RCvBVdK.jpg" alt="">
+                            </a>
+                            <a href="#" class="topic-tip">
+                                <img src="./images/T1VKhvBKd_1RCvBVdK.jpg" >
+                                <span class="tip-content">GOME福利社</span>
+                            </a>
+                        </div>
+                        <div class="topic-content">
+                            <a href="#" class="d-block topic-summary club">写出你的"团圆故事" 赢爱芒果电视！</a>
+                            <a href="#" class="d-block topic-details club">终于迎来了期盼已久的长假，大家都打算怎么过年呢？走亲访友、奔赴饭局、外出旅游......还是和小编一样，打算安安静静过个“佛系春节”呢？</a>
+                            <p class="topic-func">
+                                <a href="#" class="thumb">158</a>
+                                <a href="#" class="info">604</a>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- e 话题单元 -->
+                    <div class="fl p-relative">
+                        <div class="topic-link">
+                            <a href="#" class="d-block">
+                                <img class="topic-img" src="./images/T1N1hjBXZT1RCvBVdK.jpg" alt="">
+                            </a>
+                            <a href="#" class="topic-tip">
+                                <img src="./images/T1U7ZvB7hg1RCvBVdK.jpg" >
+                                <span class="tip-content">官方试用中心</span>
+                            </a>
+                        </div>
+                        <div class="topic-content">
+                            <a href="#" class="d-block topic-summary club">试用103期：植村秀如胶似漆眼线笔</a>
+                            <a href="#" class="d-block topic-details club">本期试用品是手残党都可轻松驾驭的眼线笔，假若你有美瞳线，也可以不时再练习下眼线，可温故而知新~</a>
+                            <p class="topic-func">
+                                <a href="#" class="thumb">242</a>
+                                <a href="#" class="info">175</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="fl p-relative">
+                        <div class="topic-link">
+                            <a href="#" class="d-block">
+                                <img class="topic-img" src="./images/T1jjDgByKT1RCvBVdK.png" alt="">
+                            </a>
+                            <a href="#" class="topic-tip">
+                                <img src="./images/T1PADvB_hg1RCvBVdK.jpg" >
+                                <span class="tip-content">国美活动大营</span>
+                            </a>
+                        </div>
+                        <div class="topic-content">
+                            <a href="#" class="d-block topic-summary club">赢最高2018元现金大礼包</a>
+                            <a href="#" class="d-block topic-details club">为了爱分享的你，我们开启了第一届国美最美分享达人活动！郑重邀请您参与！</a>
+                            <p class="topic-func">
+                                <a href="#" class="thumb">199</a>
+                                <a href="#" class="info">86</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fr interest">
+                <div class="topic-title clearfix">
+                    <h2 class="fl">兴趣圈子</h2>
+                    <a href="#" class="fr">更多></a>
+                </div>
+                <div class="interest-content">
+                    <div class="interest-store">
+                        <a href="#" class="d-block"><img src="./images/T1cjJ_BC_T1RCvBVdK.png" class="interest-img" alt=""></a>
+                        <p class="interest-summary">
+                            <span class="interest-hot">热点</span>美店全攻略
+                        </p>
+                        <p><span class="topic-num">成员5.5万</span><span>话题449</span></p>
+                    </div>
+                    <div class="interest-link">
+                        <a href="#" class="d-block club">[ 话题 ] 美店全攻略规则</a>
+                        <a href="#" class="d-block club">[ 话题 ] 【美店秘籍】如何做到分享多样化-第一季</a>
+                        <a href="#" class="d-block club">[ 话题 ] 【美店秘籍】开了美店不会分享可咋整？！ </a>
+                        <a href="#" class="d-block club">[ 话题 ] 【美店秘籍】刚开美店不会赚钱怎么办？ </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- E 热门话题 -->
 
     <!-- S 侧边栏  -->
     <div class="fix-right-slider"></div>

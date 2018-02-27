@@ -22,7 +22,8 @@
 .vip-slider { width: 190px; margin: 0 auto; overflow: hidden; }
 .vip-slider-show { width: 1000px; }
 .vip-slider-item { text-align: center; margin: 0 16px 0 0; }
-.vip-slider-item i { font-size: 40px; line-height: 45px; margin-bottom: 5px; }
+.vip-slider-item i { font-size: 40px; line-height: 45px; margin-bottom: 5px; cursor: pointer; }
+.vip-slider-item i:hover { color: #777; }
 /* 下拉菜单组件-我的国美 */
 .my-menu { width: 240px; height: 280px; background: rgb(248, 248, 248); }
 .my-partOne { padding: 10px; background: #fff; }
@@ -67,7 +68,7 @@
 .search { text-align: left; font-size: 0; border: 1px solid #dd00a7; margin-bottom: 4px; }
 .gome-select { position: relative; font-size: 14px; color: #A5A5A5; line-height: 30px; height: 30px; padding: 0 10px; width: 44px; border-right: 1px solid #dd00a7; vertical-align: top; }
 .gome-select:hover .gome-options { display: block; }
-.gome-options { position: absolute; display: none; left: -1px; margin-top: -1px; width: 64px; background: #fff; border: 1px solid #dd00a7; }
+.gome-options { position: absolute; z-index: 1; display: none; left: -1px; margin-top: -1px; width: 64px; background: #fff; border: 1px solid #dd00a7; }
 .gome-options li { height: 25px; line-height: 25px; font-size: 14px; padding-left: 10px; }
 .gome-options li:hover { background: rgb(236, 232, 232); cursor: pointer; }
 .gome-search-input { line-height: 30px; height: 30px; width: 313px; border: none; vertical-align: top; font-size: 14px; padding: 0 20px 0 10px; outline: none; }
@@ -79,8 +80,10 @@
 .empty-car { margin: 0 15px 0 8px; }
 .car-look { display: block; position: relative; padding: 0 10px 0 20px; width: 120px; background-color: #fff; }
 .car-look:hover .empty-car { color: #f5004b; text-decoration: underline; }
-.fuck-car-nothing { display: none; position: absolute; top: 39px; right: 0; width: 284px; height: 102px; line-height: 102px; text-align: center; background-color: #fff; }
+.fuck-car-nothing { display: none; position: absolute; z-index: 1; top: 39px; right: 0; width: 284px; height: 102px; line-height: 102px; text-align: center; background-color: #fff; }
 .fuck-car-link { margin: 0 4px; color: #444; text-decoration: underline; }
+/* 定位真是不容易啊 这里就偷个懒了 只有在焦点的情况下才堆叠 堆叠对其他盒子起效果的原因是不在一个维度里，维度高的向上堆叠，维度低的不能达到相同高度，堆叠无效，解决方法是让彼此父级定位后堆叠 */
+.car-link:hover .car-look { z-index: 2; }
 .car-link:hover .triangle { transform: rotate(180deg); }
 .car-link:hover, 
 .car-link:hover .fuck-car-nothing { box-shadow: 0 0 18px rgba(0,0,0,.09); }
@@ -90,15 +93,122 @@
 .header-classify { background-color: #f8f8f8; }
 .fix-nav { width: 186px; padding-left: 14px; background-color: #f1f1f1; font-size: 15px; font-weight: bolder; color: #666; }
 .middle-nav li { padding: 0 13px; font-size: 15px; }
-.middle-nav a { color: #444; }
+.middle-nav a { color: #000; }
 .middle-nav .space { display: inline-block; margin: 13px 0; padding: 0; width: 1px; height: 14px; background: rgb(163, 162, 162); }
 .ad-nav-slider { width: 194px; height: 38px; overflow: hidden; }
 .ad-slider-item { width: 170px; height: 40px; }
 
 /* ------------ 2 中心展示区 ------------- */
-.big-slider-wrap { border-top: 1px solid #dd00a7; width: 100%; overflow: hidden; }
-.big-slider::after { content: ''; width: 100%; height: 40px; background: red; }
-.big-slider-item { width: 100%; height: 450px; }
-.big-slider-item a { width: 750px; height: 450px; }
+/* 中心展示-中间轮播 */
+.big-slider-wrap { border-top: 1px solid #dd00a7; height: 450px; width: 100%; }
+.big-slider-icon { position: absolute; z-index: 1; bottom: 0; left: 50%; height: 30px; transform: translate(-50%, 0); }
+.big-slider-icon span { display: inline-block; width: 30px; height: 5px; margin: 0 5px; background: rgba(0, 0, 0, 0.3); }
+.big-slider-icon span:hover { cursor: pointer; background: #f5004b; }
+.big-slider-item { position: absolute; width: 100%; min-width: 1200px; height: 450px; background: rgb(228, 51, 35); }
+.big-slider-item a { position: absolute; left: 50%; margin-left: -400px; width: 750px; height: 450px; }
+/* 中间展示-左边导航  */
+/* 不能用模糊 会继承 */
+.left-slider-nav { position: relative; width: 200px; background: rgba(51, 51, 51, 0.7); }
+.left-slider-item { margin: 0 0 0 1px; line-height: 30px; height: 30px; padding-left: 15px; font-size: 0; }
+.left-slider-link { font-size: 14px; margin-left: 5px; color: #fff; }
+.left-slider-item:first-child { margin-top: 1px; height: 29px; }
+.left-slider-item:hover:after { position: absolute; z-index: 1; content: ''; right: -1px; width: 1px; height: 30px; background: #fff; }
+.left-slider-item:hover { background-color: #fbfbfb; }
+.left-slider-item:hover .left-slider-menu { display: block; }
+.left-slider-item:hover .left-slider-link { color: #000; }
+/* 弹出框 */
+.left-slider-menu { position: absolute; z-index: 1; display: none; top: 0; left: 0; margin-left: 200px; width: 1000px; background: #fbfbfb; border: 1px solid #818181; }
+/* 弹出框-广告 */
+.left-slider-ad { width: 210px; height: 453px; }
+.left-slider-ad a { width: 50%; background: #fff; text-align: center; height: 60px; line-height: 60px; }
+.left-slider-ad img { vertical-align: middle; }
+.left-slider-ad .big-ad { padding-top: 32px; border-top: 1px solid #ddd; }
+/* 弹出框-清单 */
+.left-slider-list { overflow: hidden; padding: 20px 20px 0 20px; background: #fbfbfb; }
+.list-labels { margin-bottom: 5px; }
+.list-labels a { color: #fff; padding: 0 5px; line-height: 20px; height: 20px; font-size: 12px; background: #f5004b; margin-right: 10px; }
+.list-labels a:hover { background: #e3101e; }
+.list-type { margin-bottom: 10px; }
+.list-type:last-child { margin-bottom: 0px; }
+.list-type dt, .list-type dd  { float: left; }
+.list-type dt { font-weight: bolder; width: 62px; color: #666; font-size: 12px; line-height: 25px;}
+.list-type dd { width: 680px; border-bottom: 1px solid #ddd; }
+.list-type a { float: left; font-size: 12px; padding: 0 7px; height: 16px; line-height: 16px; margin: 7px 0; border-left: 1px solid #ddd; }
+/* 中间展示-右边功能区  */
+.right-slider-func { position: relative; width: 250px; margin-top: 12px; background: rgba(255, 255, 255, 0.856); }
+.right-slider-content { margin: 0 15px; padding-bottom: 8px; border-bottom: 1px dashed #ccc; }
+.right-slider-title { height: 36px; line-height: 40px; }
+.right-slider-title span { font-size: 15px; color: #000; }
+.right-slider-title a { color: #777; }
+.right-slider-summary { line-height: 26px; }
+.right-slider-tip { margin-right: 7px; }
+.right-slider-link { position: absolute; width: 196px; height: 26px; color: #777; overflow: hidden; }
+.right-slider-icon { width: 216px; margin: 7px auto; }
+.right-slider-icon a { width: 25%; text-align: center; color: #333; }
+.right-slider-icon a:hover { color: #f5004b; }
+.right-slider-icon .icon-piaowu { display: block; line-height: 40px; height: 40px; font-size: 35px; }
+.right-slider-ad { height: 60px; }
+.right-slider-ad div { position: absolute; top: 10px; left: 10px; width: 120px; height: 36px; }
+.right-slider-ad p { color: #fff; font-size: 14px; }
+
+/* ------------ 3 购物主体 ------------- */
+.shopping { margin-top: 20px; }
+.shopping > div + div { margin-left: 10px; }
+.shop-title { height: 40px; line-height: 40px; font-weight: 600; }
+.shop-main::before { content: ''; display: inline-block; vertical-align: -3px; width: 24px; height: 22px; background: url('../images/ui2.png') no-repeat -169px -100px; }
+.fashion .shop-main::before { content: ''; background-position: -169px -132px; }
+.brands .shop-main::before { content: ''; background-position: -169px -166px; }
+.shop-main { margin-right: 5px; }
+.shop-body { height: 422px; border: 1px solid #dedede; }
+/* 分两列商品 */
+.shop-space div + div { border-top: 1px dashed #eee; }
+.brands .shop-space { border-right: 1px solid #eee; }
+.shop-space-little img { padding: 15px 8px; }
+.shop-space-little img + img { border-top: 1px dashed #eee; }
+
+/* ------------ 4 领券中心 ------------- */
+.ticket { margin-top: 20px; }
+.ticket ul { margin-left: -10px; }
+.ticket .ticket-list { height: 110px; overflow: hidden; }
+.ticket-list li + li { border-left: 1px dashed #ddd; }
+.ticket .center { z-index: 1; }
+
+/* ------------ 5 金融 ---------------- */
+.finance { margin-top: 10px; margin-bottom: 40px; }
+.finance .ticket-list { margin-left: -1px; }
+.finance-title { color: #000; font-weight: normal; margin-right: 5px; }
+.finance-body { border: 1px solid #ddd; height: 228px; overflow: hidden; }
+.finance-btn { position: absolute; bottom: 40px; left: 60px; height: 30px; line-height: 30px; font-size: 14px; padding: 0 14px; color: #fff; border-radius: 2px; background: #b88828; }
+
+/* ------------ 6 热门话题 ------------- */
+.hot-topic { background: #f7f7f7; padding: 30px 0; }
+.topic-title { padding-bottom: 8px; }
+.topic-title h2 { color: #000; font-weight: normal; }
+.topic-title a { color: #888; padding-top: 5px; }
+.topic-wrap > div { background: #fff; }
+.topic-wrap > div + div { margin-left: 12px; }
+.topic-img { width: 306px; height: 180px; }
+.topic-tip::before { content: ''; top: 10px; left: 20px; border-radius: 50%; position: absolute; width: 22px; height: 22px; background: rgba(0, 0, 0, 0.3); }
+.topic-tip img { position: absolute; width: 18px; height: 18px; z-index: 1; top: 10px; left: 20px; background: url('../images/loading-sm.png') 50% 50% no-repeat; border-radius: 50%; padding: 2px;  }
+.tip-content { position: absolute; opacity: 0; width: 0; overflow: hidden; height: 22px; line-height: 22px; top: 10px; left: 20px; padding: 0 10px 0 25px; border-radius: 20px; color: #fff; background: rgba(0, 0, 0, 0.3); }
+.topic-link:hover .tip-content { width: 80px; opacity: 1; transition: width .3s; }
+/* 热门内容 */
+.topic-content { width: 266px; padding: 0 20px 20px; background: #fff; }
+.topic-summary { color: #333; font-size: 16px; overflow: hidden; white-space: nowrap; margin: 14px 0 7px; }
+.topic-details { color: #333; height: 52px; overflow: hidden; }
+.topic-func { margin-top: 20px; }
+.topic-func a { color: #333; }
+.topic-func .thumb::before { content: ''; display: inline-block; width: 13px; height: 14px; vertical-align: -2px; margin-right: 4px; background: url('../images/assist.png') 50% no-repeat;  }
+.topic-func .thumb { margin-right: 30px; }
+.topic-func .info::before { content: ''; display: inline-block; width: 14px; height: 14px; vertical-align: -2px; margin-right: 4px; background: url('../images/discuss.png') 50% no-repeat;  }
+/* 兴趣圈子 */
+.interest-content { padding: 14px; background: #fff; height: 312px; }
+.interest-store { padding-bottom: 10px; border-bottom: 1px dashed #e6e6e6; }
+.interest-summary { margin: 15px 0 5px; color: #333; font-size: 14px; }
+.interest-img { width: 216px; height: 120px; }
+.interest-hot { padding: 2px; color: #fff; font-size: 12px; background: #ff7612; border-radius: 2px; margin-right: 6px; }
+.topic-num { margin-right: 10px; }
+.interest-link { margin-top: 15px; }
+.interest-link a { font-size: 13px; width: 211px; height: 20px; overflow: hidden; color: #333; }
 /* ------------ n 右侧边栏 ------------- */
 .fix-right-slider { position: fixed; right: 0; top: 0; z-index: 999; width: 36px; height: 100%; background: #5c5c5c; }
