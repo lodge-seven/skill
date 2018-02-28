@@ -10,15 +10,27 @@
 <body>
     <div id="app">
         <div v-for="(item, index) in items">
-            {{ item.message }} 呵呵~ {{ index }}
+            {{ item }} 呵呵~ {{ index }}
         </div>
         <!-- 还可以迭代对象,输出对象名 -->
-        <div v-for="(value, key) in object">
+        <div v-for="(value, key) in object" :key="value">
             {{ value }} - {{ key }}
         </div>
+        <ul>
+            <template v-for="item in items">
+                <li>{{ item }}</li>
+                <li class="divider">111</li>
+            </template>
+        </ul>
     </div>
+    <ul id="app2">
+        <!-- 不改变值的情况下取值 -->
+        <li v-for="n in evenNumbers"> {{ n }} </li>
+        <li v-for="n in even(numbers)">{{ n }}</li>
+        <li v-for="n in 10">{{ n }}</li>
+    </ul>
     <script>
-        new Vue({
+        var example = new Vue({
             el: '#app',
             data: {
                 items: [
@@ -28,6 +40,49 @@
                 object: {
                     firstName: 'json',
                     lastName: 'doe'
+                }
+            }
+        });
+        // 不改变原始数组的非变异方法
+        example.items = example.items.filter(function (item) {
+            return item.message.match(/foo/)
+        })
+
+        // 不能检测变动
+        example.items[0] = { message: 'foo3' };
+        example.items.length = 8;
+
+        // 解决这个问题 还可以动态向嵌套对象添加响应式属性
+        Vue.set(example.items, 0, { message: 'foo4' });
+        Vue.set(example.object, 'age', 30);
+        // 另一种写法
+        example.$set(example.object, 'name', 'longqi');
+        example.items.splice(0, 1, { message: 'foo5' });
+        example.items.splice(3);
+
+        // 多个属性的增加
+        example.object = Object.assign({}, example.object, {
+            firstName: 'json2',
+            lastName: 'doe2'
+        })
+
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                numbers: [ 1, 2, 3, 4, 5 ]
+            },
+            computed: {
+                evenNumbers: function(){
+                    return this.numbers.filter(function (number){
+                        return number % 2 === 0
+                    })
+                }
+            },
+            methods: {
+                even: function(numbers) {
+                    return this.numbers.filter(function (number){
+                        return number % 2 === 0
+                    })
                 }
             }
         })

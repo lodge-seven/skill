@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>11-事件处理</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="example-1">
+        <!-- 事件修饰符 -->
+        <input type="text" v-on:keyup.enter="greet">
+        <button v-on:click.once="counter += 1">添加</button>
+        <p>被点击的{{ counter }}次</p>
+        <button v-on:click="greet">变大</button>
+        <button v-on:click="say('你好')">说你好</button>
+        <!-- 事件只能当前元素触发 子集不行 -->
+        <div v-on:click.self.prevent="say('你好')">
+            你好
+            <ul>
+                <li>被点击的{{ counter }}次</li>
+            </ul>
+        </div>
+        <!-- 事件冒泡 自下而上 这里有两个事件，都会捕捉到，所以自下的时候就要阻止它  -->
+        <div v-on:click="say('你好')">
+            你好
+            <ul>
+                <li v-on:click.stop="say('你好1')">被点击的hh{{ counter }}次</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var example = new Vue({
+            el: '#example-1',
+            data: {
+                counter: 0,
+                name: 'vue'
+            },
+            methods: {
+                greet: function(event) {
+                    alert('你好啊' + this.name);
+                    if(event){
+                        alert(event.target.tagName)
+                    }
+                },
+                say: function(message) {
+                    alert(message)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
