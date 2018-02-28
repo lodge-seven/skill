@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-class绑定</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <div 
+            class="hidden" 
+            v-bind:class="{ active: isActive, 'text-danger': hasError }"
+        >类名共存</div>
+        <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">有样式啊</div>
+        <div v-bind:style="styleObject">有样式啊</div>
+        <!-- 渲染最后一个被浏览器支持的值 -->
+        <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }">弹性盒子</div>
+    </div>
+    <div id="app2">
+        <div v-bind:class="classObject">类名共存</div>
+    </div>
+    <div id="app3">
+        <div v-bind:class="classObject">类名共存</div>
+    </div>
+    <!-- 添加数组并且判断 -->
+    <div id="app4">
+        <div v-bind:class="[isActive ? 'activeClass' : '', hasError]">数组类名</div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                hasError: false,
+                activeColor: 'red',
+                fontSize: 30,
+                styleObject: {
+                    color: 'blue',
+                    fontSize: '30px'
+                }
+            }
+        })
+        new Vue({
+            el: '#app2',
+            data:
+            {
+                classObject: {
+                    isActive: true,
+                    hasError: true
+                }
+            }
+        })
+        new Vue({
+            el: '#app3',
+            data: {
+                isActive: true,
+                hasError: false,
+                error: null
+            },
+            computed: {
+                classObject: function() {
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': true
+                    }
+                }
+            }
+        })
+        new Vue({
+            el: '#app4',
+            data: {
+                isActive: true,
+                hasError: true
+            }
+        })
+    </script>
+</body>
+</html>

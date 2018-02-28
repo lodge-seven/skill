@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>06-生命周期钩子</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <!-- 只能够包含单个表达式 -->
+    <div id="app" v-bind:class="a + '1'">
+        {{ a }}
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                a: 'ssss'
+            },
+            // 初始化阶段,预处理中
+            beforeCreate: function() {
+                console.log('初始化阶段：a' + this.a);
+            },
+            // 实例被创建后实行代码
+            created: function() {
+                console.log('实例的创建：a' + this.a);
+            },
+            // vue会先去查找el，渲染dom节点，没有这步不会执行
+            beforeMount: function() {
+                console.log('选择模板去渲染虚拟节点：a' + this.a);
+            },
+            // 创建节点对象数据
+            mounted: function() {
+                console.log('创建节点el：a' + this.a);
+            },
+            // 数据变化还没渲染
+            beforeUpdate: function() {
+                console.log('数据变化未渲染：a' + this.a);
+            },
+            updated: function() {
+                console.log('数据变化：a' + this.a);
+            },
+            // 调用销毁函数$destory
+            beforeDestroy: function() {
+                console.log('销毁vm实例');
+            },
+            destroyed: function() {
+                console.log('已将其销毁');
+            }
+        });
+
+        // app.$destroy();
+    </script>
+</body>
+</html>

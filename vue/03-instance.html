@@ -13,17 +13,24 @@
         模型与视图分离使我们不用去操作dom修改值,只要找到储存值的变量,修改就可以,避免了dom复杂的操作.VM是vue实例,帮助构建模型与视图中修改的数据通过表达式去进行匹配,数据传递更直接
         vue组件树,自定义节点
     -->
-    <span>{{ name }}</span>
-    <!-- 值的绑定：用于响应更新html属性 -->
-    <button v-bind:disabled="isButtonDisabled" >按钮</button>
+    <div id="app">
+        <span v-bind:class="sex">{{ name }} {{ age }}</span>
+        <!-- 值的绑定：用于响应更新html属性 如果值是空或者假 那个属性就不会出现 -->
+        <button v-bind:disabled="isButtonDisabled" >按钮</button>
+        <p v-if="isSeen">现在不能看哦</p>
+    </div>
     <script>
         var data = {
             name: '犬夜叉',
             sex: '男',
-            race: '半妖' 
+            race: '半妖',
+            isButtonDisabled: true,
+            isSeen: false,
+            age: '' 
         }
         
         var vm = new Vue({
+            el: '#app',
             data: data
         })
 

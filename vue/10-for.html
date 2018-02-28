@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>10-列表渲染</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-for="(item, index) in items">
+            {{ item.message }} 呵呵~ {{ index }}
+        </div>
+        <!-- 还可以迭代对象,输出对象名 -->
+        <div v-for="(value, key) in object">
+            {{ value }} - {{ key }}
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                items: [
+                    { message: 'foo' },
+                    { message: 'foo2' }
+                ],
+                object: {
+                    firstName: 'json',
+                    lastName: 'doe'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

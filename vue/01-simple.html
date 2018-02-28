@@ -27,6 +27,10 @@
         <!-- <p v-model="message" ></p> -->
         <input type="text" v-model="message">
     </div>
+    <div id="app5">
+        <p>{{ foo }}</p>
+        <button @click="foo += 1">点击它</button>
+    </div>
     <script>
         // Object.defineProperty是用来操作一个对象的它有两种用法
 //（1）、
@@ -125,6 +129,19 @@
                     this.message = '谢谢大爷'
                 }
             }
+        })
+
+        /*  
+            5 无法响应值的变化
+        */
+        var obj = {
+            foo: 0
+        };
+        // 只有这个属性能够阻止其响应
+        Object.freeze(obj);
+        var app5 = new Vue({
+            el: '#app5',
+            data: obj
         })
     </script>
 </body>

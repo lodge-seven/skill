@@ -13,6 +13,8 @@
         <p>计算之后消息{{ now }}</p>
         <p>计算之后消息{{ nows() }}</p>
         <p>{{ full }}</p>
+        <p>{{ reversedMessage }}</p>
+        <span @title="nows()">www</span>
     </div>
     <script>
         var vm = new Vue({
@@ -24,8 +26,18 @@
             },
             // 计算是有缓存的，这意味着没有更新依赖，就使用缓存，有更新才会发生改变，这减少了开销
             computed: {
-                reversedMessage: function() {
-                    return this.message.split('').reverse().join('') + this.message.length;
+                /* reversedMessage: function() {
+                    return this.message.split('').reverse().join('');
+                } ,*/
+                reversedMessage : {
+                    get: function() {
+                        return this.message.split('').reverse().join('');
+                    },
+                    // 相应的更新值
+                    set: function(newData) {
+                        // console.log(newData);
+                        this.message = newData + '哈哈';
+                    }
                 },
                 now: function() {
                     return Date.now();
@@ -49,8 +61,8 @@
             }
         })
         
-        vm.full = 'John Doe';
         vm.message = "呵呵=话题结束";
+        vm.reversedMessage = 'John'
     </script>
 </body>
 </html>

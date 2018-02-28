@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>09-条件渲染</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- vue会高效渲染元素即复用相同元素，这样会使vue变快，但可能实际上需要的就两个不一样的元素，所以用key来标识它 -->
+        <div v-if="login === 'user'">
+            <label >用户名</label>
+            <input type="text" placeholder="输入用户名" key="user">
+        </div>
+        <div v-else>
+            <label >邮箱</label>
+            <input type="text" placeholder="输入邮箱" key="email">
+        </div>
+        <button @click="changes">点击切换</button>
+        <!-- 简单的显示与隐藏 -->
+        <h1 v-show="ok">Hello!</h1>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                login: 'user',
+                ok: false
+            },
+            methods: {
+                changes: function() {
+                    // this.login = '谢谢大爷';
+                    if (this.login === 'user') {
+                        this.login = 'sss'
+                    }else {
+                        this.login = 'user'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
