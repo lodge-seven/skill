@@ -8,17 +8,57 @@
     <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
+    <!-- 编辑与多文本编辑 -->
     <div id="app">
-        <input type="text" v-model="message">
+        <!-- lazy事件修饰符：不是即时更新，而是失去焦点之后才更新 -->
+        <input type="number" v-model.number.lazy="message">
         {{ message }}
 
         <span>多行文本</span>
         <p style="white-space: pre-line;">{{ message }}</p>
-        <textarea v-model="message"></textarea>
+        <textarea v-model.trim="message"></textarea>
 
         <!-- 绑定布尔值 -->
         <input type="checkbox" id="checkbox" v-model="checked">
         <label for="checkbox">{{ checked }}</label>
+    </div>
+    <!-- 复选框 -->
+    <div id="app2">
+        <input type="checkbox" id="jack" value="jack" v-model="checkedNames" >
+        <label for="jack">jack</label>
+        <input type="checkbox" id="john" value="john" v-model="checkedNames" >
+        <label for="john">john</label>
+        <input type="checkbox" id="mike" value="mike" v-model="checkedNames" >
+        <label for="mike">mike</label>
+        <p>选中的值：{{ name }}</p>
+    </div>
+    <!-- 单选框 -->
+    <div id="app3">
+        <input type="radio" id="one" value="帅哥" v-model="picked">
+        <label for="one">帅哥</label>
+        <input type="radio" id="two" value="大帅哥" v-model="picked">
+        <label for="two">大帅哥</label>
+        <p>选中{{ picked }}</p>
+    </div>
+    <!-- 选择框 -->
+    <div id="app4">
+        <!-- multiple 多选时要绑定一个值到数组 -->
+        <select v-model="selected" multiple >
+            <!-- <option disabled value="">请选择</option> -->
+            <option value="a">a</option>
+            <option value="b">b</option>
+            <option value="c">c</option>
+            <option value="d">d</option>
+        </select>
+        <span>选择的值: {{ selected }}</span>
+        <select v-model="selected2">
+            <option 
+                v-for="(option, index) in options" 
+                v-bind:value="option.value + index"
+                v-bind:key="option.value + index"
+            >{{ option.text }} - {{ index }}</option>
+        </select>
+        <span>遍历选择的值: {{ selected2 }}</span>
     </div>
     <script>
         new Vue({
@@ -26,6 +66,40 @@
             data: {
                 message: '',
                 checked: false
+            }
+        })
+        var app2 = new Vue({
+            el: '#app2',
+            data: {
+                checkedNames: []
+            },
+            computed: {
+                name: function () {
+                    return this.checkedNames.join(',')
+                }
+            }
+        })
+        // 选中一个值 但这个值没有变化不会调用其生命周期
+        var app3 = new Vue({
+            el: '#app3',
+            data: {
+                picked: ''
+            },
+            beforeUpdate: function() {
+                console.log('变动')
+            }
+        })
+
+        var app4 = new Vue({
+            el: '#app4',
+            data: {
+                selected: [],
+                selected2: '',
+                options: [
+                    { text: '1', value: 'a' },
+                    { text: '2', value: 'b' },
+                    { text: '3', value: 'c' }
+                ]
             }
         })
     </script>

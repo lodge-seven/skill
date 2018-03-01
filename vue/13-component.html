@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>13-组件</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <!-- 写组件，扩展html封装可重用代码 -->
+    <long id="some"></long>
+    <!-- data必须是函数 -->
+    <div id="app">
+        <!-- 不加vue的绑定属性，那就是字符串啦，加了才是声明好的对象/变量 
+             非字符串模板要使用短横线分隔式命名，不使用就报出警告。而且不会渲染dom对象
+        -->
+        <!-- 用v-bind动态将props绑定到父组件上去 -->
+        <simple-counter  
+            v-for="counter in counters"
+            v-bind:counter-mass="counter"></simple-counter>
+        <simple-counter counter-mass="hello!2"></simple-counter>
+        <simple-counter counter-mass="hello!3"></simple-counter>
+    </div>
+    <!-- 子组件通信父组件 -->
+    <div id="app2">
+        <p>{{ total }}</p>
+        <!-- 用了自定义事件 -->
+        <button-counter v-on:increment-event="incrementTotal"></button-counter>
+        <button-counter v-on:increment-event="incrementTotal"></button-counter>
+        <!-- 语法糖 人家监听的是input事件 -->
+        <currency-input v-model="price"></currency-input>
+        <!-- <currency-input 
+            v-bind:value="price"
+            v-on:input="price = $event.target.value"
+        ></currency-input> -->
+        <p>{{ price }}</p>
+    </div>
+    <script>
+        Vue.component('long', {
+            template: '<div>ddd</div>'
+        })
+
+        // data不是函数的话会发出警告
+        var data = { counter: 0 }
+        // 这样很不方便数据传递，万一我的数据来自于其他上下文呢
+        Vue.component('simple-counter', {
+            // 字符串模板
+            template: ' <button v-on:click="alerts">{{ counterMass }}</button>',
+            /* data: function() {
+                // 返回的是同一个对象哦
+                // return data
+                return { counterMass: 0 }
+            }, */
+            // 解决数据从外部传回来，是非字符串模板，字符串数组可以传多个值
+            props: ['counterMass'],
+            methods: {
+                alerts: function() {
+                    alert(this.counterMass + '我爱你啊');
+                }
+            }
+        })
+
+        Vue.component('button-counter', {
+            template: '<button v-on:click="increment">{{ counter }}</button>',
+            // 不用json是怕耦合
+            data: function() {
+                return {
+                    counter: 0
+                }
+            },
+            methods: {
+                increment: function() {
+                    this.counter += 1;
+                    // 非字符串模板 需要使用横线分割命名法
+                    this.$emit('increment-event')
+                }
+            }
+        })
+
+        Vue.component('currency-input', {
+            template: '\
+                <span>\
+                    $\
+                    <input\
+                        ref="input"\
+                        v-bind:value="value"\
+                        v-on:input="updateValue($event.target.value)"\
+                    />\
+                </span>\
+            ',
+            props: ['value'],
+            methods: {
+                updateValue: function (value) {
+                    // 规定这个值只会保留两位小数
+                    // console.log(value)
+                    var formattedValue = value
+                    .trim()
+                    .slice(0, value.indexOf('.') === -1 ? value.length : value.indexOf('.') + 3)
+                    if (formattedValue !== value) {
+                        this.$refs.input.value = formattedValue
+                    }
+                    this.$emit('input', Number(formattedValue))
+                }
+            }                
+        })
+
+        new Vue({
+            el: '#some',
+            data: {
+                name: '你好'
+            }
+        })
+        new Vue({
+            el: '#app',
+            data: {
+                counters: ['我爱你哦','我爱你哦2']
+            }
+        })
+        new Vue({
+            el: '#app2',
+            data: {
+                total: 0,
+                price: 0
+            },
+            methods: {
+                // 解耦了，子组件只是发了事件通知
+                incrementTotal: function() {
+                    console.log('2222')
+                    this.total += 1;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
