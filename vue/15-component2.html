@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>15-动态组件</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div id="example">
+        <!-- 缓存出现过的 -->
+        <keep-alive>
+            <component :is="currentView"></component>
+        </keep-alive>
+
+    </div>
+    <script>
+        var Home = {
+            template: '<p>你好1!</p>'
+        }
+        var Home2 = {
+            template: '<p>你好2!</p>'
+        }
+        var Home3 = {
+            template: '<p>你好3!</p>'
+        }
+        var vm = new Vue({
+            el: '#example',
+            data: {
+                currentView: 'my-component'
+            },
+            components: {
+                home: Home,
+                "home2": Home2,
+                home3: Home3,
+                "async-example": function(resolve, reject) {
+                    setTimeout(function(){
+                        resolve({
+                            template: '<div>I am async!</div>'
+                        })
+                    }, 1000) 
+                },
+                'my-component': () => new Promise(function(resolve, reject){
+                    resolve({
+                        template: '<div>I am async2!</div>'
+                    })
+                })
+            }
+        })
+    </script>
+</body>
+</html>

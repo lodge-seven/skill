@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>18-路由的学习哦</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello App!</h1>
+        <p>
+        <!-- 使用 router-link 组件来导航. -->
+        <!-- 通过传入 `to` 属性指定链接. -->
+        <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+        <router-link to="/user/hehe/profile">Go to User</router-link>
+        <router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar/hehe">Go to Bar</router-link>
+        </p>
+        <!-- 路由出口 -->
+        <!-- 路由匹配到的组件将渲染在这里 -->
+        <router-view></router-view>
+    </div>
+
+    <script>
+        // 1 定义路由的组件 携带参被设置到$route.params中
+        // /user/:username/post/:post_id
+        const Foo = { template: '<div>foo</div>' };
+        const User = { template: '<div class="user"><h2>User {{ $route.params.id }}</h2><router-view></router-view></div>' };
+        const Bar = { template: '<div>Bar{{ $route.params.ids }}</div>' };
+        const UserProfile = { template: '<div>Profile</div>' }
+        // 2 定义路由
+        const routes = [
+            { path: '/user/:id', component: User,
+                children: [
+                    {
+                        path: 'profile',
+                        component: UserProfile
+                    }
+                ] 
+            },
+            { path: '/bar/:ids', component: Bar },
+            { path: '/foo', component: Foo }
+        ]
+
+        // 3 路由实例
+        const router = new VueRouter({
+            routes
+        })  
+
+        // 4 创建和挂载根实例
+        const app = new Vue({
+            router
+        }).$mount('#app')
+    </script>
+</body>
+</html>

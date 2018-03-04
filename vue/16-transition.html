@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>16-动画</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        .fade-leave-active { 
+            transition: all .5s ease;
+        }
+        .fade-enter-active {
+            transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        }
+        .fade-enter, .fade-leave-to {
+            transform: translateX(20px);
+            opacity: 0;
+        }
+        .bounce-enter-active {
+            animation: bounce-in .5s;
+        }
+        .bounce-leave-active {
+            animation: bounce-in .5s reverse;
+        }
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="demo">
+        <button @click="show = !show">切换</button>
+        <!-- 动画效果的样式要自己去加 -->
+        <transition name="fade">
+            <p v-if="show">你好</p>
+        </transition>
+
+        <transition name="bounce">
+          <p v-if="show">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris facilisis enim libero, at lacinia diam fermentum id. Pellentesque habitant morbi tristique senectus et netus.</p>
+        </transition>
+
+        <transition :duration="{ enter: 500, leave: 800 }">...</transition>
+    </div>
+    <script>
+        new Vue({
+            el: '#demo',
+            data: {
+                show: true,
+                duration : ''
+            }
+        })
+    </script>
+</body>
+</html>

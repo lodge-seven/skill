@@ -28,13 +28,17 @@
         <!-- 用了自定义事件 -->
         <button-counter v-on:increment-event="incrementTotal"></button-counter>
         <button-counter v-on:increment-event="incrementTotal"></button-counter>
+        <!-- 回字的三种写法 -->
         <!-- 语法糖 人家监听的是input事件 -->
-        <currency-input v-model="price"></currency-input>
+        <!-- <currency-input v-model="price"></currency-input> -->
+        <currency-input v-bind:value="price" @input="val => price = val"></currency-input>
         <!-- <currency-input 
             v-bind:value="price"
-            v-on:input="price = $event.target.value"
+            v-on:input="price = arguments[0]"
         ></currency-input> -->
         <p>{{ price }}</p>
+        <p>{{ foo }}</p>
+        <my-checkbox v-model="foo" value="从上面拿值哦"></my-checkbox>
     </div>
     <script>
         Vue.component('long', {
@@ -105,6 +109,24 @@
             }                
         })
 
+        Vue.component('my-checkbox', {
+            template: '<div><input type="checkbox" id="a" @change="a" /><label for="a">{{ value }}{{ checked }}</label></div>',            
+            model: {
+                prop: 'checked',
+                event: 'change'
+            },
+            props: {
+                checked: Boolean,
+                value: String
+            },
+            methods: {
+                a: function() {
+                    // true变false false再出去就变true
+                    this.$emit('change', !this.checked)
+                }
+            }
+        })
+
         new Vue({
             el: '#some',
             data: {
@@ -121,7 +143,8 @@
             el: '#app2',
             data: {
                 total: 0,
-                price: 0
+                price: 0,
+                foo: false
             },
             methods: {
                 // 解耦了，子组件只是发了事件通知
