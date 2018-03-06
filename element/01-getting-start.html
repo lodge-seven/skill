@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <title>01-入门</title>
+    <style>
+        .transition-box {
+            margin-bottom: 10px;
+            width: 200px;
+            height: 100px;
+            border-radius: 4px;
+            background-color: #409EFF;
+            text-align: center;
+            color: #fff;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <el-button @click="visible = true">Button</el-button>
+        <el-dialog :visible.sync="visible" title="Hello world">
+          <p>Try Element</p>
+        </el-dialog>
+
+        <el-button @click="show = !show ">点击老子</el-button>
+        <div style="display: flex; margin-top: 20px; height: 100px;">
+            <!-- fade 淡入淡出 -->
+            <transition name="el-fade-in-linear">
+                <div v-show="show" class="transition-box">红烧牛肉面</div>
+            </transition>
+            <transition name="el-fade-in">
+                <div v-show="show" class="transition-box">老街小吃</div>
+            </transition>
+            <!-- zoom 缩放 -->
+            <transition name="el-zoom-in-center">
+                <div v-show="show" class="transition-box">买个新本子</div>
+            </transition>
+            <transition name="el-zoom-in-top">
+                <div v-show="show" class="transition-box">看书</div>
+            </transition>
+            <transition name="el-zoom-in-bottom">
+                <div v-show="show" class="transition-box">学习</div>
+            </transition>
+        </div>
+        <el-button @click="show2 = !show2">点击老子</el-button>
+        <div>
+            <el-collapse-transition>
+                <div v-show="show2">
+                    <div class="transition-box">饱了</div>
+                    <div class="transition-box">回去吃剩饭</div>
+                </div>
+            </el-collapse-transition>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script>
+        /* Vue.locale('en', ELEMENT.lang.en)
+        Vue.locale('zh-cn', ELEMENT.lang.zhCN) */
+        new Vue({
+            el: '#app',
+            data: () => ({
+                visible: false,
+                show: true,
+                show2: true
+            })
+            
+        })
+    </script>
+</body>
+</html>
