@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <title>02-布局</title>
+  <style>
+    .grid-content { border-radius: 4px; min-height: 36px; }
+    .bg-purple-dark { background: rgb(28, 2, 29); }
+    .bg-purple { background: rgb(116, 23, 145); }
+    .bg-purple-light { background: rgb(183, 131, 199); }
+    .row-bg { padding: 10px 0; background-color: #f9fafc; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- 24份平分 -->
+    <el-row>
+      <el-col :span="24"><div class="grid-content bg-purple-dark"></div></el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="12"><div class="grid-content bg-purple-light"></div></el-col>
+    </el-row>
+    <!-- 分割gutter -->
+    <el-row :gutter="20">
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+    </el-row> 
+    <!-- 偏移offset -->
+    <el-row :gutter="20">
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></el-col>
+    </el-row>
+    <el-row :gutter="20">
+      <el-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></el-col>
+    </el-row>
+    <el-row :gutter="20">
+      <el-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></el-col>
+    </el-row>
+    <!-- 弹性盒子 -->
+    <el-row type="flex" class="row-bg" justify="end">
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple-light"></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+    </el-row> 
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+  <script>
+      /* Vue.locale('en', ELEMENT.lang.en)
+      Vue.locale('zh-cn', ELEMENT.lang.zhCN) */
+      new Vue({
+          el: '#app',
+          data: () => ({
+              visible: false,
+              show: true,
+              show2: true
+          })
+          
+      })
+  </script>
+</body>
+</html>
