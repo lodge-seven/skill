@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>05-轮播图</title>
+    <style>
+        body { font-family: 'Microsoft YaHei'; font-size: 16px; margin: 0; padding: 0; }
+        a { text-decoration-line: none; }
+        ul, p { margin: 0; padding: 0; }
+        .box img { width: 650px; height: 400px; }
+        .box a { display: block; }
+        .box li { display: none; float: left; }
+        .box .active { display: block; }
+        ul::after { content: ''; clear: both; overflow: hidden; }
+        ul { width: 4000px; }
+        .box { position: relative; overflow: hidden; width: 650px; height: 400px; margin: 50px auto; }
+        .turn { position: absolute; line-height: 50px; text-align: center; top: 50%; margin-top: -15px; width: 30px; height: 50px; background: rgba(0, 0, 0, .5); color: #fff; }
+        .lg { left: 0; }
+        .rg { right: 0; }
+        .top, .down { position: absolute; width: 650px; height: 40px; background: rgba(0, 0, 0, .5); color: #fff; text-align: center; line-height: 40px; }
+        .top { top: 0; }
+        .down { bottom: 0; }
+        .btn { text-align: center; }
+        .btn button {width: 75px; height: 40px; background-color: #ccc; border: none; cursor: pointer; }
+		.btn button.btn1 {color: #fff; background-color: #f10215;}
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class="active">
+                <a href="#"><img src="./images/1.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./images/2.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./images/3.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./images/4.jpg" alt=""></a>
+            </li>
+            <li>
+                <a href="#"><img src="./images/5.jpg" alt=""></a>
+            </li>
+        </ul>
+        <a href="#" class="turn lg"><</a>
+        <a href="#" class="turn rg">></a>
+        <p class="top"><span>1</span>/5</p>
+        <p class="down">植物</p>
+    </div>
+    <div class="btn">
+        <button class="btn1">正常模式</button>
+        <button>循环模式</button>
+    </div>
+    <script>
+        /*  1需求：默认或正常模式下，顺序切换。循环模式下，循环切换。*/
+
+        // 1 参数设置
+        var mode = 'normal';
+        // 全局
+        var num = 0;
+        var textArr = ['植物','植物大战','植物大战僵尸','植物大战僵尸英文版','植物大战僵尸中文版'];
+        var picNum = document.getElementsByTagName('span')[0];
+        var picSummary = document.getElementsByTagName('p')[1];
+        var picTurn = document.getElementsByClassName('turn');
+        var picList = document.getElementsByTagName('li');
+        // 拿取dom对象
+        var btn = document.getElementsByTagName('button');
+
+        /* 
+            ui事件 
+        */
+        // 左切换
+        picTurn[0].onclick = function () { direction(); }
+        // 右切换
+        picTurn[1].onclick = function () { direction('add'); }
+        // 正常模式
+        btn[0].onclick = function () { mode = 'normal'; }
+        // 循环模式
+        btn[1].onclick = function () { mode = 'circle'; }
+
+        /* 
+            按参切换函数 
+            传入数字改变其内容，为对应的列表加效果：显示，文字切换，数字显示
+        */
+        function alter ( num ) {
+            picList[num].className = 'active';
+            picNum.innerText = num + 1;
+            picSummary.innerText = textArr[num];
+        }
+
+        /* 
+            变动切换方向的切换图片
+        */
+        function direction ( dir ) {
+            picList[num].className = '';
+            // 注意：域不同，不能使用局部变量，污染全局
+            dir ? num++ : num-- ;
+            mode == 'normal' && num > 4 ? ( num = 4 ) : mode == 'circle' && num > 4 ? ( num = 0 ) : num;
+            mode == 'normal' && num < 0 ? ( num = 0 ) : mode == 'circle' && num < 0 ? ( num = 4 ) : num;
+            // console.log(num)
+            alter(num);
+        }
+        
+    </script>
+</body>
+</html>
