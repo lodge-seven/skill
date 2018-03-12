@@ -1,0 +1,88 @@
+1 继承
+oo语言：面向对象
+ecmascript只支持实现继承，其依靠原型链
+原理：利用原型链做一个引用类型继承另一个引用类型的属性和方法
+构造函数、原型、实例。
+构造函数：对象创建模式，如何创建一个对象
+
+对象：
+  世间万物皆对象。不要理解的太字面，对象是一种描述事物的说明，比如说一个人，描述它的就是人傻钱多事少还丑。这些描述向我们大概描述了一个人的某些特性，我们观察这个人，它就是我们观察的对象。
+  有本质的，有客观的，有主观的。这些是一种属性，感性的认为这是一个人的组成，一个程序员的组成成分，我可以这样看，有这些成分的就是程序员，程序员由这些成分组成。
+  在计算机中，也有相应的描述，它用一些属性去模拟一些现象，它不可能知道那些现象在现实中的样子，我们只能告诉它，狗由一些属性组成，那它就知道，什么是狗了
+
+  一个场景：取钱和存钱，用数据创造一个atm机
+
+原型链：
+  对象的一个实例，都会有__proto__这个属性指向父级的原型，即xx.__proto__ = XX.prototype，然后通过__proto__/XX.prototype可以找到其父级的成员变量/成员方法，在constructor中找到XX这个父级的函数体，这个函数也不是凭空来的，会指向Function这个类，然后指向Object，最后指向null
+
+以下都创建对象，对象是可以调用的，有自己的属性
+字面量：
+var p = { xx:xxx }
+
+new关键字创建：
+var p = new Object()
+p.xx = xxx
+
+工厂模式：
+function createGf (name) {
+  // 通过sql拿取账号下金额...
+  var name = {} / new Object()
+  name.钱 = 
+  name.密码 = 
+  return 账号的所有信息，所有的钱财
+}
+
+var gf1 = createGf("bingbing");
+var gf2 = createGf("mimi");
+
+构造函数:（构造函数的首字母要大写）
+和工厂函数相似，只不过在此基础上进行了具体类型的区分，放在this上。
+function Gf(name,bar){
+  this.name = name;
+  this.bar = bar;
+  // 浪费资源 每次调用都是不同的实例
+  this.sayWhat = function(){
+    alert(this.name + "said:love you forever");
+  }
+  // 这样就不会浪费
+  this.sayWhat = sayWhat
+}
+
+function sayWhat(){
+  alert(this.name + "said:love you forever");
+}
+var gf1 = new Gf("vivian","f");
+var gf2 = new Gf("vivian2","f");
+
+原型对象模式：
+构造函数 GF ... 其原型中可以共享方法
+function Gf(name,bar){
+  this.name = name;
+  this.bar = bar;
+  // 浪费资源 每次调用都是不同的实例
+  this.sayWhat = function(){
+    alert(this.name + "said:love you forever");
+  }
+  // 这样就不会浪费
+  this.sayWhat = sayWhat
+}
+
+function sayWhat(){
+  alert(this.name + "said:love you forever");
+}
+var gf1 = new Gf("vivian","f");
+var gf2 = new Gf("vivian2","f");
+
+优化的实际开发可能会用到的对象创建方法，这里用构造函数可以区分变量类型，用原型对象模式使得资源优化，每次实例不是创建对象
+function Gf(name,bar){
+  this.name = name;
+  this.bar = bar;
+}
+Gf.prototype = {
+  constructor : Gf,
+  sayWhat : function() {
+    alert(this.name + "said:love you forever");
+  }
+}
+var gf1 = new Gf("vivian", "f");
+var gf2 = new Gf("vivian1", "c");
