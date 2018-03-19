@@ -24,6 +24,7 @@ function ab(num) {
   num = 12;
   console.log(num)
 }
+// 因为是堆中 后进先出，所以这里的函数已经被替换了 指针指向的那个对象被替换了
 ab(a)
 // 1
 // console.log(a)
@@ -31,10 +32,11 @@ ab(a)
 // 不受上下文限制
 var b = {};
 b.j = '11';
-function ab(num) {
-  num.j = 12;
-  // console.log(num)
+function ab(num, value) {
+  num.j = value;
+  console.log('+',num)
 }
-ab(b)
-// { j: 12 }
-// console.log(b)
+
+ab(b, 14)
+ab(b, 12)
+ab(b, 15)

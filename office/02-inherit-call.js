@@ -7,6 +7,7 @@
 function Mom () {
   this.name = 'fang';
   this.sex = 'falmale'
+  this.love2 = []
 }
 
 Mom.prototype = {
@@ -15,6 +16,19 @@ Mom.prototype = {
   }
 }
 
+Mom.prototype = {
+  love: function () {
+    this.love2.push(111)
+  }
+}
+
+var mom1 = new Mom()
+var mom2 = new Mom()
+mom2.love()
+// mom1.love2.push('111')
+console.log(mom1)
+console.log(mom2)
+
 function Son () {
   this.name = '方', //会重写的哦
   this.habby = 'draw'
@@ -22,7 +36,7 @@ function Son () {
 
 Son.prototype = new Mom();
 
-var son = new Son();
+var son1 = new Son();
 // 方,我爱你love,falmale
 // son.love('love')
 
